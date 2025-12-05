@@ -1,0 +1,119 @@
+.newsletter {
+  padding: 80px 20px;
+  background: var(--gradient-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -250px;
+  right: -250px;
+  animation: rotate 30s linear infinite;
+}
+
+.newsletter-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-text h2 {
+  font-size: 42px;
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.newsletter-text p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+.newsletter-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 18px 25px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.input-group input.error {
+  border: 2px solid #ef4444;
+}
+
+.input-group .btn {
+  padding: 18px 35px;
+  background: var(--white);
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+.input-group .btn:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.success-message {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  margin: 0;
+}
+
+.error-message {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .newsletter-text h2 {
+    font-size: 32px;
+  }
+  
+  .newsletter-text p {
+    font-size: 16px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group .btn {
+    width: 100%;
+  }
+}
+
