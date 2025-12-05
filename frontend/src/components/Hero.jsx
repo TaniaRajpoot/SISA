@@ -138,7 +138,7 @@ const Hero = () => {
           />
           <div className={`hero-overlay ${activeSlide === index ? "active" : ""}`}>
             <div className={`hero-text ${activeSlide === index ? "active" : ""}`}>
-              <h1>{slide.title}</h1>
+              <h1 className={`hero-title`}>{slide.title}</h1>
               <p className={`hero-description slide-${slide.id}`}>{slide.description}</p>
 
               <div className="hero-buttons">

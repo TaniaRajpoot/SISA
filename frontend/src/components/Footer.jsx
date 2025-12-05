@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/Footer.css';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
+import logo from '../assets/SISA_Logo2_transparent[1] copy.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -11,16 +14,25 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-col">
               <h3 className="footer-logo">
-                <span className="logo-icon">🎓</span>
-                Eduvalt
+                <img className='logo-icon' src={logo} alt="" />
+                SISA
               </h3>
               <p>Empowering learners worldwide with quality education and expert instruction.</p>
-              <div className="social-links">
-                <a href="#" className="social-link">📘</a>
-                <a href="#" className="social-link">🐦</a>
-                <a href="#" className="social-link">📷</a>
-                <a href="#" className="social-link">💼</a>
-              </div>
+             <div className="social-links">
+  <a href="#" className="social-link">
+    <FaFacebookF />
+  </a>
+  <a href="#" className="social-link">
+    <FaInstagram />
+  </a>
+  <a href="mailto:info@sisa.com" className="social-link">
+    <MdEmail />
+  </a>
+  <a href="#" className="social-link">
+    <FaLinkedinIn />
+  </a>
+</div>
+
             </div>
 
             <div className="footer-col">
