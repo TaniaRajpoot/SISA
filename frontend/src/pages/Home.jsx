@@ -12,6 +12,9 @@ import Footer from '../components/Footer';
 import Partners from '../components/Partners';
 import About from '../components/About';
 import Review from '../components/Reviews';
+import TopInstructors from '../components/TopInstructor';
+import NewsEvents from '../components/NewsEvents';
+import JoinTeacher from '../components/JoinTeacher';
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -55,10 +58,13 @@ const HomePage = () => {
        <Partners />
        <About />
       <Stats />
-      <Categories />
+      {/* <Categories /> */}
       <Courses />
       <Features />
       <Review />
+      <TopInstructors/>
+    <JoinTeacher/>
+      <NewsEvents/>
       <Testimonials />
       <Newsletter />
       <Footer />

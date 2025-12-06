@@ -526,3 +526,104 @@
     gap: 8px;
   }
 }
+
+/* Add these styles to your existing Header.css file */
+
+/* Desktop Get Started Button */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.get-started-btn {
+  background: linear-gradient(135deg, #3a0ca3 0%, #3a0ca3 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+  white-space: nowrap;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58, 12, 163, 0.4);
+  background: linear-gradient(135deg, #3c096c 0%, #3a0ca3 100%);
+}
+
+/* Mobile Get Started Button - Hidden on Desktop */
+.mobile-get-started-item {
+  display: none;
+}
+
+.mobile-get-started-btn {
+  display: block;
+  background: linear-gradient(135deg, #3a0ca3 0%, #3a0ca3 100%);
+  color: white;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 20px 0 10px;
+  box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mobile-get-started-btn:hover {
+  background: linear-gradient(135deg, #3c096c 0%, #3c096c 100%);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .get-started-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 968px) {
+  .get-started-btn {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop button on tablet/mobile */
+  .nav-actions .get-started-btn {
+    display: none;
+  }
+  
+  /* Show mobile button in nav menu */
+  .mobile-get-started-item {
+    display: block;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .mobile-get-started-btn {
+    margin: 15px 0 5px;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-get-started-btn {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}

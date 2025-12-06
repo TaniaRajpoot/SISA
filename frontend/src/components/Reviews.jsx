@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Reviews.css";
 
 const reviews = [
@@ -25,6 +25,16 @@ const reviews = [
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('next');
+
+  // Auto-slide effect
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setDirection('next');
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(autoSlide); // Cleanup on unmount
+  }, []);
 
   const nextReview = () => {
     setDirection('next');

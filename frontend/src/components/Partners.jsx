@@ -6,47 +6,24 @@ const Partners = () => {
   const partners = [
     {
       id: 1,
-      name: 'Google',
-      logo: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+      name: 'Cambridge Assessment International Education',
+      logo: 'https://headstarteducationalacademy.edu.in/wp-content/uploads/2020/10/cambridge-assessment-international-education-logo.jpg',
     },
     {
       id: 2,
-      name: 'Udemy',
-      logo: 'https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg',
+      name: 'Partner 2',
+      logo: 'https://tse3.mm.bing.net/th/id/OIP.kegS-aTBe-aEWVEU4xR-ogHaCt?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3',
     },
     {
       id: 3,
-      name: 'Microsoft',
-      logo: 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31',
-    },
-
-    {
-      id: 5,
-      name: 'Amazon',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
-    },
-    {
-      id: 6,
-      name: 'Adobe',
-      logo: 'https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg',
-    },
-    // {
-    //   id: 7,
-    //   name: 'IBM',
-    //   logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
-    // },
-    // {
-    //   id: 8,
-    //   name: 'LinkedIn',
-    //   logo: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
-    // }
+      name: 'Partner 3',
+      logo: 'https://th.bing.com/th/id/OIP.6-XGRIi65FcBh-0w8w2VYwHaEC?w=307&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1',
+    }
   ];
 
   return (
     <section className="partners">
       <div className="container">
-     
-        
         <div className="partners-grid">
           {partners.map((partner, index) => (
             <div 
@@ -60,9 +37,8 @@ const Partners = () => {
                 className="partner-logo"
                 loading="lazy"
                 onError={(e) => {
-                  // Fallback if image fails to load
                   e.target.style.display = 'none';
-                  e.target.parentElement.innerHTML = `<div class="partner-logo-fallback">${partner.name}</div>`;
+                  e.target.parentElement.innerHTML = `<div class="partner-logo-text">${partner.name}</div>`;
                 }}
               />
             </div>

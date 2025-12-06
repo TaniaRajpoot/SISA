@@ -27,6 +27,21 @@ const Header = () => {
 
       <nav className="nav-wrapper">
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+           <li className="nav-item dropdown">
+            <a href="#home" className="nav-link">
+              About<span className="dropdown-arrow">▼</span>
+            </a>
+            <div className="dropdown-menu">
+              <a href="#home1">About</a>
+              <a href="#home2">Directior's Message</a>
+              <a href="#home3">Mission & VIsion</a>
+              <a href="#home3">Facilities</a>
+              <a href="#home3">Accerdation</a>
+              <a href="#home3">Campus Virtual Tour</a>
+            </div>
+          </li>
+          
+          
           <li className="nav-item dropdown">
             <a href="#home" className="nav-link">
               Academics <span className="dropdown-arrow">▼</span>
@@ -40,7 +55,22 @@ const Header = () => {
             </div>
           </li>
           
+         
+
           <li className="nav-item dropdown">
+            <a href="#home" className="nav-link">
+              Admissions <span className="dropdown-arrow">▼</span>
+            </a>
+            <div className="dropdown-menu">
+              <a href="#home1">Why Choose SISA</a>
+              <a href="#home2">Admisssion Process</a>
+              <a href="#home3">Online and On Campus</a>
+          
+            </div>
+          </li>
+
+
+             <li className="nav-item dropdown">
             <a href="#courses" className="nav-link">
               Student Life <span className="dropdown-arrow">▼</span>
             </a>
@@ -54,6 +84,32 @@ const Header = () => {
           </li>
           
           <li className="nav-item dropdown">
+            <a href="#home" className="nav-link">
+              Quick Links <span className="dropdown-arrow">▼</span>
+            </a>
+            <div className="dropdown-menu">
+              <a href="#home1">Cirriculm & Sections</a>
+              <a href="#home2">Preschool & Junior School</a>
+              <a href="#home3">Middle School</a>
+              <a href="#home3">Senior School</a>
+              <a href="#home3">BTEC</a>
+            </div>
+          </li>
+
+          <li className="nav-item dropdown">
+            <a href="#home" className="nav-link">
+              Contacts<span className="dropdown-arrow">▼</span>
+            </a>
+            <div className="dropdown-menu">
+              <a href="#home1">School Address & Location Pin</a>
+              <a href="#home2">Phone Numbers</a>
+              <a href="#home3">Contact Form</a>
+              <a href="#home3">Job Application Form</a>
+              <a href="#home3">Franchise application (expression of interedt )</a>
+            </div>
+          </li>
+
+           <li className="nav-item dropdown">
             <a href="#pages" className="nav-link">
               News & Events <span className="dropdown-arrow">▼</span>
             </a>
@@ -62,14 +118,11 @@ const Header = () => {
               <a href="#instructors">Photo Gallery</a>
               <a href="#mentors">Videos etc</a>
               <a href="#events">Our Events</a>
-              {/* <a href="#event-details">Event Details</a>
-              <a href="#free-courses">Free Access Courses</a>
-              <a href="#paid-courses">Paid Courses</a>
-              <a href="#faq">Asked Question</a>
-              <a href="#contact">Contact</a> */}
+              
             </div>
           </li>
-          
+
+
           <li className="nav-item dropdown">
             <a href="#shop" className="nav-link">
             Policies <span className="dropdown-arrow">▼</span>
@@ -82,8 +135,15 @@ const Header = () => {
            
             </div>
           </li>
+
+          {/* Mobile Get Started Button */}
+          <li className="nav-item mobile-get-started-item">
+            <a href="#get-started" className="mobile-get-started-btn">
+              Get Started
+            </a>
+          </li>
           
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown">
             <a href="#blog" className="nav-link">
               Blog <span className="dropdown-arrow">▼</span>
             </a>
@@ -92,10 +152,10 @@ const Header = () => {
               <a href="#blog-list">Blog List</a>
               <a href="#blog-details">Blog Details</a>
             </div>
-          </li>
+          </li> */}
         </ul>
 
-        <div className="nav-actions">
+        {/* <div className="nav-actions">
           <div className="categories-dropdown">
             <button 
               className="categories-btn"
@@ -135,6 +195,11 @@ const Header = () => {
    
 
           <button className="login-btn">Log In</button>
+        </div> */}
+
+        {/* Desktop Get Started Button */}
+        <div className="nav-actions">
+          <a href="#get-started" className="get-started-btn">Get Started</a>
         </div>
 
         <button
