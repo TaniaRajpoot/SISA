@@ -1,9 +1,9 @@
-import React from 'react';
-import '../styles/Footer.css';
+import React from "react";
+import "../styles/Footer.css";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import logo from '../assets/SISA_Logo2_transparent[1] copy.png';
+import logo from "../assets/SISA_Logo2_transparent[1] copy.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -14,46 +14,68 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-col">
               <h3 className="footer-logo">
-                <img className='logo-icon' src={logo} alt="" />
-                SISA
+                <img className="logo-icon" src={logo} alt="" />
+                SISA EDUCATION
               </h3>
-              <p>Empowering learners worldwide with quality education and expert instruction.</p>
-             <div className="social-links">
-  <a href="#" className="social-link">
-    <FaFacebookF />
-  </a>
-  <a href="#" className="social-link">
-    <FaInstagram />
-  </a>
-  <a href="mailto:info@sisa.com" className="social-link">
-    <MdEmail />
-  </a>
-  <a href="#" className="social-link">
-    <FaLinkedinIn />
-  </a>
-</div>
-
+              <p>
+                Empowering learners worldwide with quality education and expert
+                instruction.
+              </p>
+              <div className="social-links">
+                <a href="#" className="social-link">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="social-link">
+                  <FaInstagram />
+                </a>
+                <a href="mailto:info@sisa.com" className="social-link">
+                  <MdEmail />
+                </a>
+                <a href="#" className="social-link">
+                  <FaLinkedinIn />
+                </a>
+              </div>
             </div>
 
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#instructors">Instructors</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li>
+                  <a href="#about">About Us</a>
+                </li>
+                <li>
+                  <a href="#courses">Courses</a>
+                </li>
+                <li>
+                  <a href="#instructors">Instructors</a>
+                </li>
+                <li>
+                  <a href="#pricing">Pricing</a>
+                </li>
+                <li>
+                  <a href="#blog">Blog</a>
+                </li>
               </ul>
             </div>
 
             <div className="footer-col">
               <h4>Support</h4>
               <ul>
-                <li><a href="#help">Help Center</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#terms">Terms of Service</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li>
+                  <a href="#help">Help Center</a>
+                </li>
+                <li>
+                  <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                  <a href="#terms">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#privacy">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact Us</a>
+                </li>
               </ul>
             </div>
 
@@ -62,15 +84,19 @@ const Footer = () => {
               <ul className="contact-info">
                 <li>
                   <span className="icon">📍</span>
-                  <span>123 Education St, Learning City</span>
+                  <span>
+                    House # 12 - 13, Block J-1 M.A. Johar Town, Lahore,
+                    <br />
+                    Pakistan (Post code: 54782)
+                  </span>
                 </li>
                 <li>
                   <span className="icon">📧</span>
-                  <span>info@eduvalt.com</span>
+                  <span>info@sisa.edu.pk</span>
                 </li>
                 <li>
                   <span className="icon">📞</span>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+92 (0)42 35951444 - 45</span>
                 </li>
               </ul>
             </div>
@@ -80,7 +106,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {currentYear} Eduvalt. All rights reserved. Made with ❤️ for learners worldwide.</p>
+          <p>&copy; {currentYear} SISA EDCUATION All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@ import logo from "../assets/SISA_Logo2_transparent[1] copy.png"
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,123 +16,158 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
+
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <a href="#home" className="logo-container">
         <div className="logo-icon">
           <img src={logo} alt="sisa" />
         </div>
-        
       </a>
 
       <nav className="nav-wrapper">
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
-           <li className="nav-item dropdown">
-            <a href="#home" className="nav-link">
-              About<span className="dropdown-arrow">▼</span>
-            </a>
-            <div className="dropdown-menu">
-              <a href="#home1">About</a>
-              <a href="#home2">Directior's Message</a>
-              <a href="#home3">Mission & VIsion</a>
-              <a href="#home3">Facilities</a>
-              <a href="#home3">Accerdation</a>
-              <a href="#home3">Campus Virtual Tour</a>
-            </div>
-          </li>
-          
-          
           <li className="nav-item dropdown">
-            <a href="#home" className="nav-link">
-              Academics <span className="dropdown-arrow">▼</span>
+            <a 
+              href="#home" 
+              className="nav-link"
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown('home');
+                }
+              }}
+            >
+              HOME <span className="dropdown-arrow">▼</span>
             </a>
-            <div className="dropdown-menu">
-              <a href="#home1">Cirriculm & Sections</a>
-              <a href="#home2">Preschool & Junior School</a>
-              <a href="#home3">Middle School</a>
-              <a href="#home3">Senior School</a>
-              <a href="#home3">BTEC</a>
-            </div>
-          </li>
-          
-         
-
-          <li className="nav-item dropdown">
-            <a href="#home" className="nav-link">
-              Admissions <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className="dropdown-menu">
-              <a href="#home1">Why Choose SISA</a>
-              <a href="#home2">Admisssion Process</a>
-              <a href="#home3">Online and On Campus</a>
-          
-            </div>
-          </li>
-
-
-             <li className="nav-item dropdown">
-            <a href="#courses" className="nav-link">
-              Student Life <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className="dropdown-menu">
-              <a href="#all-courses">Club & Co-curricluar activities</a>
-              <a href="#course-details">School teams & Houses</a>
-              <a href="#become-instructor">Alumini & Testimonials</a>
-              <a href="#become-instructor">Student Council</a>
-              <a href="#become-instructor">Awards & Houners</a>
-            </div>
-          </li>
-          
-          <li className="nav-item dropdown">
-            <a href="#home" className="nav-link">
-              Quick Links <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className="dropdown-menu">
-              <a href="#home1">Cirriculm & Sections</a>
-              <a href="#home2">Preschool & Junior School</a>
-              <a href="#home3">Middle School</a>
-              <a href="#home3">Senior School</a>
-              <a href="#home3">BTEC</a>
+            <div className={`dropdown-menu ${activeDropdown === 'home' ? 'mobile-active' : ''}`}>
+              <a href="#home1" onClick={() => setMobileMenuOpen(false)}>Home Default</a>
+              <a href="#home2" onClick={() => setMobileMenuOpen(false)}>Home Alternate</a>
+              <a href="#home3" onClick={() => setMobileMenuOpen(false)}>Home Slider</a>
             </div>
           </li>
 
           <li className="nav-item dropdown">
-            <a href="#home" className="nav-link">
-              Contacts<span className="dropdown-arrow">▼</span>
+            <a 
+              href="#admissions" 
+              className="nav-link"
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown('admissions');
+                }
+              }}
+            >
+              ADMISSIONS <span className="dropdown-arrow">▼</span>
             </a>
-            <div className="dropdown-menu">
-              <a href="#home1">School Address & Location Pin</a>
-              <a href="#home2">Phone Numbers</a>
-              <a href="#home3">Contact Form</a>
-              <a href="#home3">Job Application Form</a>
-              <a href="#home3">Franchise application (expression of interedt )</a>
+            <div className={`dropdown-menu ${activeDropdown === 'admissions' ? 'mobile-active' : ''}`}>
+              <a href="#why-choose" onClick={() => setMobileMenuOpen(false)}>Why Choose SISA</a>
+              <a href="#admission-process" onClick={() => setMobileMenuOpen(false)}>Admission Process</a>
+              <a href="#online-campus" onClick={() => setMobileMenuOpen(false)}>Online and On Campus</a>
             </div>
           </li>
 
-           <li className="nav-item dropdown">
-            <a href="#pages" className="nav-link">
-              News & Events <span className="dropdown-arrow">▼</span>
+          <li className="nav-item mega-menu-item">
+            <a 
+              href="#quick-links" 
+              className="nav-link"
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown('quicklinks');
+                }
+              }}
+            >
+              QUICK LINKS <span className="dropdown-arrow">▼</span>
             </a>
-            <div className="dropdown-menu">
-              <a href="#about">Upcoming Events</a>
-              <a href="#instructors">Photo Gallery</a>
-              <a href="#mentors">Videos etc</a>
-              <a href="#events">Our Events</a>
-              
+            <div className={`mega-menu ${activeDropdown === 'quicklinks' ? 'mobile-active' : ''}`}>
+              <div className="mega-menu-content">
+                <div className="mega-menu-column">
+                  <h3 className="mega-menu-title">ACADEMICS</h3>
+                  <div className="mega-menu-divider"></div>
+                  <a href="#curriculum">Curriculum & Sections</a>
+                  <a href="#preschool">Preschool & Junior Schoolr</a>
+                  <a href="#middle">Middle School</a>
+                  <a href="#senior">Senior School</a>
+                  <a href="#btec">BTEC</a>
+                  <div className="mega-menu-divider"></div>
+                  <a href="#awards">Awards & Distinctions - O' & A' Level results`</a>
+                  <a href="#affiliations">Affiliations with UK boards etc.</a>
+                  <a href="#calendar">Academic Calendar</a>
+                  <a href="#online">Online School</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h3 className="mega-menu-title">STUDENT LIFE</h3>
+                  <div className="mega-menu-divider"></div>
+                  <a href="#clubs">Clubs & Co-curricular activities</a>
+                  <a href="#teams">School teams & Houses</a>
+                  <a href="#alumni">Alumni & Testimonials</a>
+                  <a href="#council">Student Council</a>
+                  <a href="#honours">Awards & Honours</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h3 className="mega-menu-title">NEWS & EVENTS</h3>
+                  <div className="mega-menu-divider"></div>
+                  <a href="#upcoming">Upcoming Events</a>
+                  <a href="#gallery">Photo Gallery</a>
+                  <a href="#videos">Videos etc</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h3 className="mega-menu-title">POLICIES</h3>
+                  <div className="mega-menu-divider"></div>
+                  <a href="#rules">Rules & Regulations</a>
+                  <a href="#protection">Child Protection Policy</a>
+                  <a href="#examination">Examination Policy</a>
+                  <a href="#attendance">Attendance Policy</a>
+                </div>
+              </div>
             </div>
           </li>
-
 
           <li className="nav-item dropdown">
-            <a href="#shop" className="nav-link">
-            Policies <span className="dropdown-arrow">▼</span>
+            <a 
+              href="#contact" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleDropdown('contact');
+              }}
+            >
+              CONTACT <span className="dropdown-arrow">▼</span>
             </a>
-            <div className="dropdown-menu">
-              <a href="#shop-grid">Rules & Regulations</a>
-              <a href="#shop-list">Child PRotection Policy</a>
-              <a href="#product-details">Product Details</a>
-              <a href="#cart">Examination Policy</a>
-           
+            <div className={`dropdown-menu ${activeDropdown === 'contact' ? 'active' : ''}`}>
+              <a href="#address">School Address & Location Pin</a>
+              <a href="#phone">Phone Numbers</a>
+              <a href="#contact-form">Contact Form</a>
+              <a href="#job">Job Application Form</a>
+              <a href="#franchise">Franchise Application</a>
+            </div>
+          </li>
+
+          <li className="nav-item dropdown">
+            <a 
+              href="#about" 
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleDropdown('about');
+              }}
+            >
+              ABOUT <span className="dropdown-arrow">▼</span>
+            </a>
+            <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
+              <a href="#about-us">About</a>
+              <a href="#director">Director's Message</a>
+              <a href="#mission">Mission & Vision</a>
+              <a href="#facilities">Facilities</a>
+              <a href="#accreditation">Accreditation</a>
+              <a href="#tour">Campus Virtual Tour</a>
             </div>
           </li>
 
@@ -142,60 +177,7 @@ const Header = () => {
               Get Started
             </a>
           </li>
-          
-          {/* <li className="nav-item dropdown">
-            <a href="#blog" className="nav-link">
-              Blog <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className="dropdown-menu">
-              <a href="#blog-grid">Blog Grid</a>
-              <a href="#blog-list">Blog List</a>
-              <a href="#blog-details">Blog Details</a>
-            </div>
-          </li> */}
         </ul>
-
-        {/* <div className="nav-actions">
-          <div className="categories-dropdown">
-            <button 
-              className="categories-btn"
-              onClick={() => setCategoriesOpen(!categoriesOpen)}
-            >
-              <span className="grid-icon">▦</span>
-              Categories
-            </button>
-            
-            {categoriesOpen && (
-              <div className="categories-menu">
-                <div className="categories-header">
-                  <span className="grid-icon-large">▦</span>
-                  <h3>Categories</h3>
-                </div>
-                <div className="categories-search">
-                  <input 
-                    type="text" 
-                    placeholder="Search categories..." 
-                    className="category-search-input"
-                  />
-                  <span className="search-icon-input">🔍</span>
-                </div>
-                <div className="categories-list">
-                  <a href="#business" className="category-item">Business</a>
-                  <a href="#design" className="category-item">Design</a>
-                  <a href="#development" className="category-item">Development</a>
-                  <a href="#health" className="category-item">Heath & Fitness</a>
-                  <a href="#marketing" className="category-item">Marketing</a>
-                  <a href="#math" className="category-item">Math</a>
-                  <a href="#photography" className="category-item">Photography</a>
-                </div>
-              </div>
-            )}
-          </div>
-
-   
-
-          <button className="login-btn">Log In</button>
-        </div> */}
 
         {/* Desktop Get Started Button */}
         <div className="nav-actions">
