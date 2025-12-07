@@ -32,10 +32,23 @@
 }
 
 .stat-icon {
-  font-size: 48px;
+  width: 70px;
+  height: 70px;
+  background: rgba(47, 38, 87, 0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
-  display: inline-block;
+  font-size: 30px;
+  color: #2f2657;
+  transition: all 0.3s ease;
+}
 
+.stat-card:hover .stat-icon {
+  background: #2f2657;
+  color: #fff;
+  transform: rotateY(180deg);
 }
 
 .stat-number {

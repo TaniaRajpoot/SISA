@@ -52,10 +52,10 @@
   top: 100px;
   left: 20px;
   background: white;
-  color: #3a0ca3;
+  color: #2f2657;
   padding: 24px 32px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 24px rgba(47, 38, 87, 0.3);
   z-index: 5;
   text-align: center;
 }
@@ -121,8 +121,8 @@
 
 .about-badge {
   display: inline-block;
-  background: rgba(225, 239, 254, 0.8);
-  color: #3a0ca3;
+  background: rgba(47, 38, 87, 0.1);
+  color: #2f2657;
   padding: 10px 24px;
   border-radius: 50px;
   font-size: 14px;
@@ -139,7 +139,7 @@
 }
 
 .about-title .highlight {
-  color: #3a0ca3;
+  color: #2f2657;
   position: relative;
 }
 
@@ -203,8 +203,8 @@
 }
 
 .stat-icon.purple {
-  background: rgba(168, 85, 247, 0.1);
-  color: #a855f7;
+  background: rgba(47, 38, 87, 0.1);
+  color: #2f2657;
 }
 
 .stat-icon.red {
@@ -227,7 +227,7 @@
 
 /* Discover button - NO HOVER MOVEMENT */
 .discover-btn {
-  background: #3a0ca3;
+  background: #2f2657;
   color: white;
   border: none;
   padding: 18px 36px;
@@ -240,12 +240,12 @@
   align-items: center;
   gap: 12px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 38, 87, 0.3);
 }
 
 .discover-btn:hover {
-  background: #3c096c;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  background: #403672;
+  box-shadow: 0 6px 20px rgba(47, 38, 87, 0.4);
 }
 
 .discover-btn .arrow {

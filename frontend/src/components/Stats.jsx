@@ -1,6 +1,6 @@
-// src/components/Stats.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Stats.css';
+import { FaBook, FaUserGraduate, FaChalkboardTeacher, FaTrophy } from 'react-icons/fa';
 
 const StatCard = ({ stat, isVisible }) => {
   const [count, setCount] = useState(0);
@@ -54,10 +54,10 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses', icon: '📚' },
-    { key: 'students', end: 50000, suffix: '+', label: 'Active Students', icon: '👨‍🎓' },
-    { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors', icon: '👨‍🏫' },
-    { key: 'success', end: 95, suffix: '%', label: 'Success Rate', icon: '🏆' }
+    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses', icon: <FaBook /> },
+    { key: 'students', end: 50000, suffix: '+', label: 'Active Students', icon: <FaUserGraduate /> },
+    { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors', icon: <FaChalkboardTeacher /> },
+    { key: 'success', end: 95, suffix: '%', label: 'Success Rate', icon: <FaTrophy /> }
   ];
 
   useEffect(() => {

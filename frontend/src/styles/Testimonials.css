@@ -51,7 +51,7 @@
   width: 90px;
   height: 90px;
   margin: 0 auto 20px;
-  background: var(--gradient-1);
+  background: linear-gradient(135deg, #2f2657 0%, #403672 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -153,21 +153,21 @@
   .testimonial-card {
     padding: 40px 30px;
   }
-  
+
   .testimonial-text {
     font-size: 16px;
   }
-  
+
   .slider-btn {
     width: 40px;
     height: 40px;
     font-size: 24px;
   }
-  
+
   .slider-btn.prev {
     left: 10px;
   }
-  
+
   .slider-btn.next {
     right: 10px;
   }

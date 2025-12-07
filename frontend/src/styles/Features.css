@@ -109,7 +109,7 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .features-section {
     padding: 60px 20px;
   }

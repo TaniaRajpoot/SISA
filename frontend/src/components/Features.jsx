@@ -42,11 +42,7 @@ const featuresData = [
     title: "Unmatched Curriculum Flexibility",
     description: "Most schools bind students to a single examination board. At SISA, we are affiliated with Cambridge, Pearson-Edexcel, and OxfordAQA. This triple accreditation gives us the flexibility to choose the best syllabus and assessment style for our students, maximizing their chances of achieving top grades."
   },
-  {
-    icon: <FaRoad />,
-    title: "A Pathway for Every Learner",
-    description: "We believe education is NOT \"one size fits all.\" For the Academic: Rigorous O’ & A’ Level programs tailored to challenge and inspire."
-  }
+
 ];
 
 const containerVariants = {

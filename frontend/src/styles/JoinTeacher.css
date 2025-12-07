@@ -8,12 +8,12 @@
 .join-teacher-container {
   max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #3a0ca3 0%, #3c096c 100%);
+  background: linear-gradient(135deg, #2f2657 0%, #403672 100%);
   border-radius: 16px;
   padding: 35px 60px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 50px rgba(60, 9, 108, 0.25);
+  box-shadow: 0 15px 50px rgba(47, 38, 87, 0.25);
 }
 
 /* Decorative Elements */
@@ -38,18 +38,16 @@
   height: 45px;
   top: 25px;
   left: 60px;
-  clip-path: polygon(
-    50% 0%, 
-    61% 35%, 
-    98% 35%, 
-    68% 57%, 
-    79% 91%, 
-    50% 70%, 
-    21% 91%, 
-    32% 57%, 
-    2% 35%, 
-    39% 35%
-  );
+  clip-path: polygon(50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%);
 }
 
 .sparkle-2 {
@@ -57,18 +55,16 @@
   height: 35px;
   bottom: 30px;
   left: 45%;
-  clip-path: polygon(
-    50% 0%, 
-    61% 35%, 
-    98% 35%, 
-    68% 57%, 
-    79% 91%, 
-    50% 70%, 
-    21% 91%, 
-    32% 57%, 
-    2% 35%, 
-    39% 35%
-  );
+  clip-path: polygon(50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%);
   animation-delay: 1s;
   animation-duration: 5s;
 }
@@ -78,10 +74,12 @@
     transform: rotate(0deg) scale(1);
     opacity: 0.7;
   }
+
   50% {
     transform: rotate(180deg) scale(1.15);
     opacity: 1;
   }
+
   100% {
     transform: rotate(360deg) scale(1);
     opacity: 0.7;
@@ -112,9 +110,12 @@
 }
 
 @keyframes floatCircle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
   }
+
   50% {
     transform: translateY(-25px) translateX(15px);
   }
@@ -179,7 +180,7 @@
 
 .become-instructor-btn {
   background: white;
-  color: #3c096c;
+  color: #2f2657;
   border: none;
   padding: 13px 28px;
   border-radius: 8px;
