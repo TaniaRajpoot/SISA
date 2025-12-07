@@ -1,56 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/Reviews.css";
+import mamImage from "../assets/mam.jpg";
 
-const reviews = [
-  {
-    text: "When an unknown printer took a galley of type and scrambled to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.",
-    name: "Cristina Luwis",
-    role: "Web Developer",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
-  },
-  {
-    text: "The professionalism and dedication shown by the team is remarkable. They helped me achieve my goals and exceeded all my expectations throughout the journey.",
-    name: "John Anderson",
-    role: "Software Engineer",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-  },
-  {
-    text: "An incredible learning experience that transformed my career. The support and guidance provided were exceptional and made all the difference in my success.",
-    name: "Sarah Mitchell",
-    role: "UX Designer",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
-  }
-];
+const review = {
+  text: "Welcome to SISA. We are committed to providing an exceptional educational experience that empowers students to reach their full potential. Our dedicated faculty and state-of-the-art facilities ensure a nurturing environment for academic and personal growth.",
+  name: "Mrs. Saeeda Salim",
+  role: "Director",
+  avatar: mamImage
+};
 
 const Reviews = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState('next');
-
-  // Auto-slide effect
-  useEffect(() => {
-    const autoSlide = setInterval(() => {
-      setDirection('next');
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(autoSlide); // Cleanup on unmount
-  }, []);
-
-  const nextReview = () => {
-    setDirection('next');
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setDirection('prev');
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
-  };
-
-  const goToReview = (index) => {
-    setDirection(index > currentIndex ? 'next' : 'prev');
-    setCurrentIndex(index);
-  };
-
   return (
     <section className="review-section">
       {/* Decorative background elements */}
@@ -61,7 +20,7 @@ const Reviews = () => {
         {/* Header */}
         <div className="review-header">
           <h1 className="review-title">
-            What Our Students Say About Us
+            From Director
             <span className="title-underline"></span>
           </h1>
         </div>
@@ -87,13 +46,12 @@ const Reviews = () => {
               <div className="line"></div>
             </div>
 
-            {/* Avatar Circle */}
-            <div className="avatar-circle">
+            {/* Avatar Circle - Now Square */}
+            <div className="avatar-box">
               <img
-                key={`avatar-${currentIndex}`}
-                src={reviews[currentIndex].avatar}
-                alt={reviews[currentIndex].name}
-                className={`avatar-image ${direction === 'next' ? 'slide-right' : 'slide-left'}`}
+                src={review.avatar}
+                alt={review.name}
+                className="avatar-image"
               />
             </div>
 
@@ -106,49 +64,22 @@ const Reviews = () => {
             {/* Quote mark */}
             <div className="quote-mark">"</div>
 
-            <div
-              key={`content-${currentIndex}`}
-              className={`text-content ${direction === 'next' ? 'slide-right' : 'slide-left'}`}
-            >
+            <div className="text-content">
               <p className="review-text">
-                {reviews[currentIndex].text}
+                {review.text}
               </p>
 
               <div className="text-divider"></div>
 
               <h3 className="reviewer-name">
-                {reviews[currentIndex].name}
+                {review.name}
               </h3>
 
               <p className="reviewer-role">
-                {reviews[currentIndex].role}
+                {review.role}
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Navigation Buttons */}
-        <div className="nav-buttons">
-          <button onClick={prevReview} className="nav-btn" aria-label="Previous review">
-            ←
-          </button>
-          <button onClick={nextReview} className="nav-btn" aria-label="Next review">
-            →
-          </button>
-        </div>
-
-        {/* Progress Indicators */}
-        <div className="progress-indicators">
-          {reviews.map((_, index) => (
-            <div
-              key={index}
-              className={`progress-dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => goToReview(index)}
-              role="button"
-              tabIndex={0}
-              aria-label={`Go to review ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>

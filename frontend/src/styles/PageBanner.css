@@ -1,0 +1,64 @@
+.page-banner {
+    background-color: #020b2d;
+    /* Fallback */
+    background: linear-gradient(rgba(2, 11, 45, 0.8), rgba(2, 11, 45, 0.8)), url('../assets/banner-bg.jpg');
+    /* You might need a generic background image asset */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: left;
+    position: relative;
+    border-bottom: 5px solid #2f2657;
+    /* The requested theme color */
+}
+
+/* If no image is available, use a solid color or gradient matching the theme */
+.page-banner {
+    background: linear-gradient(135deg, #020b2d 0%, #0a164a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(37, 150, 190, 0.1), transparent);
+}
+
+.page-banner .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.breadcrumbs {
+    color: #a0a0a0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumbs .separator {
+    color: #2f2657;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.breadcrumbs .current {
+    color: #2f2657;
+    font-weight: 500;
+}

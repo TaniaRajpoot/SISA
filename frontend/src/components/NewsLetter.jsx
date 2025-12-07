@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
+import '../styles/Newsletter.css';
 
-// ======================== Newsletter.jsx ========================
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
@@ -11,7 +10,7 @@ const Newsletter = () => {
       setStatus('error');
       return;
     }
-    
+
     setStatus('loading');
     setTimeout(() => {
       setStatus('success');
@@ -24,69 +23,52 @@ const Newsletter = () => {
     <section className="newsletter-section">
       <div className="newsletter-container">
         <div className="newsletter-illustration">
+          {/* Simplified Abstract School Illustration */}
           <svg viewBox="0 0 400 300" className="newsletter-svg">
-            <circle cx="200" cy="150" r="120" fill="#E8F0FE" opacity="0.5"/>
-            <circle cx="140" cy="100" r="8" fill="#4285F4" opacity="0.3"/>
-            <circle cx="280" cy="180" r="6" fill="#4285F4" opacity="0.3"/>
-            
-            <g transform="translate(180, 120)">
-              <path d="M0 0 L40 -20 L40 20 Z" fill="#4285F4"/>
-              <path d="M40 -20 L60 -10 L40 0 Z" fill="#5E97F6"/>
-              <path d="M40 0 L60 10 L40 20 Z" fill="#5E97F6"/>
-              <circle cx="50" cy="0" r="12" fill="#FFA000"/>
-              <path d="M50 0 L45 -5 L45 5 Z" fill="white"/>
-            </g>
-            
-            <g transform="translate(120, 200)">
-              <rect x="0" y="0" width="60" height="45" fill="#4285F4" rx="4"/>
-              <path d="M0 0 L30 25 L60 0" fill="#5E97F6"/>
-              <rect x="5" y="8" width="20" height="4" fill="#34A853" rx="2"/>
-            </g>
-            
-            <g transform="translate(250, 190)">
-              <circle cx="0" cy="-15" r="12" fill="#FBBF77"/>
-              <ellipse cx="0" cy="10" rx="18" ry="25" fill="#1A237E"/>
-              <rect x="-8" y="-5" width="16" height="3" fill="#4285F4" rx="1.5"/>
-            </g>
-            
-            <g transform="translate(80, 160) rotate(-30)">
-              <rect x="0" y="0" width="8" height="60" fill="#FFA000" rx="2"/>
-              <path d="M0 60 L4 70 L8 60 Z" fill="#FBBF77"/>
-            </g>
-            
-            <g transform="translate(100, 80)">
-              <rect x="0" y="0" width="40" height="18" fill="#4285F4" rx="4"/>
-              <text x="20" y="13" fill="white" fontSize="10" fontWeight="bold" textAnchor="middle">SEND</text>
+            <circle cx="200" cy="150" r="140" fill="#E1F5FE" opacity="0.5" />
+            <path d="M100 200 L150 120 L200 200 Z" fill="#2f2657" opacity="0.8" />
+            <rect x="180" y="140" width="80" height="60" fill="#403672" rx="4" />
+            <circle cx="280" cy="100" r="30" fill="#FFA000" opacity="0.8" />
+            <rect x="80" y="220" width="240" height="10" fill="#ddd" rx="5" />
+
+            {/* Mail Icon Floating */}
+            <g transform="translate(250, 180) rotate(-10)">
+              <rect x="0" y="0" width="60" height="40" rx="5" fill="#fff" stroke="#2f2657" strokeWidth="2" />
+              <path d="M0 0 L30 20 L60 0" fill="none" stroke="#2f2657" strokeWidth="2" />
             </g>
           </svg>
         </div>
 
         <div className="newsletter-content">
           <h2 className="newsletter-title">
-            Let's Join To<br />Our Newsletters
+            Subscribe to our<br />Academic Updates
           </h2>
-          
+          <p style={{ marginBottom: '30px', color: '#666', lineHeight: '1.6' }}>
+            Stay informed about admissions, school events, and educational resources.
+            Join our community today.
+          </p>
+
           <div className="newsletter-form-area">
             <div className="form-wrapper">
               <input
                 type="email"
-                placeholder="Enter your email*"
+                placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`newsletter-input ${status === 'error' ? 'error' : ''}`}
                 onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
               />
-              <button 
+              <button
                 onClick={handleSubmit}
-                className="newsletter-btn" 
+                className="newsletter-btn"
                 disabled={status === 'loading'}
               >
                 {status === 'loading' ? 'SUBSCRIBING...' : 'SUBSCRIBE NOW'}
               </button>
             </div>
-            
+
             {status === 'success' && (
-              <p className="success-msg">✓ Successfully subscribed to our newsletter!</p>
+              <p className="success-msg">✓ Successfully subscribed!</p>
             )}
             {status === 'error' && (
               <p className="error-msg">⚠ Please enter a valid email address</p>

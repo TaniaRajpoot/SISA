@@ -52,19 +52,19 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      
+
       <Header />
       <Hero />
-       <Partners />
-       <About />
+      <Partners />
+      <About />
       <Stats />
       {/* <Categories /> */}
-      <Courses />
+      {/* <Courses /> */}
       <Features />
       <Review />
-      <TopInstructors/>
-    <JoinTeacher/>
-      <NewsEvents/>
+      <TopInstructors />
+      <JoinTeacher />
+      <NewsEvents />
       <Testimonials />
       <Newsletter />
       <Footer />

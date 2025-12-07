@@ -1,0 +1,138 @@
+.registration-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #2f2657;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #0d6efd;
+    /* Fallback */
+    background: linear-gradient(135deg, #2f2657 0%, #403672 100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 150, 190, 0.3);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    /* ... existing styles ... */
+    font-size: 24px;
+    color: #333;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #2f2657;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.privacy-note {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.privacy-note a {
+    color: #2f2657;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #2f2657;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.toggle-btn:hover {
+    color: #403672;
+    text-decoration: underline;
+}
+
+.text-gray {
+    color: #666;
+}

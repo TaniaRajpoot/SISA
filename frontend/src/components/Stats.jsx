@@ -2,13 +2,54 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Stats.css';
 
+const StatCard = ({ stat, isVisible }) => {
+  const [count, setCount] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const startAnimation = () => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    let start = 0;
+    const increment = stat.end / 100;
+    const duration = 2000;
+    const stepTime = duration / 100;
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= stat.end) {
+        setCount(stat.end);
+        setIsAnimating(false);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  };
+
+  useEffect(() => {
+    if (isVisible) {
+      startAnimation();
+    }
+  }, [isVisible]);
+
+  return (
+    <div
+      className={`stat-card ${isVisible ? 'animate' : ''}`}
+      onMouseEnter={startAnimation}
+    >
+      <div className="stat-icon">{stat.icon}</div>
+      <h3 className="stat-number">
+        {count.toLocaleString()}{stat.suffix}
+      </h3>
+      <p className="stat-label">{stat.label}</p>
+    </div>
+  );
+};
+
 const Stats = () => {
-  const [counts, setCounts] = useState({
-    courses: 0,
-    students: 0,
-    instructors: 0,
-    success: 0
-  });
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -36,47 +77,12 @@ const Stats = () => {
     return () => observer.disconnect();
   }, [isVisible]);
 
-  useEffect(() => {
-    if (!isVisible) return;
-
-    stats.forEach((stat) => {
-      let start = 0;
-      const increment = stat.end / 100;
-      const duration = 2000;
-      const stepTime = duration / 100;
-
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= stat.end) {
-          setCounts((prev) => ({ ...prev, [stat.key]: stat.end }));
-          clearInterval(timer);
-        } else {
-          setCounts((prev) => ({ ...prev, [stat.key]: Math.floor(start) }));
-        }
-      }, stepTime);
-    });
-  }, [isVisible]);
-
-  const formatNumber = (num) => {
-    return num.toLocaleString();
-  };
-
   return (
     <section className="stats" ref={sectionRef} data-animate>
       <div className="container">
         <div className="stats-grid">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.key} 
-              className={`stat-card ${isVisible ? 'animate' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="stat-icon">{stat.icon}</div>
-              <h3 className="stat-number">
-                {formatNumber(counts[stat.key])}{stat.suffix}
-              </h3>
-              <p className="stat-label">{stat.label}</p>
-            </div>
+          {stats.map((stat) => (
+            <StatCard key={stat.key} stat={stat} isVisible={isVisible} />
           ))}
         </div>
       </div>

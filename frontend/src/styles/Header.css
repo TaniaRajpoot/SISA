@@ -1,10 +1,9 @@
-.nav-actions .get-started-btn {
-    display: none;
-  }
-}  .dropdown-arrow {
-    margin-left: auto;
-    font-size: 10px;
-  }/* src/styles/Header.css */
+.dropdown-arrow {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+/* src/styles/Header.css */
 
 /* Header Styles */
 .header {
@@ -51,9 +50,8 @@
 .nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   flex: 1;
-  justify-content: flex-end;
 }
 
 .nav-links {
@@ -61,7 +59,7 @@
   align-items: center;
   gap: 45px;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -85,11 +83,12 @@
 }
 
 .nav-link:hover {
-  color: #3a0ca3;
+  color: #2f2657;
 }
 
 /* Desktop hover for dropdowns */
 @media (min-width: 769px) {
+
   .nav-item.dropdown:hover .dropdown-menu,
   .mega-menu-item:hover .mega-menu {
     opacity: 1;
@@ -143,7 +142,7 @@
 
 .dropdown-menu a:hover {
   background: #f8fafc;
-  color: #3a0ca3;
+  color: #2f2657;
   padding-left: 28px;
 }
 
@@ -165,7 +164,7 @@
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
-  border-top: 3px solid #3a0ca3;
+  border-top: 3px solid #2f2657;
   border-radius: 0 0 8px 8px;
   margin-top: 12px;
 }
@@ -185,7 +184,7 @@
 .mega-menu-title {
   font-size: 15px;
   font-weight: 700;
-  color: #3a0ca3;
+  color: #2f2657;
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -194,7 +193,7 @@
 .mega-menu-divider {
   width: 40px;
   height: 2px;
-  background: #3a0ca3;
+  background: #2f2657;
   margin-bottom: 18px;
 }
 
@@ -210,7 +209,7 @@
 }
 
 .mega-menu-column a:hover {
-  color: #3a0ca3;
+  color: #2f2657;
   padding-left: 10px;
 }
 
@@ -222,7 +221,7 @@
   transform: translateY(-50%);
   width: 4px;
   height: 4px;
-  background: #3a0ca3;
+  background: #2f2657;
   border-radius: 50%;
 }
 
@@ -236,7 +235,7 @@
 
 /* Desktop Get Started Button */
 .get-started-btn {
-  background: linear-gradient(135deg, #3a0ca3 0%, #4c1d95 100%);
+  background: linear-gradient(135deg, #2f2657 0%, #403672 100%);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -247,7 +246,7 @@
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+  box-shadow: 0 4px 15px rgba(47, 38, 87, 0.3);
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -255,8 +254,8 @@
 
 .get-started-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(58, 12, 163, 0.4);
-  background: linear-gradient(135deg, #4c1d95 0%, #3a0ca3 100%);
+  box-shadow: 0 6px 20px rgba(47, 38, 87, 0.4);
+  background: linear-gradient(135deg, #403672 0%, #2f2657 100%);
 }
 
 /* Mobile Get Started Button - Hidden on Desktop */
@@ -266,7 +265,7 @@
 
 .mobile-get-started-btn {
   display: block;
-  background: linear-gradient(135deg, #3a0ca3 0%, #4c1d95 100%);
+  background: linear-gradient(135deg, #2f2657 0%, #403672 100%);
   color: white;
   text-align: center;
   padding: 14px 24px;
@@ -275,14 +274,14 @@
   font-weight: 600;
   text-decoration: none;
   margin: 20px 0 10px;
-  box-shadow: 0 4px 15px rgba(58, 12, 163, 0.3);
+  box-shadow: 0 4px 15px rgba(47, 38, 87, 0.3);
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .mobile-get-started-btn:hover {
-  background: linear-gradient(135deg, #4c1d95 0%, #3a0ca3 100%);
+  background: linear-gradient(135deg, #403672 0%, #2f2657 100%);
   transform: translateY(-2px);
 }
 
@@ -415,8 +414,8 @@
     transition: transform 0.3s ease;
   }
 
-  .dropdown-menu.mobile-active ~ .nav-link .dropdown-arrow,
-  .mega-menu.mobile-active ~ .nav-link .dropdown-arrow {
+  .dropdown-menu.mobile-active~.nav-link .dropdown-arrow,
+  .mega-menu.mobile-active~.nav-link .dropdown-arrow {
     transform: rotate(180deg);
   }
 
@@ -455,9 +454,9 @@
 
   .dropdown-menu a:hover {
     background: #f8fafc;
-    border-left-color: #3a0ca3;
+    border-left-color: #2f2657;
     padding-left: 48px;
-    color: #3a0ca3;
+    color: #2f2657;
   }
 
   /* Mobile Mega Menu */
@@ -492,7 +491,7 @@
     font-size: 13px;
     margin-bottom: 8px;
     padding: 0 25px;
-    color: #3a0ca3;
+    color: #2f2657;
   }
 
   .mega-menu-divider {

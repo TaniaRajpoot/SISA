@@ -1,0 +1,229 @@
+.whatsapp-widget-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.whatsapp-button {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+/* Chat Popup */
+.whatsapp-chat-popup {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    /* Smoother rounding */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideIn 0.3s ease-out;
+    transform-origin: bottom right;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Header */
+.chat-header {
+    background-color: #075E54;
+    /* Darker WhatsApp green */
+    color: white;
+    padding: 20px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.avatar-container {
+    margin-right: 15px;
+    position: relative;
+}
+
+.avatar-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #25D366;
+    /* Online green */
+    border-radius: 50%;
+    border: 2px solid #075E54;
+}
+
+.chat-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.chat-info p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* Body */
+.chat-body {
+    padding: 20px;
+    background-color: #E5DDD5;
+    /* WhatsApp chat background */
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    /* Subtle pattern */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-received {
+    align-self: flex-start;
+    background: white;
+    border-radius: 0 8px 8px 8px;
+    /* Rounded corners except top-left */
+    padding: 12px 16px;
+    max-width: 85%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #111b21;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Little tail for the message */
+.message-received::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top-color: white;
+    /* Matches message bg */
+    border-right: 0;
+    margin-top: 0;
+}
+
+
+/* Footer */
+.chat-footer {
+    padding: 15px;
+    /* Reduced padding a bit */
+    background: white;
+    text-align: center;
+}
+
+.start-chat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Space between icon and text */
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    width: fit-content;
+    margin: 0 auto 8px auto;
+    /* Center button */
+}
+
+.start-chat-btn:hover {
+    background-color: #20bd5a;
+}
+
+.start-chat-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: #161616;
+    margin-top: 5px;
+}
+
+.footer-note span {
+    color: #25D366;
+    /* Green dot bullet */
+    margin-right: 4px;
+}

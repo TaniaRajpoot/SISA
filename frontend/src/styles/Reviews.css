@@ -160,12 +160,12 @@
   width: 35px;
 }
 
-/* Avatar Circle - BIGGER AND MORE ROUND */
-.avatar-circle {
-  width: 320px;
-  height: 320px;
+/* Avatar Box - Square and Larger */
+.avatar-box {
+  width: 400px;
+  height: 400px;
   background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d0 100%);
-  border-radius: 50%;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,72 +247,7 @@
   font-weight: 400;
 }
 
-/* ========================================
-   Navigation Buttons
-   ======================================== */
 
-.nav-buttons {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-btn {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  font-family: Arial, sans-serif;
-}
-
-.nav-btn:hover {
-  background: rgba(255, 165, 0, 0.3);
-  border-color: #ffa500;
-  transform: scale(1.1);
-}
-
-.nav-btn:active {
-  transform: scale(0.95);
-}
-
-/* ========================================
-   Progress Indicators
-   ======================================== */
-
-.progress-indicators {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-}
-
-.progress-dot {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.progress-dot.active {
-  width: 40px;
-  background: linear-gradient(90deg, #ffa500, #00d4ff);
-}
-
-.progress-dot:hover:not(.active) {
-  background: rgba(255, 255, 255, 0.5);
-}
 
 /* ========================================
    Animations
@@ -323,6 +258,7 @@
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -334,6 +270,7 @@
     opacity: 0;
     transform: translateX(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -512,6 +449,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .slide-right,
   .slide-left {
     animation: none;
