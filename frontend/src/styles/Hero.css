@@ -225,8 +225,9 @@
 /* Responsive for mobile phones */
 @media (max-width: 480px) {
   .hero-fullscreen {
-    height: auto;
-    padding: 80px 0;
+    height: 100vh;
+    min-height: 600px;
+    padding: 0;
   }
 
   .hero-text h1 {
@@ -244,11 +245,9 @@
   }
 
   .hero-buttons .btn {
-    /* keep same width as full screen */
-    width: auto;
-    padding: 10px 20px;
-    /* optional smaller padding */
-    font-size: 0.9rem;
-    /* optional smaller font */
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }

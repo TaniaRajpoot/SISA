@@ -372,6 +372,14 @@
     display: flex;
   }
 
+  .nav-wrapper {
+    justify-content: flex-end;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
