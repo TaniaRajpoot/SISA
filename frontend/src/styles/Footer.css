@@ -1,7 +1,7 @@
 /* src/styles/Footer.css */
 
 .footer {
-    background-color: var(--dark-light, #231c43);
+    background-color: #2f2657;
     /* User request ambiguity: Image is dark, text says 'make background #2596be'. keeping dark to match 'like this' image constraint. #2596be is used for hover. */
     color: #fff;
     padding-top: 80px;
