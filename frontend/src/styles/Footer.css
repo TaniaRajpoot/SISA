@@ -25,6 +25,10 @@
     vertical-align: middle;
 }
 
+.logo-icon img {
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.5));
+}
+
 .footer-logo h3 {
     display: inline-block;
     color: #fff;
@@ -165,9 +169,7 @@
     border-bottom: none;
 }
 
-.footer-links keyframes {
-    /* ... */
-}
+
 
 .footer-links a {
     color: #a0a0a0;
