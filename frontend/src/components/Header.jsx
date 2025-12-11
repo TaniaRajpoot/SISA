@@ -42,13 +42,9 @@ const Header = () => {
                 }
               }}
             >
-              HOME <span className="dropdown-arrow">▼</span>
+              HOME <span className="dropdown-arrow"></span>
             </Link>
-            <div className={`dropdown-menu ${activeDropdown === 'home' ? 'mobile-active' : ''}`}>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home Default</Link>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home Alternate</Link>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home Slider</Link>
-            </div>
+
           </li>
 
           <li className="nav-item dropdown">
@@ -65,7 +61,7 @@ const Header = () => {
               ADMISSIONS <span className="dropdown-arrow">▼</span>
             </Link>
             <div className={`dropdown-menu ${activeDropdown === 'admissions' ? 'mobile-active' : ''}`}>
-              <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>Why Choose SISA</Link>
+              <Link to="/why-choose-sisa" onClick={() => setMobileMenuOpen(false)}>Why Choose SISA</Link>
               <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>Admission Process</Link>
               <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>Online and On Campus</Link>
             </div>
@@ -169,7 +165,7 @@ const Header = () => {
             <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
               <Link to="/about/us">About Us</Link>
               <Link to="/about/director-message">Director's Message</Link>
-              <Link to="/about/mission-vision">Mission & Vision</Link>
+              <Link to="/mission-vision">Mission & Vision</Link>
               <Link to="/about/facilities">Facilities</Link>
               <Link to="/about/accreditation">Accreditation</Link>
               <Link to="/about/virtual-tour">Campus Virtual Tour</Link>

@@ -15,6 +15,7 @@ import Review from '../components/Reviews';
 import TopInstructors from '../components/TopInstructor';
 import NewsEvents from '../components/NewsEvents';
 import JoinTeacher from '../components/JoinTeacher';
+import SISAOverview from '../components/SISAOverview';
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -56,15 +57,16 @@ const HomePage = () => {
       <Header />
       <Hero />
       <Partners />
-      <About />
+      <SISAOverview />
+      {/* <About /> */}
       <Stats />
       {/* <Categories /> */}
       {/* <Courses /> */}
-      <Features />
+      {/* <Features /> */}
       <Review />
       <TopInstructors />
       <JoinTeacher />
-      <NewsEvents />
+      {/* <NewsEvents /> */}
       <Testimonials />
       <Newsletter />
       <Footer />

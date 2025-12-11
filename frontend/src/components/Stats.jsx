@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Stats.css';
-import { FaBook, FaUserGraduate, FaChalkboardTeacher, FaTrophy } from 'react-icons/fa';
 
 const StatCard = ({ stat, isVisible }) => {
   const [count, setCount] = useState(0);
@@ -40,7 +39,6 @@ const StatCard = ({ stat, isVisible }) => {
       className={`stat-card ${isVisible ? 'animate' : ''}`}
       onMouseEnter={startAnimation}
     >
-      <div className="stat-icon">{stat.icon}</div>
       <h3 className="stat-number">
         {count.toLocaleString()}{stat.suffix}
       </h3>
@@ -54,10 +52,10 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses', icon: <FaBook /> },
-    { key: 'students', end: 50000, suffix: '+', label: 'Active Students', icon: <FaUserGraduate /> },
-    { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors', icon: <FaChalkboardTeacher /> },
-    { key: 'success', end: 95, suffix: '%', label: 'Success Rate', icon: <FaTrophy /> }
+    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses' },
+    { key: 'students', end: 50000, suffix: '+', label: 'Active Students' },
+    { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors' },
+    { key: 'success', end: 95, suffix: '%', label: 'Success Rate' }
   ];
 
   useEffect(() => {

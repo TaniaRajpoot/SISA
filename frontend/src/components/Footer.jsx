@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/Footer.css';
-import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import logo from "../assets/logo.png";
+import { X } from "lucide-react";
 
 const Footer = () => {
     return (
@@ -43,11 +44,11 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="footer-social-links">
-                            <a href="#" className="footer-social-link"><FaFacebookF /></a>
-                            <a href="#" className="footer-social-link"><FaTwitter /></a>
-                            <a href="#" className="footer-social-link"><FaWhatsapp /></a>
-                            <a href="#" className="footer-social-link"><FaLinkedinIn /></a>
-                            <a href="#" className="footer-social-link"><FaYoutube /></a>
+                            <a href="https://www.facebook.com/SISAeducationPk" className="footer-social-link"><FaFacebookF /></a>
+                            <a href="" className="footer-social-link"><X/></a>
+                            <a href="https://api.whatsapp.com/send/?phone=923113777472&text=Hello+SISA+Admissions+Team%2C+I+have+a+query+regarding...&type=phone_number&app_absent=0" className="footer-social-link"><FaWhatsapp /></a>
+                            <a href="https://www.linkedin.com/school/sisaschool/" className="footer-social-link"><FaLinkedinIn /></a>
+                            <a href="https://www.instagram.com/sisaeducationpk/" className="footer-social-link"><FaInstagram /></a>
                         </div>
                     </div>
 

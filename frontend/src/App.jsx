@@ -6,6 +6,9 @@ import GenericPage from './pages/GenericPage';
 import './App.css';
 import AnimatedCursor from "react-animated-cursor";
 import WhatsAppWidget from './components/WhatsAppWidget';
+import WhyChooseSISA from './pages/WhyChooseSISA';
+import MissionVision from './pages/MissionVision';
+
 
 function App() {
   return (
@@ -35,6 +38,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/why-choose-sisa" element={<WhyChooseSISA />} />
+        <Route path="/mission-vision" element={<MissionVision />} />
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
         {/* Academics */}
         <Route path="/academics/curriculum" element={<GenericPage title="Curriculum & Sections" />} />

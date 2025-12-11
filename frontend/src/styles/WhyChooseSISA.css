@@ -1,0 +1,219 @@
+/* Why Choose SISA Page Styles */
+
+.why-choose-sisa-page {
+    min-height: 100vh;
+    background: #f4f7fc;
+}
+
+/* Hero Section */
+.why-hero {
+    position: relative;
+    background: linear-gradient(rgba(47, 38, 87, 0.85), rgba(47, 38, 87, 0.85)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 180px 20px 120px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.why-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.why-hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+}
+
+.why-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.why-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: #ffd699;
+    margin: 0;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Section */
+.why-content-section {
+    padding: 80px 20px;
+    background: #f4f7fc;
+}
+
+.why-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.why-intro h2 {
+    color: #2f2657;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.why-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffa500, #ff6b00);
+    border-radius: 2px;
+}
+
+.why-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-top: 30px;
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    border-left: 5px solid #2f2657;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(47, 38, 87, 0.15);
+    border-left-color: #ffa500;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card h3 {
+    color: #2f2657;
+    font-size: 1.35rem;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.feature-card:hover h3 {
+    color: #ffa500;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal Animation */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-hero {
+        padding: 140px 20px 80px;
+        background-attachment: scroll;
+    }
+
+    .why-content-section {
+        padding: 60px 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 25px 20px;
+    }
+
+    .why-intro {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-hero {
+        padding: 120px 15px 60px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+    }
+}
