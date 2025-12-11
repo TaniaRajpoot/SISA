@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/SISAOverview.css';
+import Stats from './Stats';
+import Partners from './Partners';
 
 const SISAOverview = () => {
     return (
@@ -69,6 +71,9 @@ const SISAOverview = () => {
                     </div>
                 </section>
 
+                {/* Stats Section */}
+                <Stats />
+
                 {/* Academic Pathway */}
                 <section className="pathway-section">
                     <h2>Academic Pathway</h2>
@@ -103,7 +108,7 @@ const SISAOverview = () => {
                     <h2>Triple-Accredited Institution</h2>
                     <p className="section-desc muted">SISA proudly offers curricula from the United Kingdom's leading examination boards.</p>
 
-                    <div className="accreditation-badges">
+                    {/* <div className="accreditation-badges">
                         <div className="badge">
                             <div className="badge-icon">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +147,10 @@ const SISAOverview = () => {
                                 <div className="badge-subtitle">Oxford Assessment & Qualifications Alliance</div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+
+                    {/* Partners Section */}
+                    <Partners />
                 </section>
 
                 {/* Core Values */}
@@ -204,6 +212,45 @@ const SISAOverview = () => {
                         <div className="pill">Bangladesh</div>
                         <div className="pill">UK</div>
                         <div className="pill">Canada</div>
+                    </div>
+                </section>
+
+                {/* Admissions & Transition Support */}
+                <section className="admissions-section">
+                    <div className="admissions-grid">
+                        <div className="admissions-content">
+                            <h2>Admissions & Transition Support</h2>
+                            <p className="muted">
+                                We provide personalised guidance for students transitioning to higher education or vocational pathways (BTEC Levels 4 & 5). Our counsellors assist with subject choice, university selection and career planning.
+                            </p>
+
+                            <ul className="feature-list">
+                                <li>One-to-one counselling sessions</li>
+                                <li>Exam centre & assessment support</li>
+                                <li>University pathway planning</li>
+                            </ul>
+
+                            <div className="cta-button-container">
+                                <a href="mailto:admissions@sisa.edu.pk" className="cta-button">Get in touch</a>
+                            </div>
+                        </div>
+
+                        <div className="contact-card">
+                            <h4>Contact & Enquiries</h4>
+                            <p className="muted">Johar Town, Lahore — Registered International Online School</p>
+
+                            <div className="contact-info-item">
+                                <strong>Head:</strong> Mrs. Saeeda Salim
+                            </div>
+
+                            <div className="contact-info-item">
+                                <strong>Established:</strong> 4 Sep 2006
+                            </div>
+
+                            <p className="muted contact-details">
+                                For admissions, email <a href="mailto:admissions@sisa.edu.pk">admissions@sisa.edu.pk</a> or call +92 42 0000 0000
+                            </p>
+                        </div>
                     </div>
                 </section>
             </div>

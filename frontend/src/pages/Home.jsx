@@ -56,10 +56,10 @@ const HomePage = () => {
 
       <Header />
       <Hero />
-      <Partners />
+      {/* <Partners /> */}
       <SISAOverview />
       {/* <About /> */}
-      <Stats />
+      {/* <Stats /> */}
       {/* <Categories /> */}
       {/* <Courses /> */}
       {/* <Features /> */}

@@ -52,7 +52,7 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses' },
+    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses'},
     { key: 'students', end: 50000, suffix: '+', label: 'Active Students' },
     { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors' },
     { key: 'success', end: 95, suffix: '%', label: 'Success Rate' }
