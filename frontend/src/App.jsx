@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import GetStarted from './pages/GetStarted';
 import GenericPage from './pages/GenericPage';
+import ContactForm from './pages/ContactForm'; // Import ContactForm from pages
 import './App.css';
 import AnimatedCursor from "react-animated-cursor";
 import WhatsAppWidget from './components/WhatsAppWidget';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/why-choose-sisa" element={<WhyChooseSISA />} />
         <Route path="/mission-vision" element={<MissionVision />} />
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
+        
         {/* Academics */}
         <Route path="/academics/curriculum" element={<GenericPage title="Curriculum & Sections" />} />
         <Route path="/academics/preschool-junior" element={<GenericPage title="Preschool & Junior School" />} />
@@ -69,13 +71,19 @@ function App() {
         <Route path="/policies/child-protection" element={<GenericPage title="Child Protection Policy" />} />
         <Route path="/policies/exams" element={<GenericPage title="Examination Policy" />} />
         <Route path="/policies/attendance" element={<GenericPage title="Attendance Policy" />} />
-        <Route path="/contact" element={<GenericPage title="Contact Us" />} />
+        
+        {/* Contact Pages - Use ContactForm page directly */}
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/contact-form" element={<ContactForm />} />
+        
+        {/* About */}
         <Route path="/about/us" element={<GenericPage title="About Us" />} />
         <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
         <Route path="/about/mission-vision" element={<GenericPage title="Mission & Vision" />} />
         <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
         <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
         <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
+        
         {/* Fallback for other links */}
         <Route path="*" element={<HomePage />} />
       </Routes>
