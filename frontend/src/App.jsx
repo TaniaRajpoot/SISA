@@ -9,6 +9,7 @@ import AnimatedCursor from "react-animated-cursor";
 import WhatsAppWidget from './components/WhatsAppWidget';
 import WhyChooseSISA from './pages/WhyChooseSISA';
 import MissionVision from './pages/MissionVision';
+import BTEC from './pages/BTEC';
 
 
 function App() {
@@ -42,13 +43,13 @@ function App() {
         <Route path="/why-choose-sisa" element={<WhyChooseSISA />} />
         <Route path="/mission-vision" element={<MissionVision />} />
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
-        
+
         {/* Academics */}
         <Route path="/academics/curriculum" element={<GenericPage title="Curriculum & Sections" />} />
         <Route path="/academics/preschool-junior" element={<GenericPage title="Preschool & Junior School" />} />
         <Route path="/academics/middle-school" element={<GenericPage title="Middle School" />} />
         <Route path="/academics/senior-school" element={<GenericPage title="Senior School" />} />
-        <Route path="/academics/btec" element={<GenericPage title="BTEC" />} />
+        <Route path="/academics/btec" element={<BTEC />} />
         <Route path="/academics/awards-distinctions" element={<GenericPage title="Awards & Distinctions" />} />
         <Route path="/academics/affiliations" element={<GenericPage title="Affiliations" />} />
         <Route path="/academics/calendar" element={<GenericPage title="Academic Calendar" />} />
@@ -71,11 +72,11 @@ function App() {
         <Route path="/policies/child-protection" element={<GenericPage title="Child Protection Policy" />} />
         <Route path="/policies/exams" element={<GenericPage title="Examination Policy" />} />
         <Route path="/policies/attendance" element={<GenericPage title="Attendance Policy" />} />
-        
+
         {/* Contact Pages - Use ContactForm page directly */}
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/contact-form" element={<ContactForm />} />
-        
+
         {/* About */}
         <Route path="/about/us" element={<GenericPage title="About Us" />} />
         <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
@@ -83,7 +84,7 @@ function App() {
         <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
         <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
         <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
-        
+
         {/* Fallback for other links */}
         <Route path="*" element={<HomePage />} />
       </Routes>

@@ -1,0 +1,328 @@
+/* src/styles/BTEC.css */
+
+/* Reusing site variables where possible, mapping provided design to site theme */
+:root {
+    /* Map to App.css variables */
+    --btec-primary: var(--primary-color, #2f2657);
+    --btec-accent: var(--secondary-color, #ff9e00);
+    --btec-gold: #D97706;
+    --btec-bg-light: var(--bg-light, #f8f9fa);
+    --btec-text-dark: var(--text-dark, #1a1a1a);
+    --btec-text-light: var(--text-gray, #666);
+    --btec-white: var(--white, #ffffff);
+    --btec-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.1));
+    --btec-radius: var(--radius-md, 12px);
+    --btec-transition: var(--transition, all 0.3s ease);
+}
+
+.btec-page {
+    /* Font is inherited from body in App.css (Inter) */
+    background-color: var(--btec-bg-light);
+    overflow-x: hidden;
+}
+
+/* Headers - Enforce Site Font */
+.btec-page h1,
+.btec-page h2,
+.btec-page h3 {
+    font-family: 'Poppins', sans-serif;
+    /* Site standard */
+    color: var(--btec-primary);
+}
+
+/* --- UTILITIES --- */
+.btec-section-padding {
+    padding: 80px 0;
+}
+
+.btec-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.btec-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HERO SECTION --- */
+.btec-hero {
+    background: linear-gradient(rgba(47, 38, 87, 0.85), rgba(47, 38, 87, 0.85)),
+        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--btec-white);
+    text-align: center;
+    padding: 120px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.btec-hero h1 {
+    color: var(--btec-white);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.btec-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+    color: #e0e0e0;
+    /* Light text for dark bg */
+}
+
+.btec-cta-btn {
+    display: inline-block;
+    background: var(--btec-white);
+    color: var(--btec-primary);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--btec-transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btec-cta-btn:hover {
+    background: var(--btec-accent);
+    color: var(--btec-primary);
+    transform: translateY(-2px);
+}
+
+.btec-cta-btn.primary {
+    background: var(--btec-primary);
+    color: var(--btec-white);
+}
+
+.btec-cta-btn.primary:hover {
+    background: var(--btec-accent);
+}
+
+
+/* --- WHAT IS BTEC --- */
+.btec-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.btec-about-image img {
+    width: 100%;
+    border-radius: var(--btec-radius);
+    box-shadow: var(--btec-shadow);
+}
+
+.btec-about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.btec-feature-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.btec-feature-list i {
+    color: var(--btec-accent);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- LEVELS SECTION (CARDS) --- */
+.btec-levels-section {
+    background: var(--btec-white);
+}
+
+.btec-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.btec-levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.btec-level-card {
+    background: var(--btec-white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--btec-radius);
+    padding: 30px;
+    transition: var(--btec-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btec-level-card:hover {
+    box-shadow: var(--btec-shadow);
+    border-color: var(--btec-accent);
+    transform: translateY(-5px);
+}
+
+.btec-level-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--btec-primary);
+}
+
+.btec-level-card:nth-child(2)::before {
+    background: var(--btec-accent);
+}
+
+.btec-level-card:nth-child(3)::before {
+    background: var(--btec-gold);
+}
+
+.btec-level-badge {
+    display: inline-block;
+    background: var(--btec-bg-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--btec-text-light);
+    margin-bottom: 15px;
+}
+
+.btec-level-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    /* Inherits Poppins */
+}
+
+.btec-level-equiv {
+    color: var(--btec-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.btec-level-detail {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btec-level-detail p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--btec-text-light);
+}
+
+.btec-level-detail strong {
+    color: var(--btec-text-dark);
+}
+
+/* --- COMPARISON TABLE --- */
+.btec-comparison-wrapper {
+    overflow-x: auto;
+    border-radius: var(--btec-radius);
+    box-shadow: var(--btec-shadow);
+    background: var(--btec-white);
+}
+
+.btec-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.btec-comparison-table th,
+.btec-comparison-table td {
+    padding: 20px 25px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.btec-comparison-table th {
+    background: var(--btec-primary);
+    color: var(--btec-white);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.btec-comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.btec-comparison-table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.btec-check-icon {
+    color: var(--btec-accent);
+    margin-right: 8px;
+}
+
+/* --- ONLINE LEARNING --- */
+.btec-online-section {
+    background: var(--btec-primary);
+    color: var(--btec-white);
+    border-radius: 30px;
+    margin: 40px 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.btec-online-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btec-online-content h2 {
+    color: var(--btec-white);
+    margin-bottom: 20px;
+}
+
+.btec-online-content p {
+    color: #e0e0e0;
+}
+
+.btec-online-img {
+    background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .btec-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .btec-about,
+    .btec-online-section {
+        grid-template-columns: 1fr;
+    }
+
+    .btec-online-img {
+        height: 250px;
+        order: -1;
+    }
+
+    .btec-online-content {
+        padding: 30px;
+    }
+
+    .btec-levels-grid {
+        grid-template-columns: 1fr;
+    }
+}
