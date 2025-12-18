@@ -118,7 +118,7 @@ const Header = () => {
                 <div className="mega-menu-column">
                   <h3 className="mega-menu-title">POLICIES</h3>
                   <div className="mega-menu-divider"></div>
-                  <Link to="/policies/rules">Rules & Regulations</Link>
+                  <Link to="/policies">Rules & Regulations</Link>
                   <Link to="/policies/child-protection">Child Protection Policy</Link>
                   <Link to="/policies/exams">Examination Policy</Link>
                   <Link to="/policies/attendance">Attendance Policy</Link>

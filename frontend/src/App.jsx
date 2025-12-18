@@ -10,6 +10,13 @@ import WhatsAppWidget from './components/WhatsAppWidget';
 import WhyChooseSISA from './pages/WhyChooseSISA';
 import MissionVision from './pages/MissionVision';
 import BTEC from './pages/BTEC';
+import Policies from './pages/Policies';
+import PreschoolJunior from './pages/PreschoolJunior';
+import Alumni from './pages/Alumni';
+import AcademicProgrammes from './pages/AcademicProgrammes';
+import Careers from './pages/Careers';
+import MiddleSchool from './pages/MiddleSchool';
+import StudentLife from './pages/StudentLife';
 
 
 function App() {
@@ -45,9 +52,9 @@ function App() {
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
 
         {/* Academics */}
-        <Route path="/academics/curriculum" element={<GenericPage title="Curriculum & Sections" />} />
-        <Route path="/academics/preschool-junior" element={<GenericPage title="Preschool & Junior School" />} />
-        <Route path="/academics/middle-school" element={<GenericPage title="Middle School" />} />
+        <Route path="/academics/curriculum" element={<AcademicProgrammes />} />
+        <Route path="/academics/preschool-junior" element={<PreschoolJunior />} />
+        <Route path="/academics/middle-school" element={<MiddleSchool />} />
         <Route path="/academics/senior-school" element={<GenericPage title="Senior School" />} />
         <Route path="/academics/btec" element={<BTEC />} />
         <Route path="/academics/awards-distinctions" element={<GenericPage title="Awards & Distinctions" />} />
@@ -56,9 +63,10 @@ function App() {
         <Route path="/academics/online-school" element={<GenericPage title="Online School" />} />
 
         {/* Student Life */}
+        <Route path="/student-life" element={<StudentLife />} />
         <Route path="/student-life/clubs" element={<GenericPage title="Clubs & Co-curricular" />} />
         <Route path="/student-life/houses" element={<GenericPage title="School teams & Houses" />} />
-        <Route path="/student-life/alumni" element={<GenericPage title="Alumni & Testimonials" />} />
+        <Route path="/student-life/alumni" element={<Alumni />} />
         <Route path="/student-life/council" element={<GenericPage title="Student Council" />} />
         <Route path="/student-life/awards" element={<GenericPage title="Awards & Honours" />} />
 
@@ -68,10 +76,14 @@ function App() {
         <Route path="/news/videos" element={<GenericPage title="Videos etc" />} />
 
         {/* Policies */}
+        <Route path="/policies" element={<Policies />} />
         <Route path="/policies/rules" element={<GenericPage title="Rules & Regulations" />} />
         <Route path="/policies/child-protection" element={<GenericPage title="Child Protection Policy" />} />
         <Route path="/policies/exams" element={<GenericPage title="Examination Policy" />} />
         <Route path="/policies/attendance" element={<GenericPage title="Attendance Policy" />} />
+
+        {/* Careers */}
+        <Route path="/careers" element={<Careers />} />
 
         {/* Contact Pages - Use ContactForm page directly */}
         <Route path="/contact" element={<ContactForm />} />

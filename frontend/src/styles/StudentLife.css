@@ -1,0 +1,231 @@
+/* Student Life Page Styles */
+
+:root {
+    --sl-primary: #004d99;
+    --sl-secondary: #ff9900;
+    --sl-background: #f4f7f9;
+    --sl-text-dark: #333;
+    --sl-text-light: #fff;
+    --sl-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --sl-transition: 0.3s;
+}
+
+.student-life-page {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--sl-text-dark);
+    background-color: var(--sl-background);
+    transition: background-color 0.5s;
+}
+
+/* HERO */
+.sl-hero {
+    background: linear-gradient(135deg, var(--sl-primary) 0%, #0066cc 100%);
+    color: var(--sl-text-light);
+    padding: 80px 20px 100px 20px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+.sl-hero-content h1 {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.sl-hero-content p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* CONTAINER */
+.sl-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* SECTION CARDS */
+.section-card {
+    background: var(--sl-text-light);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: var(--sl-card-shadow);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    color: var(--sl-primary);
+    border-bottom: 3px solid var(--sl-secondary);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* EXCELLENCE GRID */
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.activity-block {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--sl-background);
+    transition: transform var(--sl-transition), box-shadow var(--sl-transition);
+}
+
+.activity-block:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 77, 153, 0.15);
+}
+
+.icon-box {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--sl-secondary);
+}
+
+.activity-block h3 {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    color: var(--sl-primary);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.activity-block p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* ONLINE FEATURES */
+.online-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    border-left: 6px solid var(--sl-secondary);
+    background-color: #fcfcfc;
+    border-radius: 6px;
+}
+
+.feature-item h4 {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    color: var(--sl-primary);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* TWO COLUMN LAYOUT */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .two-column-layout {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* STYLED LIST */
+.styled-list {
+    list-style: none;
+    padding: 0;
+}
+
+.styled-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.styled-list li:before {
+    content: "🏅";
+    position: absolute;
+    left: 0;
+    color: var(--sl-secondary);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.styled-list li:last-child {
+    border-bottom: none;
+}
+
+/* FOOTER */
+.sl-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--sl-primary);
+    color: var(--sl-text-light);
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sl-hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .excellence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .online-features {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .sl-hero {
+        padding: 70px 20px 80px;
+    }
+
+    .sl-hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .section-card {
+        padding: 24px 20px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+}

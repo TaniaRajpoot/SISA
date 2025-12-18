@@ -1,0 +1,402 @@
+/* Alumni Network Page Styles */
+
+:root {
+    --alumni-primary: #2f2657;
+    --alumni-secondary: #4a3a7a;
+    --alumni-accent: #ffa500;
+    --alumni-bg-light: #f5f7fa;
+    --alumni-text-dark: #1f2937;
+    --alumni-text-muted: #6b7280;
+    --alumni-card-bg: #ffffff;
+    --alumni-radius: 18px;
+    --alumni-shadow: 0 20px 40px rgba(47, 38, 87, 0.08);
+}
+
+.alumni-page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--alumni-text-dark);
+    background: linear-gradient(180deg, #eef3f8 0%, #ffffff 60%);
+    line-height: 1.6;
+}
+
+/* ---------- HERO ---------- */
+.alumni-hero {
+    position: relative;
+    padding: 100px 8% 80px;
+    background: radial-gradient(circle at top right, rgba(255, 165, 0, 0.15), transparent 40%),
+        linear-gradient(120deg, var(--alumni-primary), #1a1340);
+    color: #fff;
+    overflow: hidden;
+}
+
+.alumni-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.alumni-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.alumni-hero p {
+    font-size: 1.05rem;
+    color: #e5ecf3;
+    max-width: 620px;
+    line-height: 1.7;
+}
+
+.alumni-hero-badges {
+    margin-top: 30px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.alumni-badge {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+}
+
+.alumni-hero-graphic {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+    border-radius: var(--alumni-radius);
+    box-shadow: var(--alumni-shadow);
+}
+
+/* Floating icons */
+.alumni-float-icon {
+    position: absolute;
+    background: #fff;
+    color: var(--alumni-primary);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--alumni-shadow);
+    animation: alumniFloat 6s ease-in-out infinite;
+}
+
+.alumni-float-icon.one {
+    top: -20px;
+    left: 30px;
+}
+
+.alumni-float-icon.two {
+    bottom: -20px;
+    right: 40px;
+    animation-delay: 2s;
+}
+
+.alumni-float-icon.three {
+    top: 40%;
+    left: -20px;
+    animation-delay: 4s;
+}
+
+@keyframes alumniFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* ---------- SECTIONS ---------- */
+.alumni-section {
+    padding: 90px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.alumni-section-title {
+    max-width: 720px;
+    margin-bottom: 50px;
+}
+
+.alumni-section-title h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 14px;
+    color: var(--alumni-primary);
+    font-weight: 700;
+}
+
+.alumni-section-title p {
+    color: var(--alumni-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ---------- BENEFITS ---------- */
+.alumni-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.alumni-benefit-card {
+    background: var(--alumni-card-bg);
+    border-radius: var(--alumni-radius);
+    padding: 36px 28px;
+    box-shadow: var(--alumni-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(47, 38, 87, 0.05);
+}
+
+.alumni-benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(47, 38, 87, 0.15);
+    border-color: rgba(255, 165, 0, 0.3);
+}
+
+.alumni-benefit-card i {
+    font-size: 28px;
+    color: var(--alumni-accent);
+    margin-bottom: 18px;
+    display: block;
+}
+
+.alumni-benefit-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--alumni-text-dark);
+    font-weight: 600;
+}
+
+.alumni-benefit-card p {
+    color: var(--alumni-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.alumni-testimonials {
+    background: var(--alumni-bg-light);
+    border-radius: 40px;
+    padding: 90px 8%;
+    max-width: 1400px;
+    margin: 60px auto;
+}
+
+.alumni-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.alumni-testimonial {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--alumni-radius);
+    box-shadow: var(--alumni-shadow);
+    position: relative;
+    border: 1px solid rgba(47, 38, 87, 0.05);
+}
+
+.alumni-testimonial::before {
+    content: "\f10d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -14px;
+    right: 22px;
+    font-size: 36px;
+    color: rgba(255, 165, 0, 0.3);
+}
+
+.alumni-testimonial p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--alumni-text-dark);
+    line-height: 1.7;
+}
+
+.alumni-author {
+    font-weight: 600;
+    color: var(--alumni-primary);
+    margin-bottom: 4px;
+}
+
+.alumni-testimonial span {
+    font-size: 0.85rem;
+    color: var(--alumni-text-muted);
+}
+
+/* ---------- FORM ---------- */
+.alumni-form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.alumni-form-info p {
+    color: var(--alumni-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.alumni-form-info img {
+    width: 100%;
+    border-radius: var(--alumni-radius);
+    box-shadow: var(--alumni-shadow);
+    margin-top: 20px;
+}
+
+.alumni-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--alumni-radius);
+    box-shadow: var(--alumni-shadow);
+    border: 1px solid rgba(47, 38, 87, 0.05);
+}
+
+.alumni-success-alert {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.alumni-field {
+    margin-bottom: 18px;
+}
+
+.alumni-field label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--alumni-text-dark);
+}
+
+.alumni-field input,
+.alumni-field select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.alumni-field input:focus,
+.alumni-field select:focus {
+    outline: none;
+    border-color: var(--alumni-primary);
+    box-shadow: 0 0 0 3px rgba(47, 38, 87, 0.1);
+}
+
+.alumni-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--alumni-accent), #e0b65a);
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alumni-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 165, 0, 0.3);
+}
+
+/* ---------- FOOTER ---------- */
+.alumni-footer {
+    background: #081e30;
+    color: #cbd5e1;
+    padding: 40px 8%;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.alumni-footer span {
+    color: var(--alumni-accent);
+    font-weight: 600;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+
+    .alumni-hero-grid,
+    .alumni-form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .alumni-hero {
+        padding-top: 80px;
+    }
+
+    .alumni-hero-graphic {
+        height: 250px;
+    }
+
+    .alumni-section {
+        padding: 60px 5%;
+    }
+
+    .alumni-testimonials {
+        padding: 60px 5%;
+        margin: 40px 5%;
+    }
+}
+
+@media (max-width: 640px) {
+    .alumni-hero {
+        padding: 70px 5% 50px;
+    }
+
+    .alumni-hero h1 {
+        font-size: 2rem;
+    }
+
+    .alumni-section {
+        padding: 50px 5%;
+    }
+
+    .alumni-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .alumni-testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alumni-form {
+        padding: 30px 20px;
+    }
+
+    .alumni-float-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 0.9rem;
+    }
+}
