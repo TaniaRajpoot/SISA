@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/SISAOverview.css';
 import Stats from './Stats';
 import Partners from './Partners';
+import worldMapImage from '../assets/world-map.png'; // Adjust path as needed
 
 const SISAOverview = () => {
     return (
@@ -108,47 +109,6 @@ const SISAOverview = () => {
                     <h2>Triple-Accredited Institution</h2>
                     <p className="section-desc muted">SISA proudly offers curricula from the United Kingdom's leading examination boards.</p>
 
-                    {/* <div className="accreditation-badges">
-                        <div className="badge">
-                            <div className="badge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeOpacity="0.12" />
-                                    <path d="M7 9h10M7 13h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div className="badge-title">Cambridge International</div>
-                                <div className="badge-subtitle">Cambridge University Press & Assessment</div>
-                            </div>
-                        </div>
-
-                        <div className="badge">
-                            <div className="badge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeOpacity="0.12" />
-                                    <path d="M8 9h8M8 12h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div className="badge-title">Pearson - Edexcel</div>
-                                <div className="badge-subtitle">Formerly University of London</div>
-                            </div>
-                        </div>
-
-                        <div className="badge">
-                            <div className="badge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 4l6 16H6l6-16z" stroke="currentColor" strokeOpacity="0.12" />
-                                    <path d="M10 10h4M9 13h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div className="badge-title">OxfordAQA</div>
-                                <div className="badge-subtitle">Oxford Assessment & Qualifications Alliance</div>
-                            </div>
-                        </div>
-                    </div> */}
-
                     {/* Partners Section */}
                     <Partners />
                 </section>
@@ -212,6 +172,15 @@ const SISAOverview = () => {
                         <div className="pill">Bangladesh</div>
                         <div className="pill">UK</div>
                         <div className="pill">Canada</div>
+                    </div>
+
+                    {/* World Map Image - Placed after countries */}
+                    <div className="world-map-container">
+                        <img 
+                            src={worldMapImage} 
+                            alt="SISA International Classroom - Global Reach Map" 
+                            className="world-map-image"
+                        />
                     </div>
                 </section>
 
