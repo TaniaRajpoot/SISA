@@ -90,6 +90,7 @@
 // export default Hero;
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 import banner1 from "../assets/download (1).jpg";
 import banner2 from "../assets/download.jpg";
@@ -147,9 +148,9 @@ const Hero = () => {
               </div>
 
               <div className="hero-buttons-bottom">
-                <button className="btn btn-outline">Admissions</button>
-                <button className="btn btn-outline">Director's Message</button>
-                <button className="btn btn-outline">Upcoming Events</button>
+                <Link to="/admissions" className="btn btn-outline">Admissions</Link>
+                <Link to="/about/director-message" className="btn btn-outline">Director's Message</Link>
+                <Link to="/news/upcoming" className="btn btn-outline">Upcoming Events</Link>
               </div>
             </div>
           </div>

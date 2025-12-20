@@ -89,7 +89,7 @@ const PreschoolJunior = () => {
 
             {/* Junior School Section */}
             <section className="pj-section reveal">
-                <h2 className="pj-section-title"><span>🎓</span> Junior School (Grades 1–5)</h2>
+                <h2 className="pj-section-title"><span></span> Junior School (Grades 1–5)</h2>
                 <p className="pj-section-desc">
                     The Junior School curriculum builds on the early years foundation, introducing students to core subjects
                     and rigorous academic standards aligned with the UK education system.

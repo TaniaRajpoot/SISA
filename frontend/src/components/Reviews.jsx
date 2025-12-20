@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Reviews.css";
-import mamImage from "../assets/mam.jpg";
+import mamImage from "../assets/mam_saeeda_saleem.jpg";
 
 const review = {
   text: "Welcome to SISA. We are committed to providing an exceptional educational experience that empowers students to reach their full potential. Our dedicated faculty and state-of-the-art facilities ensure a nurturing environment for academic and personal growth.",
