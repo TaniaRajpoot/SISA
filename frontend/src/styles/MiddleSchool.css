@@ -1,9 +1,9 @@
 /* Middle School Page Styles */
 
 :root {
-    --ms-primary: #2f2657;
-    --ms-secondary: #4a3a7a;
-    --ms-accent: #38bdf8;
+    --ms-primary: #302759;
+    --ms-secondary: #483F7E;
+    --ms-accent: #ff9e00;
     --ms-bg: #f8fafc;
     --ms-card: #ffffff;
     --ms-text: #334155;
@@ -91,7 +91,7 @@
 
 .ms-section h2 {
     font-size: 1.9rem;
-    color: var(--ms-primary);
+    color: var(--ms-accent);
     margin-bottom: 16px;
     font-weight: 700;
 }
@@ -129,15 +129,16 @@
     border-radius: 14px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, var(--ms-primary), var(--ms-accent));
-    color: white;
+    background: white;
+    border: 2px solid #483F7E;
+    color: #483F7E;
     font-size: 1.4rem;
     margin-bottom: 18px;
 }
 
 .ms-card h3 {
     font-size: 1.2rem;
-    color: var(--ms-primary);
+    color: var(--ms-accent);
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -172,16 +173,20 @@
     font-size: 0.8rem;
     color: var(--ms-muted);
     font-weight: 500;
+    
 }
 
 .ms-step.active {
-    background: linear-gradient(135deg, var(--ms-primary), var(--ms-accent));
+    background: linear-gradient(135deg, #302759, #483F7E);
     color: white;
 }
+.ms-step.active span {
+    color: #efefef;
+}   
 
 .ms-arrow {
     font-size: 1.6rem;
-    color: var(--ms-primary);
+    color: var(--ms-accent);
 }
 
 @keyframes msPulse {
@@ -213,7 +218,7 @@
 }
 
 .ms-table thead {
-    background: linear-gradient(135deg, var(--ms-primary), var(--ms-accent));
+    background: linear-gradient(135deg, #302759, #483F7E);
     color: white;
 }
 
@@ -238,13 +243,17 @@
 
 /* HIGHLIGHT */
 .ms-highlight {
-    background: linear-gradient(135deg, #eef2ff, #f0f9ff);
+    background: linear-gradient(135deg, #2f2657, #4a3a7a);
     border-radius: var(--ms-radius);
     padding: 40px;
     text-align: center;
     font-weight: 500;
-    color: var(--ms-primary);
+    color: #ffffff;
     line-height: 1.8;
+}
+
+.yellow-text {
+    color: #ff9e00;
 }
 
 /* FOOTER */

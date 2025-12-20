@@ -16,10 +16,11 @@ const AcademicProgrammes = () => {
             <header className="ap-hero">
                 <div className="ap-hero-grid">
                     <div>
-                        <h1>🏆 Academic Programmes at SISA: Excellence from Preschool to BTEC</h1>
+                        <h1>Academic Programmes at SISA: Excellence from Preschool to BTEC</h1>
                         <p>SISA delivers a world-class, triple-accredited curriculum that is designed to unlock every student's full potential, ensuring they are prepared for global university admission or immediate career success.</p>
                     </div>
                     <div className="ap-hero-img">
+                        <div className="ap-hero-square-bg"></div>
                         <i className="fa-solid fa-graduation-cap one"></i>
                         <i className="fa-solid fa-globe two"></i>
                     </div>
@@ -311,9 +312,6 @@ const AcademicProgrammes = () => {
                 </div>
             </section>
 
-            <footer className="ap-footer">
-                <p>© <span>SISA</span> Academic Programmes · Triple Accredited British Curriculum</p>
-            </footer>
 
             <Footer />
         </div>

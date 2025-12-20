@@ -38,7 +38,7 @@ const MiddleSchool = () => {
             {/* Hero Section */}
             <header className="ms-hero">
                 <div className="ms-container">
-                    <h1>🚀 Middle School (Grades 6–8)<br /><span>Foundation for GCE O‑Levels, A‑Levels & BTEC</span></h1>
+                    <h1> Middle School (Grades 6–8)<br /><span>Foundation for GCE O‑Levels, A‑Levels & BTEC</span></h1>
                     <p className="ms-subtitle">
                         The SISA Middle School program (Grades 6, 7, and 8) is specifically designed as the vital <strong>Pre‑IGCSE / O‑Level foundation phase</strong>, developing academic maturity, independence, and clarity for future success.
                     </p>
@@ -133,14 +133,11 @@ const MiddleSchool = () => {
             <section className="ms-section">
                 <div className="ms-container fade-up">
                     <div className="ms-highlight">
-                        By the end of <strong>Grade 8</strong>, every SISA student is equipped with the knowledge base and academic maturity to confidently choose their pathway—<strong>GCE Academic</strong> or <strong>BTEC Vocational</strong>—aligned with their goals and strengths.
+                        By the end of <strong className="yellow-text">Grade 8</strong>, every SISA student is equipped with the knowledge base and academic maturity to confidently choose their pathway—<strong>GCE Academic</strong> or <strong>BTEC Vocational</strong>—aligned with their goals and strengths.
                     </div>
                 </div>
             </section>
 
-            <footer className="ms-footer">
-                © SISA International School · Learning Management System
-            </footer>
 
             <Footer />
         </div>

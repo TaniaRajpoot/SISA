@@ -1,8 +1,8 @@
 /* Student Life Page Styles */
 
 :root {
-    --sl-primary: #004d99;
-    --sl-secondary: #ff9900;
+    --sl-primary: #2f2657;
+    --sl-secondary: #ff9e00;
     --sl-background: #f4f7f9;
     --sl-text-dark: #333;
     --sl-text-light: #fff;
@@ -20,7 +20,7 @@
 
 /* HERO */
 .sl-hero {
-    background: linear-gradient(135deg, var(--sl-primary) 0%, #0066cc 100%);
+    background: linear-gradient(135deg, var(--sl-primary) 0%, #4a3a7a 100%);
     color: var(--sl-text-light);
     padding: 80px 20px 100px 20px;
     text-align: center;
@@ -68,7 +68,7 @@
 
 .section-title {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-primary);
+    color: var(--sl-secondary);
     border-bottom: 3px solid var(--sl-secondary);
     padding-bottom: 10px;
     margin-bottom: 25px;
@@ -105,7 +105,7 @@
 
 .activity-block h3 {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-primary);
+    color: var(--sl-secondary);
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -134,7 +134,7 @@
 
 .feature-item h4 {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-primary);
+    color: var(--sl-secondary);
     margin-bottom: 5px;
     font-weight: 600;
 }

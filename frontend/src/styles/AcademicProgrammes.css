@@ -39,6 +39,7 @@
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    color: #ffffff;
 }
 
 .ap-hero p {
@@ -49,11 +50,25 @@
 }
 
 .ap-hero-img {
-    height: 320px;
-    border-radius: var(--ap-radius);
-    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-    box-shadow: var(--ap-shadow);
+    height: 520px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ap-hero-square-bg {
+    width: 400px;
+    height: 400px;
+    border-radius: var(--ap-radius);
+    background-color: #ffffff;
+    background-image: url('../assets/young-students-learning-together-group-study.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--ap-shadow);
+    z-index: 1;
+    position: absolute;
 }
 
 .ap-hero-img i {
@@ -68,6 +83,7 @@
     box-shadow: var(--ap-shadow);
     animation: apFloat 6s ease-in-out infinite;
     font-size: 1.3rem;
+    z-index: 2;
 }
 
 .ap-hero-img i.one {
@@ -103,6 +119,7 @@
 .ap-section-title {
     max-width: 900px;
     margin-bottom: 50px;
+    color: #e5e7eb;
 }
 
 .ap-section-title h2 {
@@ -220,19 +237,7 @@
     margin: 60px auto;
 }
 
-/* FOOTER */
-.ap-footer {
-    background: #081e30;
-    color: #cbd5e1;
-    padding: 40px 8%;
-    text-align: center;
-    font-size: 0.95rem;
-}
 
-.ap-footer span {
-    color: var(--ap-accent);
-    font-weight: 600;
-}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
