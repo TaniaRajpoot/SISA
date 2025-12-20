@@ -31,7 +31,7 @@ const ContactForm = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setSubmitted(true);
-    
+
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -48,7 +48,7 @@ const ContactForm = () => {
   return (
     <div className="contact-page">
       <Header />
-      
+
       <div className="contact-container">
         <div className="contact-page-header">
           <h1> Contact SISA</h1>
@@ -103,12 +103,31 @@ const ContactForm = () => {
             We welcome prospective parents to visit our campus. Please schedule an
             appointment in advance by calling the Admissions Office.
           </p>
+
+          <div className="contact-map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d581.1857367204561!2d74.25120945879985!3d31.472354040577283!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391902253b02dc89%3A0x67ab9f32e1dcab29!2sSchool%20of%20International%20Studies%20in%20Sciences%20And%20Arts!5e1!3m2!1sen!2smy!4v1766208037093!5m2!1sen!2smy"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="SISA Location"
+            ></iframe>
+            <div className="map-link">
+              <a href="https://maps.app.goo.gl/6WReruQyBS8QPRgz5" target="_blank" rel="noopener noreferrer">
+                <i className="fa-solid fa-location-dot" style={{ marginRight: '8px' }}></i>
+                Open in Google Maps
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Contact Form Card */}
         <div className="contact-card form-card">
           <h2>✉️ Send Us a Message</h2>
-          
+
           {submitted && (
             <div className="success-alert">
               ✓ Thank you! Your message has been sent successfully.
