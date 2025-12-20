@@ -123,7 +123,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(prev => (prev + 1) % slides.length);
-    }, 3000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -144,6 +144,12 @@ const Hero = () => {
               <div className="hero-buttons">
                 <button className="btn btn-primary">Explore Courses</button>
                 <button className="btn btn-secondary">Watch Demo</button>
+              </div>
+
+              <div className="hero-buttons-bottom">
+                <button className="btn btn-outline">Admissions</button>
+                <button className="btn btn-outline">Director's Message</button>
+                <button className="btn btn-outline">Upcoming Events</button>
               </div>
             </div>
           </div>

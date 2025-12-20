@@ -59,7 +59,7 @@ const ContactForm = () => {
         </div>
 
         <div className="contact-card">
-          <h2>📍 SISA Main Campus (Physical & Local Inquiries)</h2>
+          <h2> SISA Main Campus (Physical & Local Inquiries)</h2>
 
           <div className="info-grid">
             <div className="info-item">
@@ -94,7 +94,7 @@ const ContactForm = () => {
           </div>
 
           <div className="hours">
-            <h3>🕘 Office & Visiting Hours</h3>
+            <h3>Office & Visiting Hours</h3>
             <p><strong>Monday – Friday:</strong> 8:30 a.m. – 4:30 p.m. (Pakistan Time)</p>
             <p><strong>Saturday:</strong> 10:00 a.m. – 4:30 p.m. (Pakistan Time)</p>
           </div>
@@ -126,7 +126,7 @@ const ContactForm = () => {
 
         {/* Contact Form Card */}
         <div className="contact-card form-card">
-          <h2>✉️ Send Us a Message</h2>
+          <h2>Send Us a Message</h2>
 
           {submitted && (
             <div className="success-alert">

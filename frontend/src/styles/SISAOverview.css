@@ -304,6 +304,7 @@
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -402,14 +403,17 @@
         grid-template-columns: 1fr;
     }
 
-    /* Core Values - 2 columns on tablet */
+    .admissions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Core Values - 2 columns on tablet portrait */
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .admissions-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -446,6 +450,7 @@
 }
 
 @media (max-width: 640px) {
+
     /* Core Values - 1 column on mobile */
     .values-grid {
         grid-template-columns: 1fr;
