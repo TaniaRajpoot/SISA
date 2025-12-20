@@ -218,50 +218,86 @@
     font-size: 0.85rem;
 }
 
-/* Core Values - Horizontal Layout on Desktop */
+/* Core Values - Horizontal Layout */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 40px;
+    gap: 15px;
+    margin-top: 30px;
+    width: 100%;
 }
 
 .value-card {
-    background: linear-gradient(180deg, #ffffff, #fcfdfe);
-    padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(47, 38, 87, 0.06);
+    background: #ffffff;
+    padding: 24px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(47, 38, 87, 0.03);
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(47, 38, 87, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #302759, #54449c);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(47, 38, 87, 0.12);
-    border-color: rgba(47, 38, 87, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(47, 38, 87, 0.12);
+    z-index: 10;
+}
+
+.value-card:hover::before {
+    opacity: 1;
 }
 
 .value-card svg {
-    width: 48px;
-    height: 48px;
-    color: #2f2657;
+    width: 56px;
+    height: 56px;
+    color: #302759;
     margin: 0 auto 16px;
     display: block;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    filter: drop-shadow(0 4px 6px rgba(48, 39, 89, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.value-card:hover svg {
+    transform: scale(1.1) rotate(5deg);
+    background: transparent;
+    color: #302759;
 }
 
 .value-card h5 {
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     color: #2f2657;
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
 }
 
 .value-card p {
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
     color: #666;
+    flex-grow: 1;
 }
 
 /* Countries Pills */
