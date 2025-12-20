@@ -55,7 +55,7 @@ const Alumni = () => {
             <header className="alumni-hero">
                 <div className="alumni-hero-grid">
                     <div>
-                        <h1>🎓 SISA Alumni Network</h1>
+                        <h1> SISA Alumni Network</h1>
                         <p>
                             At SISA, graduation is not an end, but the beginning of a lifelong connection.
                             Our alumni are leaders, innovators, and thinkers making an impact across the globe,
@@ -69,6 +69,7 @@ const Alumni = () => {
                         </div>
                     </div>
                     <div className="alumni-hero-graphic">
+                        <div className="alumni-hero-square-bg"></div>
                         <div className="alumni-float-icon one"><i className="fa-solid fa-globe"></i></div>
                         <div className="alumni-float-icon two"><i className="fa-solid fa-user-graduate"></i></div>
                         <div className="alumni-float-icon three"><i className="fa-solid fa-network-wired"></i></div>
@@ -239,9 +240,6 @@ const Alumni = () => {
                 </div>
             </section>
 
-            <footer className="alumni-footer">
-                <p>© <span>SISA</span> Alumni Network · Connecting Success Globally</p>
-            </footer>
 
             <Footer />
         </div>

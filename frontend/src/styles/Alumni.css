@@ -43,6 +43,7 @@
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
+    color: #fff;
 }
 
 .alumni-hero p {
@@ -72,10 +73,20 @@
 .alumni-hero-graphic {
     position: relative;
     width: 100%;
-    height: 320px;
-    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alumni-hero-square-bg {
+    width: 450px;
+    height: 450px;
     border-radius: var(--alumni-radius);
+    background: url('https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
     box-shadow: var(--alumni-shadow);
+    z-index: 1;
+    position: absolute;
 }
 
 /* Floating icons */
@@ -90,6 +101,7 @@
     place-items: center;
     box-shadow: var(--alumni-shadow);
     animation: alumniFloat 6s ease-in-out infinite;
+    z-index: 2;
 }
 
 .alumni-float-icon.one {

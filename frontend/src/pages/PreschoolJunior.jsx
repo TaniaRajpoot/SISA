@@ -45,7 +45,7 @@ const PreschoolJunior = () => {
 
             {/* Hero Section */}
             <section className="pj-hero reveal">
-                <h1>👶 SISA Preschool & Junior School</h1>
+                <h1> SISA Preschool & Junior School</h1>
                 <p>
                     Building Foundational Excellence from <strong>Playgroup to Grade 5</strong> — nurturing curiosity, confidence,
                     and a lifelong love of learning in a supportive, international environment.
@@ -54,7 +54,7 @@ const PreschoolJunior = () => {
 
             {/* Preschool Section */}
             <section className="pj-section reveal">
-                <h2 className="pj-section-title"><span>🌱</span> The Early Years (Preschool / Playgroup)</h2>
+                <h2 className="pj-section-title"><span></span> The Early Years (Preschool / Playgroup)</h2>
                 <p className="pj-section-desc">
                     Our Playgroup curriculum is thoughtfully designed to encourage exploration, creativity, and social development.
                     Through structured play and interactive learning, children build essential foundations for future success.
@@ -123,7 +123,7 @@ const PreschoolJunior = () => {
 
                 <div className="pj-split">
                     <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200" alt="Students learning together" />
-                    <img src="https://images.unsplash.com/photo-1596495578065-9b33f7d9e3b8?q=80&w=1200" alt="Creative classroom activities" />
+                    <img src="https://images.unsplash.com/photo-1557734864-c78b6dfef1b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2Nob29sJTIwZWFybmluZyUyMGFjdGl2aXRlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Creative classroom activities" />
                 </div>
             </section>
 

@@ -17,6 +17,10 @@ import AcademicProgrammes from './pages/AcademicProgrammes';
 import Careers from './pages/Careers';
 import MiddleSchool from './pages/MiddleSchool';
 import StudentLife from './pages/StudentLife';
+import RulesRegulations from './pages/RulesRegulations';
+import AttendancePolicy from './pages/AttendancePolicy';
+import ExaminationPolicy from './pages/ExaminationPolicy';
+import ChildProtectionPolicy from './pages/ChildProtectionPolicy';
 
 
 function App() {
@@ -77,10 +81,10 @@ function App() {
 
         {/* Policies */}
         <Route path="/policies" element={<Policies />} />
-        <Route path="/policies/rules" element={<GenericPage title="Rules & Regulations" />} />
-        <Route path="/policies/child-protection" element={<GenericPage title="Child Protection Policy" />} />
-        <Route path="/policies/exams" element={<GenericPage title="Examination Policy" />} />
-        <Route path="/policies/attendance" element={<GenericPage title="Attendance Policy" />} />
+        <Route path="/policies/rules" element={<RulesRegulations />} />
+        <Route path="/policies/child-protection" element={<ChildProtectionPolicy />} />
+        <Route path="/policies/exams" element={<ExaminationPolicy />} />
+        <Route path="/policies/attendance" element={<AttendancePolicy />} />
 
         {/* Careers */}
         <Route path="/careers" element={<Careers />} />
