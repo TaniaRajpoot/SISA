@@ -5,7 +5,7 @@ import GetStarted from './pages/GetStarted';
 import GenericPage from './pages/GenericPage';
 import ContactForm from './pages/ContactForm'; // Import ContactForm from pages
 import './App.css';
-import AnimatedCursor from "react-animated-cursor";
+
 import WhatsAppWidget from './components/WhatsAppWidget';
 import WhyChooseSISA from './pages/WhyChooseSISA';
 import MissionVision from './pages/MissionVision';
@@ -23,30 +23,11 @@ import ExaminationPolicy from './pages/ExaminationPolicy';
 import ChildProtectionPolicy from './pages/ChildProtectionPolicy';
 
 
+
 function App() {
   return (
     <div className="App">
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={8}
-        color='58, 12, 163'
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-        zIndex={99999}
-        clickables={[
-          'a',
-          'button',
-          '.link',
-          '.nav-link',
-          '.menu-item',
-          '.header-link',
-          'li',
-          '.whatsapp-button',
-          '.close-btn',
-          '.start-chat-btn'
-        ]}
-      />
+
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -100,6 +81,7 @@ function App() {
         <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
         <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
         <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
+
 
         {/* Fallback for other links */}
         <Route path="*" element={<HomePage />} />

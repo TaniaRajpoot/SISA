@@ -2,7 +2,7 @@
 
 .sisa-overview {
     background: linear-gradient(180deg, #f4f7fc, #ffffff);
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 /* Hero Section */
@@ -11,7 +11,7 @@
     grid-template-columns: 1fr 420px;
     gap: 24px;
     align-items: start;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .hero-card {
@@ -115,7 +115,7 @@
 .accreditation-section,
 .values-section,
 .coverage-section {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .about-section h2,
@@ -218,100 +218,136 @@
     font-size: 0.85rem;
 }
 
-/* Core Values - Horizontal Layout */
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 30px;
-    width: 100%;
+
+/* Core Values - S.I.S.A. Way Style */
+.values-header {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.value-card {
-    background: #ffffff;
-    padding: 24px 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(47, 38, 87, 0.03);
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+.values-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #2f2657;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.values-subtitle {
+    color: #2e0e62 !important;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.sisa-way-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.sisa-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    padding-top: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.value-card::before {
+.sisa-card:hover {
+    transform: translateY(-8px);
+}
+
+.sisa-card:hover .sisa-card-content {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: #ff9e00;
+}
+
+.sisa-card:hover .sisa-icon-wrapper {
+    transform: scale(1.1);
+    border-color: #2f2657;
+}
+
+.sisa-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    margin-bottom: -35px;
+    border: 3px solid #ff9e00;
+    /* Yellow stroke restored */
+}
+
+.sisa-letter {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.sisa-card-content {
+    background: #fff;
+    padding: 50px 15px 30px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* More pronounced depth */
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle outline */
+}
+
+.sisa-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #302759, #54449c);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    right: 0;
+    height: 50px;
+    background: #2e0e62;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.value-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(47, 38, 87, 0.12);
-    z-index: 10;
+.sisa-card h5 {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
-.value-card:hover::before {
-    opacity: 1;
-}
-
-.value-card svg {
-    width: 56px;
-    height: 56px;
-    color: #302759;
-    margin: 0 auto 16px;
-    display: block;
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-    filter: drop-shadow(0 4px 6px rgba(48, 39, 89, 0.2));
-    transition: transform 0.4s ease;
-}
-
-.value-card:hover svg {
-    transform: scale(1.1) rotate(5deg);
-    background: transparent;
-    color: #302759;
-}
-
-.value-card h5 {
-    margin: 0 0 10px 0;
-    color: #2f2657;
-    font-size: 1.2rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-}
-
-.value-card p {
-    margin: 0;
-    font-size: 0.9rem;
+.sisa-card p {
+    font-size: 0.85rem;
     line-height: 1.5;
-    color: #666;
-    flex-grow: 1;
+    color: #444;
 }
 
-/* Countries Pills */
-.countries-pills {
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+@media (max-width: 992px) {
+    .sisa-way-grid {
+        gap: 30px;
+    }
+
+    .sisa-card {
+        max-width: 45%;
+    }
 }
 
-.countries-pills .pill {
-    background: linear-gradient(135deg, #eef4ff, #e3f0ff);
-    color: #2f2657;
-    border: 1px solid rgba(47, 38, 87, 0.1);
+@media (max-width: 576px) {
+    .sisa-card {
+        max-width: 100%;
+    }
 }
 
 /* World Map Styling - Placed after countries pills */

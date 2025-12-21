@@ -67,6 +67,7 @@
 }
 
 .feature-card:hover {
+  transform: translateY(-8px);
   border-bottom-color: #2f2657;
   box-shadow: 0 15px 40px rgba(37, 150, 190, 0.15);
 }

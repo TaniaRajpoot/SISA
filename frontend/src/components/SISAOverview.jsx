@@ -113,48 +113,57 @@ const SISAOverview = () => {
                     <Partners />
                 </section>
 
+
                 {/* Core Values */}
                 <section className="values-section">
-                    <h2>Core Values — The S.I.S.A. Way</h2>
-                    <p className="section-desc muted">Our identity is guided by four pillars designed to shape lifelong learners and global citizens.</p>
+                    <div className="values-header">
+                        <h2>CORE VALUES</h2>
+                        <h2 className="values-subtitle">(The S.I.S.A. Way)</h2>
+                    </div>
 
-                    <div className="values-grid">
-                        <div className="value-card">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2v7l3 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.12" />
-                            </svg>
-                            <h5>Scholarship</h5>
-                            <p className="muted">Promoting academic rigour through affiliations with the UK's top exam boards.</p>
+                    <div className="sisa-way-grid">
+                        <div className="sisa-card">
+                            <div className="sisa-icon-wrapper">
+                                <div className="sisa-letter">S</div>
+                            </div>
+                            <div className="sisa-card-content">
+                                <h5>Scholarship</h5>
+                                <p>Promoting academic rigor through our affiliations with the UK's top 3 exam boards.</p>
+                            </div>
                         </div>
 
-                        <div className="value-card">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeOpacity="0.12" />
-                                <path d="M7 10h10M7 14h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                            </svg>
-                            <h5>Innovation</h5>
-                            <p className="muted">Embracing digital classrooms and connecting students from 6+ countries.</p>
+                        <div className="sisa-card">
+                            <div className="sisa-icon-wrapper">
+                                <div className="sisa-letter">I</div>
+                            </div>
+                            <div className="sisa-card-content">
+                                <h5>Innovation</h5>
+                                <p>Embracing digital classrooms and connecting students from 6+ countries.</p>
+                            </div>
                         </div>
 
-                        <div className="value-card">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 7h16M6 11h12M8 15h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.06" />
-                            </svg>
-                            <h5>Service</h5>
-                            <p className="muted">Dedication to holistic development from Playgroup to Professional level.</p>
+                        <div className="sisa-card">
+                            <div className="sisa-icon-wrapper">
+                                <div className="sisa-letter">S</div>
+                            </div>
+                            <div className="sisa-card-content">
+                                <h5>Service</h5>
+                                <p>Dedication to the holistic development of the student from Playgroup to Professional level.</p>
+                            </div>
                         </div>
 
-                        <div className="value-card">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path d="M3 12h18M12 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                            </svg>
-                            <h5>Adaptability</h5>
-                            <p className="muted">Offering diverse pathways (Academic & BTEC) to suit every learner's strengths.</p>
+                        <div className="sisa-card">
+                            <div className="sisa-icon-wrapper">
+                                <div className="sisa-letter">A</div>
+                            </div>
+                            <div className="sisa-card-content">
+                                <h5>Adaptability</h5>
+                                <p>Offering diverse pathways (Academic & BTEC) to suit every learner's strengths.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
+
 
                 {/* International Classroom */}
                 <section className="coverage-section">
@@ -176,9 +185,9 @@ const SISAOverview = () => {
 
                     {/* World Map Image - Placed after countries */}
                     <div className="world-map-container">
-                        <img 
-                            src={worldMapImage} 
-                            alt="SISA International Classroom - Global Reach Map" 
+                        <img
+                            src={worldMapImage}
+                            alt="SISA International Classroom - Global Reach Map"
                             className="world-map-image"
                         />
                     </div>

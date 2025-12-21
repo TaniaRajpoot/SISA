@@ -6,6 +6,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: auto;
+}
+
+a,
+button,
+.btn,
+[role="button"] {
+  cursor: pointer;
 }
 
 :root {
@@ -50,6 +58,25 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.2s ease;
   --transition-slow: all 0.5s ease;
+}
+
+/* Global Hover Animations */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-hover-lift {
+  transition: var(--transition-fast);
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 body {
@@ -384,8 +411,4 @@ section {
     padding: 14px 28px;
     font-size: 16px;
   }
-}
-
-.react-animated-cursor {
-  z-index: 999999 !important;
 }
