@@ -92,6 +92,9 @@ const MiddleSchool = () => {
             <section className="ms-section">
                 <div className="ms-container fade-up">
                     <h2>Direct Preparation for All Three Pathways</h2>
+                    <p className="ms-subtitle">
+                        The Grades 6–8 curriculum is meticulously structured to prepare students equally for SISA's diverse higher secondary options.
+                    </p>
 
                     {/* Animated Pathway Diagram */}
                     <div className="ms-pathway">
@@ -101,10 +104,6 @@ const MiddleSchool = () => {
                         <div className="ms-arrow">→</div>
                         <div className="ms-step">University</div>
                     </div>
-
-                    <p className="ms-subtitle">
-                        The Grades 6–8 curriculum is meticulously structured to prepare students equally for SISA's diverse higher secondary options.
-                    </p>
 
                     <div className="ms-table-wrapper">
                         <table className="ms-table">

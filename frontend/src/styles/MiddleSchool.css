@@ -98,7 +98,8 @@
 
 .ms-section .ms-subtitle {
     color: var(--ms-muted);
-    margin-bottom: 40px;
+    margin: 0 0 40px 0;
+    max-width: 820px;
 }
 
 /* CARDS */
@@ -173,16 +174,17 @@
     font-size: 0.8rem;
     color: var(--ms-muted);
     font-weight: 500;
-    
+
 }
 
 .ms-step.active {
     background: linear-gradient(135deg, #302759, #483F7E);
     color: white;
 }
+
 .ms-step.active span {
     color: #efefef;
-}   
+}
 
 .ms-arrow {
     font-size: 1.6rem;
