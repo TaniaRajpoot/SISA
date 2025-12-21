@@ -8,8 +8,7 @@
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  opacity: 0;
-  transform: scale(0.95);
+  opacity: 1;
 }
 
 .testimonials-slider.animate {
@@ -19,6 +18,10 @@
 .testimonials-track {
   display: flex;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonials-track.no-transition {
+  transition: none;
 }
 
 .testimonial-slide {
@@ -170,5 +173,17 @@
 
   .slider-btn.next {
     right: 10px;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

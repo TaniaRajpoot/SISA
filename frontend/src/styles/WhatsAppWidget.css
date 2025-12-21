@@ -96,12 +96,14 @@
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
+    color: #fff;
 }
 
 .chat-info p {
     margin: 2px 0 0;
     font-size: 0.85rem;
     opacity: 0.9;
+    color: #fff;
 }
 
 .close-btn {

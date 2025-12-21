@@ -2,10 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Testimonials.css';
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
   const testimonials = [
     {
       id: 1,
@@ -41,6 +37,19 @@ const Testimonials = () => {
     }
   ];
 
+  // For infinite loop, we clone the first and last slides
+  const slides = [
+    testimonials[testimonials.length - 1], // Last slide clone at beginning
+    ...testimonials,
+    testimonials[0] // First slide clone at end
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at the first real slide (index 1)
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const transitionTimer = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -58,24 +67,53 @@ const Testimonials = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Handle auto-play
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      nextSlide();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, []);
+
+  const handleTransitionEnd = () => {
+    if (currentIndex === 0) {
+      // Jumped to the last slide clone, snap to the real last slide
+      setIsTransitioning(false);
+      setCurrentIndex(testimonials.length);
+    } else if (currentIndex === slides.length - 1) {
+      // Jumped to the first slide clone, snap to the real first slide
+      setIsTransitioning(false);
+      setCurrentIndex(1);
+    }
+  };
+
+  // Turn transition back on after snapping
+  useEffect(() => {
+    if (!isTransitioning) {
+      // Small timeout to allow the browser to process the snap without transition
+      transitionTimer.current = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+    }
+    return () => clearTimeout(transitionTimer.current);
+  }, [isTransitioning]);
 
   const goToSlide = (index) => {
-    setCurrentIndex(index);
+    setCurrentIndex(index + 1); // Offset by 1 because of clones
+    setIsTransitioning(true);
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    if (!isTransitioning && currentIndex >= slides.length - 1) return;
+    setCurrentIndex((prev) => prev + 1);
+    setIsTransitioning(true);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    if (!isTransitioning && currentIndex <= 0) return;
+    setCurrentIndex((prev) => prev - 1);
+    setIsTransitioning(true);
   };
 
   return (
@@ -88,10 +126,14 @@ const Testimonials = () => {
 
         <div className={`testimonials-slider ${isVisible ? 'animate' : ''}`}>
           <button className="slider-btn prev" onClick={prevSlide}>‹</button>
-          
-          <div className="testimonials-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-slide">
+
+          <div
+            className={`testimonials-track ${!isTransitioning ? 'no-transition' : ''}`}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {slides.map((testimonial, index) => (
+              <div key={`${testimonial.id}-${index}`} className="testimonial-slide">
                 <div className="testimonial-card">
                   <div className="testimonial-avatar">{testimonial.avatar}</div>
                   <div className="testimonial-rating">
@@ -104,7 +146,7 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
-          
+
           <button className="slider-btn next" onClick={nextSlide}>›</button>
         </div>
 
@@ -112,7 +154,7 @@ const Testimonials = () => {
           {testimonials.map((_, index) => (
             <button
               key={index}
-              className={`dot ${currentIndex === index ? 'active' : ''}`}
+              className={`dot ${(currentIndex === index + 1) || (currentIndex === 0 && index === testimonials.length - 1) || (currentIndex === slides.length - 1 && index === 0) ? 'active' : ''}`}
               onClick={() => goToSlide(index)}
             />
           ))}
