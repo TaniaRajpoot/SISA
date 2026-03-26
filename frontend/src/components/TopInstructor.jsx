@@ -1,5 +1,5 @@
-// src/components/TopInstructors.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/TopInstructors.css';
 
 const TopInstructors = () => {
@@ -72,10 +72,10 @@ const TopInstructors = () => {
             </h2>
           </div>
           <div className="header-right">
-            <a href="#all-instructors" className="all-instructors-btn">
+            <Link to="/instructors" className="all-instructors-btn">
               ALL INSTRUCTORS
               <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
         </div>
 

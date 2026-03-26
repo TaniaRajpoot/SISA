@@ -37,11 +37,12 @@ const StatCard = ({ stat, isVisible }) => {
   return (
     <div
       className={`stat-card ${isVisible ? 'animate' : ''}`}
-      onMouseEnter={startAnimation}
     >
-      <h3 className="stat-number">
-        {count.toLocaleString()}{stat.suffix}
-      </h3>
+      {!stat.noCount && (
+        <h3 className="stat-number">
+          {count.toLocaleString()}{stat.suffix}
+        </h3>
+      )}
       <p className="stat-label">{stat.label}</p>
     </div>
   );
@@ -52,10 +53,10 @@ const Stats = () => {
   const sectionRef = useRef(null);
 
   const stats = [
-    { key: 'courses', end: 10000, suffix: '+', label: 'Online Courses'},
-    { key: 'students', end: 50000, suffix: '+', label: 'Active Students' },
-    { key: 'instructors', end: 500, suffix: '+', label: 'Expert Instructors' },
-    { key: 'success', end: 95, suffix: '%', label: 'Success Rate' }
+    { key: 'courses', end: 400, suffix: '+', label: 'Courses'},
+    { key: 'students', end: 300, suffix: '+', label: 'Active students' },
+    { key: 'instructors', end: 50, suffix: '+', label: 'Expert Instructors' },
+    { key: 'success', end: 95, suffix: '%', label: 'Success On campus & online' }
   ];
 
   useEffect(() => {

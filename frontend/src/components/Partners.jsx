@@ -1,51 +1,58 @@
-// src/components/Partners.jsx
 import React from 'react';
 import '../styles/Partners.css';
+import pearsonLogo from '../assets/pearson-logo.png';
+import oxfordaqaLogo from '../assets/oxfordaqa-logo.png';
+import cambridgeLogo from '../assets/cambridge-logo.png';
 
 const Partners = () => {
   const partners = [
     {
       id: 1,
-      name: 'Cambridge Assessment International Education',
-      logo: 'https://headstarteducationalacademy.edu.in/wp-content/uploads/2020/10/cambridge-assessment-international-education-logo.jpg',
+      name: 'Cambridge International School',
+      logo: cambridgeLogo,
+      centreNumber: 'PK817'
     },
     {
       id: 2,
-      name: 'Partner 2',
-      logo: 'https://tse3.mm.bing.net/th/id/OIP.kegS-aTBe-aEWVEU4xR-ogHaCt?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3',
+      name: 'Pearson International School',
+      logo: pearsonLogo,
+      centreNumber: '90538'
     },
     {
       id: 3,
-      name: 'Partner 3',
-      logo: 'https://th.bing.com/th/id/OIP.6-XGRIi65FcBh-0w8w2VYwHaEC?w=307&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1',
+      name: 'OxfordAQA International Qualifications',
+      logo: oxfordaqaLogo,
+      centreNumber: '96926'
     }
   ];
 
   return (
-    <section className="partners">
-      <div className="container">
-        <div className="partners-grid">
-          {partners.map((partner, index) => (
-            <div 
-              key={partner.id} 
-              className="partner-item"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+    <div className="partners-section-wrapper">
+      <div className="partners-custom-grid">
+        {partners.map((partner, index) => (
+          <div 
+            key={partner.id} 
+            className="partner-card-item"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="partner-logo-container">
               <img 
                 src={partner.logo} 
                 alt={`${partner.name} logo`}
-                className="partner-logo"
+                className="partner-logo-img"
                 loading="lazy"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.innerHTML = `<div class="partner-logo-text">${partner.name}</div>`;
-                }}
               />
             </div>
-          ))}
-        </div>
+            {partner.centreNumber && (
+              <div className="centre-info-box">
+                <span className="centre-label-text">Centre Number:</span>
+                <span className="centre-value-text">{partner.centreNumber}</span>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

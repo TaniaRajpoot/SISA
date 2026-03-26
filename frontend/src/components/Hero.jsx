@@ -92,28 +92,42 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
-import banner1 from "../assets/download (1).jpg";
-import banner2 from "../assets/download.jpg";
-import banner3 from "../assets/Cambridge2.jpg";
+import hero1 from "../assets/hero-1.jpg";
+import hero2 from "../assets/hero-2.jpg";
+import hero3 from "../assets/hero-3.jpg";
+import hero4 from "../assets/hero-4.jpg";
+import hero5 from "../assets/hero-5.jpg";
 
 const slides = [
   {
     id: 1,
     title: <>Learn <span className="highlight-skill">Skills</span> From <span>Our Top Instructors</span></>,
     description: "Discover thousands of courses from expert instructors. Learn at your own pace with lifetime access on mobile and desktop.",
-    image: banner1
+    image: hero1
   },
   {
     id: 2,
     title: <>Master <span className="highlight-skill">New Techniques</span> With <span>Expert Guidance</span></>,
     description: "Get hands-on experience and real-world skills to boost your career. Flexible learning at your fingertips.",
-    image: banner2
+    image: hero2
   },
   {
     id: 3,
     title: <>Join <span className="highlight-skill">Our Community</span> And <span>Grow Together</span></>,
     description: "Connect with like-minded learners and top instructors. Learn, practice, and achieve your goals.",
-    image: banner3
+    image: hero3
+  },
+  {
+    id: 4,
+    title: <>Explore <span className="highlight-skill">Our Campus</span> And <span>Excellence</span></>,
+    description: "SISA provides a world-class environment for students to excel in both sciences and arts.",
+    image: hero4
+  },
+  {
+    id: 5,
+    title: <>Hands-on <span className="highlight-skill">Learning</span> In <span>Our Labs</span></>,
+    description: "Equipped with modern facilities to provide practical knowledge and experimental learning.",
+    image: hero5
   }
 ];
 

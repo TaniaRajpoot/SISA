@@ -5,7 +5,6 @@ import GetStarted from './pages/GetStarted';
 import GenericPage from './pages/GenericPage';
 import ContactForm from './pages/ContactForm'; // Import ContactForm from pages
 import './App.css';
-
 import WhatsAppWidget from './components/WhatsAppWidget';
 import WhyChooseSISA from './pages/WhyChooseSISA';
 import MissionVision from './pages/MissionVision';
@@ -21,6 +20,7 @@ import RulesRegulations from './pages/RulesRegulations';
 import AttendancePolicy from './pages/AttendancePolicy';
 import ExaminationPolicy from './pages/ExaminationPolicy';
 import ChildProtectionPolicy from './pages/ChildProtectionPolicy';
+import Instructors from './pages/Instructors';
 
 
 
@@ -35,6 +35,15 @@ function App() {
         <Route path="/why-choose-sisa" element={<WhyChooseSISA />} />
         <Route path="/mission-vision" element={<MissionVision />} />
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
+
+        {/* About */}
+        <Route path="/about/us" element={<GenericPage title="About Us" />} />
+        <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
+        <Route path="/about/mission-vision" element={<GenericPage title="Mission & Vision" />} />
+        <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
+        <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
+        <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
+
 
         {/* Academics */}
         <Route path="/academics/curriculum" element={<AcademicProgrammes />} />
@@ -73,15 +82,9 @@ function App() {
         {/* Contact Pages - Use ContactForm page directly */}
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/contact-form" element={<ContactForm />} />
+        <Route path="/instructors" element={<Instructors />} />
 
-        {/* About */}
-        <Route path="/about/us" element={<GenericPage title="About Us" />} />
-        <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
-        <Route path="/about/mission-vision" element={<GenericPage title="Mission & Vision" />} />
-        <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
-        <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
-        <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
-
+        
 
         {/* Fallback for other links */}
         <Route path="*" element={<HomePage />} />

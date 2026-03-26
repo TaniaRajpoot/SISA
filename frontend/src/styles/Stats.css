@@ -26,10 +26,10 @@
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.stat-card:hover {
+/* .stat-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(47, 38, 87, 0.12);
-}
+} */
 
 .stat-icon {
   width: 70px;
@@ -45,11 +45,11 @@
   transition: all 0.3s ease;
 }
 
-.stat-card:hover .stat-icon {
+/* .stat-card:hover .stat-icon {
   background: #2f2657;
   color: #fff;
   transform: rotateY(180deg);
-}
+} */
 
 .stat-number {
   font-size: 32px;

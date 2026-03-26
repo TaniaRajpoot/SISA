@@ -32,19 +32,36 @@ const Header = () => {
       <nav className="nav-wrapper">
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
           <li className="nav-item dropdown">
+            <a
+              href="/"
+              className="nav-link"
+            >
+              HOME
+            </a>
+
+          </li>
+
+          <li className="nav-item dropdown">
             <Link
-              to="/"
+              to="/about"
               className="nav-link"
               onClick={(e) => {
                 if (window.innerWidth <= 768) {
                   e.preventDefault();
-                  toggleDropdown('home');
+                  toggleDropdown('about');
                 }
               }}
             >
-              HOME <span className="dropdown-arrow"></span>
+              ABOUT <span className="dropdown-arrow">▼</span>
             </Link>
-
+            <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
+              <Link to="/about/us">About Us</Link>
+              <Link to="/about/director-message">Director's Message</Link>
+              <Link to="/mission-vision">Mission & Vision</Link>
+              <Link to="/about/facilities">Facilities</Link>
+              <Link to="/about/accreditation">Accreditation</Link>
+              <Link to="/about/virtual-tour">Campus Virtual Tour</Link>
+            </div>
           </li>
 
           <li className="nav-item dropdown">
@@ -150,28 +167,7 @@ const Header = () => {
             </div>
           </li>
 
-          <li className="nav-item dropdown">
-            <Link
-              to="/about"
-              className="nav-link"
-              onClick={(e) => {
-                if (window.innerWidth <= 768) {
-                  e.preventDefault();
-                  toggleDropdown('about');
-                }
-              }}
-            >
-              ABOUT <span className="dropdown-arrow">▼</span>
-            </Link>
-            <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
-              <Link to="/about/us">About Us</Link>
-              <Link to="/about/director-message">Director's Message</Link>
-              <Link to="/mission-vision">Mission & Vision</Link>
-              <Link to="/about/facilities">Facilities</Link>
-              <Link to="/about/accreditation">Accreditation</Link>
-              <Link to="/about/virtual-tour">Campus Virtual Tour</Link>
-            </div>
-          </li>
+
 
           {/* Mobile Get Started Button */}
           <li className="nav-item mobile-get-started-item">
