@@ -180,9 +180,26 @@
   color: #fff;
 }
 
+.instructors-new-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.top-card.instructor-card-new {
+  /* Inherit from InstructorsPage.css or redefine if needed */
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .instructors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .instructors-new-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -197,6 +214,15 @@
   .all-instructors-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .instructors-new-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-image-box {
+    width: 200px;
+    height: 270px;
   }
 
   .instructors-grid {

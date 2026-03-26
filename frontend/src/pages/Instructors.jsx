@@ -10,77 +10,174 @@ const Instructors = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const allInstructors = [
+  const adminTeam = [
     {
-      id: 1,
-      name: "Robert Smith",
-      role: "Graphic Designer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      bgColor: "#E0F2FE",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
-    },
-    {
-      id: 2,
-      name: "Olivia Mia",
-      role: "Web Designer",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-      bgColor: "#D1FAE5",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
-    },
-    {
-      id: 3,
-      name: "William Hope",
-      role: "Digital Marketer",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-      bgColor: "#E0E7FF",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
-    },
-    {
-      id: 4,
-      name: "Sophia Ava",
-      role: "Support Staff",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-      bgColor: "#FCE7F3",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
-    },
-    {
-      id: 5,
-      name: "James Wilson",
-      role: "Math Head",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-      bgColor: "#FEF3C7",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
-    },
-    {
-      id: 6,
-      name: "Emma Davis",
-      role: "Science Expert",
+      id: "admin-1",
+      name: "Mrs. Saeeda Salim",
+      role: "Director & Principal",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
-      bgColor: "#F3E8FF",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
     },
     {
-      id: 7,
-      name: "Michael Brown",
-      role: "IT Specialist",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
-      bgColor: "#E0F2FE",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
+      id: "admin-2",
+      name: "Mr. Wasif W. Mir",
+      role: "Vice Principal",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     },
     {
-      id: 8,
-      name: "Sarah Miller",
-      role: "English Literature",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop",
-      bgColor: "#D1FAE5",
-      socials: { facebook: "#", twitter: "#", instagram: "#", linkedin: "#" }
+      id: "admin-3",
+      name: "Mrs. Saneea Sohaib Khan",
+      role: "Administrator",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    },
+    {
+      id: "admin-4",
+      name: "Mr. Hassan Askari",
+      role: "Coordinator – Math",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "admin-5",
+      name: "Mrs. Khadija Idrees",
+      role: "Coordinator – Urdu",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    },
+    {
+      id: "admin-6",
+      name: "Mr. Furrukh Abbas",
+      role: "Coordinator – History, Geography & Social Studies",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
     }
   ];
+
+  const faculty = [
+    {
+      id: "faculty-1",
+      name: "Mrs. Saeeda Salim",
+      role: "A’Level Chemistry, IGCSE O’ & A’ Level Design & Tech, IGCSE O’ & A’ Level Travel & Tourism, IGCSE O’ & A’ Level Envirommental Management",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-2",
+      name: "Mr. Wasif W. Mir",
+      role: "IGCSE O’Level Chemistry, IGCSE O’ & A’ Global Perspectives",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-3",
+      name: "Mr. Hassan Askari",
+      role: "IGCSE O’ & A’ Mathematics & IGCSE O’Level Additional Mathematics",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-4",
+      name: "Mrs. Saneea Sohaib Khan",
+      role: "IGCSE O’ Level Mathematics & Key Stage",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-5",
+      name: "Mrs. Khadija Idrees",
+      role: "IGCSE O’Level Urdu",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-6",
+      name: "Mr. Mazhar Abbas Chaudhry",
+      role: "IGCSE O’ & A’ Level Urdu",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-7",
+      name: "Mr. Furrukh Abbas",
+      role: "IGCSE O’ Level Islamiyat & Pakistan Studies",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-8",
+      name: "Mr. Waris Ali",
+      role: "IGCSE O’ Level Islamiyat & Pakistan Studies",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-9",
+      name: "Mr. Sajjad Afzal",
+      role: "A’ Level Accounting & BTEC",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-10",
+      name: "Mr. Azam Saleem",
+      role: "IGCSE O’Level Accounting & BTEC",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-11",
+      name: "Mr. M. Waqar Khan",
+      role: "A’ Level Business & BTEC",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-12",
+      name: "Mr. Raja Shahzore Khan",
+      role: "IGCSE O’ Level Business Studies & Commerce",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-13",
+      name: "Mr. M. Dawood Murtaza",
+      role: "A’ Level Physics",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-14",
+      name: "Mr. Muhammad Jameel",
+      role: "IGCSE O’ Level Physics",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-15",
+      name: "Mrs. Hafsa Akhtar",
+      role: "IGCSE O’ Level English Language",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-16",
+      name: "Ms. Mishal Usman",
+      role: "IGCSE O’ Level Biology & Chemistry",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-17",
+      name: "Mr. Abdul Quddus",
+      role: "A’ Level Law",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    },
+    {
+      id: "faculty-18",
+      name: "Mr. Muhammad Ali",
+      role: "A’ Level Sociology",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    }
+  ];
+
+  const InstructorCard = ({ instructor }) => (
+    <div key={instructor.id} className="instructor-card-new">
+      <div className="card-image-box">
+        <div className="purple-bg-rect"></div>
+        <div className="slanted-border"></div>
+        <img src={instructor.image} alt={instructor.name} className="instructor-img" />
+      </div>
+      <div className="card-text-content">
+        <h3 className="instructor-name-new">{instructor.name}</h3>
+        <p className="instructor-role-new">{instructor.role}</p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="instructors-page">
       <Header />
-      
+
       <div className="page-banner">
         <div className="container">
           <span className="banner-badge">Our Educators</span>
@@ -91,33 +188,22 @@ const Instructors = () => {
 
       <section className="instructors-main">
         <div className="container">
-          <div className="instructors-full-grid">
-            {allInstructors.map((instructor) => (
-              <div key={instructor.id} className="instructor-card-large">
-                <div className="card-top" style={{ backgroundColor: instructor.bgColor }}>
-                  <img src={instructor.image} alt={instructor.name} className="card-img" />
-                  
-                  <div 
-                    className="card-share"
-                    onMouseEnter={() => setHoveredShareBtn(instructor.id)}
-                    onMouseLeave={() => setHoveredShareBtn(null)}
-                  >
-                    <div className={`card-socials ${hoveredShareBtn === instructor.id ? 'active' : ''}`}>
-                      <a href={instructor.socials.facebook} className="s-link"><i className="fab fa-facebook-f"></i></a>
-                      <a href={instructor.socials.twitter} className="s-link"><i className="fab fa-twitter"></i></a>
-                      <a href={instructor.socials.linkedin} className="s-link"><i className="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button className="s-btn">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                    </button>
-                  </div>
-                </div>
-                <div className="card-bottom">
-                  <span className="card-role">{instructor.role}</span>
-                  <h3 className="card-name">{instructor.name}</h3>
-                </div>
-              </div>
-            ))}
+          <div className="section-type">
+            <h2 className="type-title">Admin Team</h2>
+            <div className="instructors-custom-grid">
+              {adminTeam.map((instructor) => (
+                <InstructorCard key={instructor.id} instructor={instructor} />
+              ))}
+            </div>
+          </div>
+
+          <div className="section-type faculty-section">
+            <h2 className="type-title">O’ & A’Level Faculty</h2>
+            <div className="instructors-custom-grid">
+              {faculty.map((instructor) => (
+                <InstructorCard key={instructor.id} instructor={instructor} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
