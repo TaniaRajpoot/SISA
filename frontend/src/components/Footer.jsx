@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/Footer.css';
-import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaWhatsapp, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import logo from "../assets/logo.png";
-import { X } from "lucide-react";
+import twitterIcon from "../assets/twitter (2).png";
 
 const Footer = () => {
     return (
@@ -14,10 +14,9 @@ const Footer = () => {
                     <div className="footer-col brand-col">
                         <div className="footer-logo">
                             <div className="logo-icon">
-                                {/* Placeholder logo icon matching theme */}
                                 <img src={logo} alt="SISA Education System" style={{ height: '50px', width: 'auto' }} />
                             </div>
-                            <h3>SISA EDUCATION </h3>
+                            <h3>SISA EDUCATION</h3>
                         </div>
                         <p className="footer-desc">
                             Connecting Our Local and Global Campuses. Whether you are interested in a campus tour in Lahore or joining our online community from abroad, we look forward to hearing from you.
@@ -45,26 +44,28 @@ const Footer = () => {
                         </div>
                         <div className="footer-social-links">
                             <a href="https://www.facebook.com/SISAeducationPk" className="footer-social-link"><FaFacebookF /></a>
-                            <a href="" className="footer-social-link"><X/></a>
+                            <a href="" className="footer-social-link">
+                                <img src={twitterIcon} alt="Twitter" className="footer-twitter-icon" />
+                            </a>
                             <a href="https://api.whatsapp.com/send/?phone=923113777472&text=Hello+SISA+Admissions+Team%2C+I+have+a+query+regarding...&type=phone_number&app_absent=0" className="footer-social-link"><FaWhatsapp /></a>
                             <a href="https://www.linkedin.com/school/sisaschool/" className="footer-social-link"><FaLinkedinIn /></a>
                             <a href="https://www.instagram.com/sisaeducationpk/" className="footer-social-link"><FaInstagram /></a>
                         </div>
                     </div>
 
-                    {/* Resources Column */}
+                    {/* Quick Links Column */}
                     <div className="footer-col">
                         <h4>Quick Links</h4>
                         <ul className="footer-links">
                             <li><a href="#">Admissions</a></li>
                             <li><a href="#">Academic Calendar</a></li>
                             <li><a href="#">Student Life</a></li>
-                            <li><a href="#">News & Events</a></li>
+                            <li><a href="#">News &amp; Events</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
 
-                    {/* Courses Column */}
+                    {/* Programs Column */}
                     <div className="footer-col">
                         <h4>Programs</h4>
                         <ul className="footer-links">
@@ -72,12 +73,12 @@ const Footer = () => {
                             <li><a href="#">Junior School</a></li>
                             <li><a href="#">Middle School</a></li>
                             <li><a href="#">Senior School</a></li>
-                            <li><a href="#">O' & A' Levels</a></li>
+                            <li><a href="#">O' &amp; A' Levels</a></li>
                             <li><a href="#">Online School</a></li>
                         </ul>
                     </div>
 
-                    {/* Working Hours Column */}
+                    {/* Office Hours Column */}
                     <div className="footer-col">
                         <h4>Office Hours</h4>
                         <div className="schedule">
@@ -105,12 +106,12 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="container bottom-content">
                     <p className="copyright">
-                        Copyright © 2025 SISA. All Rights Reserved.
+                        Copyright &copy; 2025 SISA. All Rights Reserved.
                     </p>
                     <div className="bottom-links">
                         <a href="#">Privacy Policy</a>
                         <span className="separator">·</span>
-                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Terms &amp; Conditions</a>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@ const ContactForm = () => {
         </div>
 
         <div className="contact-card">
-          <h2> SISA Main Campus (Physical & Local Inquiries)</h2>
+          <h2> SISA Main Campus (International & Local Inquiries)</h2>
 
           <div className="info-grid">
             <div className="info-item">

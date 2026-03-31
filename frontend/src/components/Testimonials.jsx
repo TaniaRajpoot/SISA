@@ -1,163 +1,197 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Testimonials.css';
 
+const testimonials = [
+  {
+    id: 1,
+    name: 'Alex Johnson',
+    location: 'United States',
+    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    text: 'Eduvalt transformed my career completely! The courses are comprehensive and the instructors are absolutely top-notch. I landed my dream job within 3 months.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'Maria Garcia',
+    location: 'Australia',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    text: 'Best investment I ever made in my professional development. The quality of content is exceptional and very practical. The community support is amazing too!',
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: 'James Smith',
+    location: 'Canada',
+    avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+    text: 'I learned more in 3 months than I did in a year of self-study. The structured approach and hands-on projects made all the difference. Highly recommended!',
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Sarah Williams',
+    location: 'United Kingdom',
+    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+    text: 'The flexibility to learn at my own pace while having access to expert guidance was perfect for my busy schedule. The certificates helped me advance my career.',
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: 'David Chen',
+    location: 'Singapore',
+    avatar: 'https://randomuser.me/api/portraits/men/22.jpg',
+    text: 'Outstanding platform! The mentors are incredibly knowledgeable and always willing to help. I went from a complete beginner to a full-stack developer in 6 months.',
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'Priya Patel',
+    location: 'India',
+    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
+    text: 'Eduvalt gave me the confidence and skills to switch careers. The real-world projects prepared me perfectly for industry demands. Truly life-changing!',
+    rating: 5,
+  },
+];
+
+const VISIBLE = 2; // cards shown at once
+
 const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Alex Johnson',
-      role: 'Web Developer',
-      avatar: '👨‍💼',
-      text: 'Eduvalt transformed my career completely! The courses are comprehensive, well-structured, and the instructors are absolutely top-notch. I landed my dream job within 3 months of completing the bootcamp.',
-      rating: 5
-    },
-    {
-      id: 2,
-      name: 'Maria Garcia',
-      role: 'UX Designer',
-      avatar: '👩‍💼',
-      text: 'Best investment I ever made in my professional development. The quality of content is exceptional and very practical. The community support is amazing too!',
-      rating: 5
-    },
-    {
-      id: 3,
-      name: 'James Smith',
-      role: 'Data Scientist',
-      avatar: '👨‍💻',
-      text: 'I learned more in 3 months than I did in a year of self-study. The structured approach and hands-on projects made all the difference. Highly recommended!',
-      rating: 5
-    },
-    {
-      id: 4,
-      name: 'Sarah Williams',
-      role: 'Product Manager',
-      avatar: '👩‍💻',
-      text: 'The flexibility to learn at my own pace while having access to expert guidance was perfect for my busy schedule. The certificates helped me advance in my career.',
-      rating: 5
-    }
-  ];
-
-  // For infinite loop, we clone the first and last slides
-  const slides = [
-    testimonials[testimonials.length - 1], // Last slide clone at beginning
+  // Infinite clone list: clone last VISIBLE at front, first VISIBLE at end
+  const cloned = [
+    ...testimonials.slice(-VISIBLE),
     ...testimonials,
-    testimonials[0] // First slide clone at end
+    ...testimonials.slice(0, VISIBLE),
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(1); // Start at the first real slide (index 1)
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
+  const [index, setIndex] = useState(VISIBLE); // start at first real item
+  const [transitioning, setTransitioning] = useState(true);
+  const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
-  const transitionTimer = useRef(null);
+  const isAnimating = useRef(false);
 
+  // Intersection observer for entrance animation
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // Handle auto-play
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+  const advance = () => {
+    if (isAnimating.current) return;
+    setTransitioning(true);
+    setIndex((prev) => prev + 1);
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  const retreat = () => {
+    if (isAnimating.current) return;
+    setTransitioning(true);
+    setIndex((prev) => prev - 1);
+  };
 
+  const handleNext = () => { advance(); };
+  const handlePrev = () => { retreat(); };
+
+  // Snap back silently when hitting clone boundaries
   const handleTransitionEnd = () => {
-    if (currentIndex === 0) {
-      // Jumped to the last slide clone, snap to the real last slide
-      setIsTransitioning(false);
-      setCurrentIndex(testimonials.length);
-    } else if (currentIndex === slides.length - 1) {
-      // Jumped to the first slide clone, snap to the real first slide
-      setIsTransitioning(false);
-      setCurrentIndex(1);
+    isAnimating.current = false;
+    const realCount = testimonials.length;
+    if (index >= realCount + VISIBLE) {
+      setTransitioning(false);
+      setIndex(VISIBLE);
+    } else if (index < VISIBLE) {
+      setTransitioning(false);
+      setIndex(realCount + VISIBLE - 1);
     }
   };
 
-  // Turn transition back on after snapping
   useEffect(() => {
-    if (!isTransitioning) {
-      // Small timeout to allow the browser to process the snap without transition
-      transitionTimer.current = setTimeout(() => {
-        setIsTransitioning(true);
-      }, 50);
+    if (!transitioning) {
+      const t = setTimeout(() => setTransitioning(true), 30);
+      return () => clearTimeout(t);
     }
-    return () => clearTimeout(transitionTimer.current);
-  }, [isTransitioning]);
+  }, [transitioning]);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index + 1); // Offset by 1 because of clones
-    setIsTransitioning(true);
-  };
-
-  const nextSlide = () => {
-    if (!isTransitioning && currentIndex >= slides.length - 1) return;
-    setCurrentIndex((prev) => prev + 1);
-    setIsTransitioning(true);
-  };
-
-  const prevSlide = () => {
-    if (!isTransitioning && currentIndex <= 0) return;
-    setCurrentIndex((prev) => prev - 1);
-    setIsTransitioning(true);
-  };
+  const trackOffset = -(index * (100 / VISIBLE));
 
   return (
-    <section className="testimonials" ref={sectionRef} data-animate>
-      <div className="container">
-        <div className="section-header">
-          <h2>What Our Students Say</h2>
-          <p>Real feedback from our amazing community of learners</p>
+    <section className="testimonials" ref={sectionRef}>
+      <div className="testi-container">
+
+        {/* ── Header row ── */}
+        <div className="testi-header">
+          <div className="testi-header-left">
+            <span className="testi-label">TESTIMONIALS</span>
+            <h2 className="testi-title">
+              People's Say About Our<br />
+              <span className="testi-brand">SISA</span>
+              <span className="testi-underline" />
+            </h2>
+          </div>
+          <div className="testi-nav">
+            <button className="testi-nav-btn" onClick={handlePrev} aria-label="Previous">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button className="testi-nav-btn" onClick={handleNext} aria-label="Next">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div className={`testimonials-slider ${isVisible ? 'animate' : ''}`}>
-          <button className="slider-btn prev" onClick={prevSlide}>‹</button>
+        {/* ── Body: image panel + cards ── */}
+        <div className={`testi-body ${visible ? 'testi-visible' : ''}`}>
 
-          <div
-            className={`testimonials-track ${!isTransitioning ? 'no-transition' : ''}`}
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {slides.map((testimonial, index) => (
-              <div key={`${testimonial.id}-${index}`} className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-avatar">{testimonial.avatar}</div>
-                  <div className="testimonial-rating">
-                    {'⭐'.repeat(testimonial.rating)}
-                  </div>
-                  <p className="testimonial-text">"{testimonial.text}"</p>
-                  <h4>{testimonial.name}</h4>
-                  <p className="testimonial-role">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
+          {/* Left rating panel */}
+          <div className="testi-rating-panel">
+            <div className="testi-rating-overlay">
+              <span className="testi-rating-score">4.8</span>
+              <div className="testi-rating-stars">★★★★★</div>
+              <p className="testi-rating-label">5 Star Rating</p>
+            </div>
           </div>
 
-          <button className="slider-btn next" onClick={nextSlide}>›</button>
-        </div>
+          {/* Right: sliding cards */}
+          <div className="testi-track-wrapper">
+            <div
+              className={`testi-track ${!transitioning ? 'testi-no-transition' : ''}`}
+              style={{ transform: `translateX(${trackOffset}%)` }}
+              onTransitionEnd={handleTransitionEnd}
+            >
+              {cloned.map((t, i) => (
+                <div key={`${t.id}-${i}`} className="testi-card-slide">
+                  <div className="testi-card">
+                    <div className="testi-card-top">
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="testi-avatar"
+                        onError={(e) => { e.target.style.display = 'none'; }}
+                      />
+                      <div className="testi-card-info">
+                        <h4 className="testi-name">{t.name}</h4>
+                        <span className="testi-location">{t.location}</span>
+                      </div>
+                    </div>
+                    <p className="testi-text">{t.text}</p>
+                    <div className="testi-card-footer">
+                      <div className="testi-stars">
+                        {Array.from({ length: t.rating }).map((_, si) => (
+                          <span key={si} className="testi-star">★</span>
+                        ))}
+                      </div>
+                    </div>
+                    <span className="testi-quote-mark">"</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div className="testimonials-dots">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              className={`dot ${(currentIndex === index + 1) || (currentIndex === 0 && index === testimonials.length - 1) || (currentIndex === slides.length - 1 && index === 0) ? 'active' : ''}`}
-              onClick={() => goToSlide(index)}
-            />
-          ))}
         </div>
       </div>
     </section>

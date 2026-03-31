@@ -2,7 +2,6 @@
 
 .footer {
     background-color: #2f2657;
-    /* User request ambiguity: Image is dark, text says 'make background #2596be'. keeping dark to match 'like this' image constraint. #2596be is used for hover. */
     color: #fff;
     padding-top: 80px;
     position: relative;
@@ -80,7 +79,6 @@
 }
 
 /* Social Icons */
-/* Social Icons */
 .footer-social-links {
     margin-top: 25px;
     display: flex;
@@ -107,6 +105,14 @@
     width: 18px;
     height: 18px;
     display: block;
+}
+
+.footer-twitter-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
 }
 
 .footer-social-link:hover {
@@ -139,19 +145,11 @@
     transition: all 0.3s ease;
     font-size: 15px;
     display: inline-block;
-    /* Required for transform/padding */
 }
 
 .footer-links a:hover {
     color: #ffa500;
     padding-left: 5px;
-    transform: translateX(5px);
-}
-
-.footer-links a:hover::before {
-    content: "- ";
-    display: inline-block;
-    color: #ffa500;
 }
 
 /* Working Hours */
@@ -169,28 +167,6 @@
     border-bottom: none;
 }
 
-
-
-.footer-links a {
-    color: #a0a0a0;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 15px;
-    display: inline-block;
-}
-
-.footer-links a:hover {
-    color: #ffa500;
-    padding-left: 10px;
-    font-weight: 500;
-}
-
-.footer-links a:hover::before {
-    content: "— ";
-    margin-right: 5px;
-    color: #ffa500;
-}
-
 /* Bottom Footer */
 .footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
@@ -202,7 +178,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 .copyright {
@@ -250,6 +225,4 @@
         gap: 15px;
         text-align: center;
     }
-
-
 }

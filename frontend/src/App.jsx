@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import GetStarted from './pages/GetStarted';
 import GenericPage from './pages/GenericPage';
-import ContactForm from './pages/ContactForm'; // Import ContactForm from pages
+import ContactForm from './pages/ContactForm';
 import './App.css';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import WhyChooseSISA from './pages/WhyChooseSISA';
@@ -21,29 +21,26 @@ import AttendancePolicy from './pages/AttendancePolicy';
 import ExaminationPolicy from './pages/ExaminationPolicy';
 import ChildProtectionPolicy from './pages/ChildProtectionPolicy';
 import Instructors from './pages/Instructors';
-
-
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
     <div className="App">
-
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/why-choose-sisa" element={<WhyChooseSISA />} />
         <Route path="/mission-vision" element={<MissionVision />} />
         <Route path="/admissions" element={<GenericPage title="Admissions" />} />
 
         {/* About */}
-        <Route path="/about/us" element={<GenericPage title="About Us" />} />
+        <Route path="/about/us" element={<AboutPage />} />
         <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
         <Route path="/about/mission-vision" element={<GenericPage title="Mission & Vision" />} />
         <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
         <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
         <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
-
 
         {/* Academics */}
         <Route path="/academics/curriculum" element={<AcademicProgrammes />} />
@@ -79,14 +76,12 @@ function App() {
         {/* Careers */}
         <Route path="/careers" element={<Careers />} />
 
-        {/* Contact Pages - Use ContactForm page directly */}
+        {/* Contact */}
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/contact-form" element={<ContactForm />} />
         <Route path="/instructors" element={<Instructors />} />
 
-        
-
-        {/* Fallback for other links */}
+        {/* Fallback */}
         <Route path="*" element={<HomePage />} />
       </Routes>
 
