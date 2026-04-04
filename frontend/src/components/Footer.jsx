@@ -47,7 +47,7 @@ const Footer = () => {
                             <a href="" className="footer-social-link">
                                 <img src={twitterIcon} alt="Twitter" className="footer-twitter-icon" />
                             </a>
-                            <a href="https://api.whatsapp.com/send/?phone=923113777472&text=Hello+SISA+Admissions+Team%2C+I+have+a+query+regarding...&type=phone_number&app_absent=0" className="footer-social-link"><FaWhatsapp /></a>
+                            <a href="https://api.whatsapp.com/send/?phone=923113777472&text=Hello+SISA+Admissions+Team%2C+I+have+a+query+regarding...&type=phone_number&app_absent=0" className="footer-social-link"><FaWhatsapp className="footer-whatsapp-icon" /></a>
                             <a href="https://www.linkedin.com/school/sisaschool/" className="footer-social-link"><FaLinkedinIn /></a>
                             <a href="https://www.instagram.com/sisaeducationpk/" className="footer-social-link"><FaInstagram /></a>
                         </div>

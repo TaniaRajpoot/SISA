@@ -115,6 +115,11 @@
     filter: brightness(0) invert(1);
 }
 
+.footer-social-link .footer-whatsapp-icon {
+    width: 22px;
+    height: 22px;
+}
+
 .footer-social-link:hover {
     background-color: #ffa500;
     color: #fff !important;

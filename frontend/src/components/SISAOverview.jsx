@@ -3,7 +3,8 @@ import '../styles/SISAOverview.css';
 import Stats from './Stats';
 import Partners from './Partners';
 import worldMapImage from '../assets/world-map.png'; // Adjust path as needed
-
+import coreValuesImage from '../assets/SISA Core Values.jpg.jpeg';
+import InteractiveMap from './InteractiveMap';
 const SISAOverview = () => {
     return (
         <div className="sisa-overview">
@@ -116,52 +117,7 @@ const SISAOverview = () => {
 
                 {/* Core Values */}
                 <section className="values-section">
-                    <div className="values-header">
-                        <h2>CORE VALUES</h2>
-                        <h2 className="values-subtitle">(The S.I.S.A. Way)</h2>
-                    </div>
-
-                    <div className="sisa-way-grid">
-                        <div className="sisa-card">
-                            <div className="sisa-icon-wrapper">
-                                <div className="sisa-letter">S</div>
-                            </div>
-                            <div className="sisa-card-content">
-                                <h5>Scholarship</h5>
-                                <p>Promoting academic rigor through our affiliations with the UK's top 3 exam boards.</p>
-                            </div>
-                        </div>
-
-                        <div className="sisa-card">
-                            <div className="sisa-icon-wrapper">
-                                <div className="sisa-letter">I</div>
-                            </div>
-                            <div className="sisa-card-content">
-                                <h5>Innovation</h5>
-                                <p>Embracing digital classrooms and connecting students from 6+ countries.</p>
-                            </div>
-                        </div>
-
-                        <div className="sisa-card">
-                            <div className="sisa-icon-wrapper">
-                                <div className="sisa-letter">S</div>
-                            </div>
-                            <div className="sisa-card-content">
-                                <h5>Service</h5>
-                                <p>Dedication to the holistic development of the student from Playgroup to Professional level.</p>
-                            </div>
-                        </div>
-
-                        <div className="sisa-card">
-                            <div className="sisa-icon-wrapper">
-                                <div className="sisa-letter">A</div>
-                            </div>
-                            <div className="sisa-card-content">
-                                <h5>Adaptability</h5>
-                                <p>Offering diverse pathways (Academic & BTEC) to suit every learner's strengths.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img src={coreValuesImage} alt="SISA Core Values" className="core-values-img" />
                 </section>
 
 
@@ -183,14 +139,8 @@ const SISAOverview = () => {
                         <div className="pill">Canada</div>
                     </div>
 
-                    {/* World Map Image - Placed after countries */}
-                    <div className="world-map-container">
-                        <img
-                            src={worldMapImage}
-                            alt="SISA International Classroom - Global Reach Map"
-                            className="world-map-image"
-                        />
-                    </div>
+                    {/* Interactive World Map */}
+                    <InteractiveMap />
                 </section>
 
                 {/* Admissions & Transition Support */}
