@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import '../styles/InteractiveMap.css';
-import sisaPinLogo from '../assets/logo.png';
+import sisaPinLogo from '../assets/SISA Logo2_transparent.webp';
 
 const pinData = [
     { name: 'Canada',      flag: '🇨🇦', coords: [-75.7, 45.4] },
@@ -49,8 +49,8 @@ const InteractiveMap = () => {
             .attr('patternUnits', 'userSpaceOnUse')
             .append('circle')
             .attr('cx', 4.5).attr('cy', 4.5).attr('r', 2.6)
-            .attr('fill', '#d80027')
-            .attr('opacity', 0.6);
+            .attr('fill', '#8A5AC2')
+            .attr('opacity', 0.82);
 
         /* ── Fetch world topojson ── */
         d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
@@ -78,65 +78,64 @@ const InteractiveMap = () => {
 
                     const g = svg.append('g')
                         .attr('class', 'pin-group')
-                        .attr('transform', `translate(${x},${y})`);
+                        .attr('transform', `translate(${x},${y})`)
+                        .attr('cursor', 'pointer')
+                        .attr('pointer-events', 'all');
 
                     /* Pin circle & logo */
                     const pinBg = g.append('g').attr('class', 'pin-outer');
 
                     pinBg.append('circle')
-                        .attr('r', 12)
+                        .attr('r', 14)
                         .attr('fill', '#111827')
                         .attr('stroke', '#fff')
                         .attr('stroke-width', 2);
 
-                    const clipId = `logoClip-${i}`;
-                    defs.append('clipPath')
-                        .attr('id', clipId)
-                        .append('circle')
-                        .attr('cx', 0).attr('cy', 0).attr('r', 8);
-
                     pinBg.append('image')
                         .attr('href', sisaPinLogo)
-                        .attr('x', -8).attr('y', -8)
-                        .attr('width', 16).attr('height', 16)
-                        .attr('clip-path', `url(#${clipId})`)
+                        .attr('x', -9)
+                        .attr('y', -9)
+                        .attr('width', 18)
+                        .attr('height', 18)
                         .attr('preserveAspectRatio', 'xMidYMid meet')
-                        .style('filter', 'brightness(0) invert(1)');
+                        .style('filter', 'brightness(0) invert(1)')
+                        .style('pointer-events', 'none');
 
                     /* Country Label below pin */
                     const label = g.append('text')
                         .attr('class', 'pin-label')
-                        .attr('y', 28)
+                        .attr('y', 25)
                         .attr('text-anchor', 'middle')
                         .attr('font-size', '14px')
                         .attr('font-weight', '800')
                         .attr('font-family', 'system-ui, sans-serif')
                         .attr('fill', '#111827')
                         .attr('opacity', 0)
+                        .attr('pointer-events', 'none')
                         .style('text-transform', 'uppercase')
                         .text(country.name);
 
                     /* Hover interactions */
                     function showEffects() {
-                        pinBg.transition().duration(300).ease(d3.easeBackOut)
-                            .attr('transform', 'scale(1.8)');
+                        pinBg.transition().duration(400).ease(d3.easeBackOut)
+                            .attr('transform', 'scale(2.5)');
                         label.transition().duration(300)
                             .attr('opacity', 1)
-                            .attr('y', 36);
+                            .attr('y', 42);
                     }
 
                     function hideEffects() {
-                        pinBg.transition().duration(250)
+                        pinBg.transition().duration(300)
                             .attr('transform', 'scale(1)');
-                        label.transition().duration(250)
+                        label.transition().duration(300)
                             .attr('opacity', 0)
-                            .attr('y', 28);
+                            .attr('y', 25);
                     }
 
                     g.on('mouseenter', showEffects)
                      .on('mouseleave', hideEffects)
                      .on('touchstart', (e) => { e.preventDefault(); showEffects(); })
-                     .on('touchend',   (e) => { e.preventDefault(); setTimeout(hideEffects, 1800); });
+                     .on('touchend',   (e) => { e.preventDefault(); setTimeout(hideEffects, 2000); });
                 });
             })
             .catch((err) => {
@@ -152,15 +151,6 @@ const InteractiveMap = () => {
         <div className="interactive-map-container">
             <div className="map-wrapper">
                 <svg ref={svgRef} />
-            </div>
-
-            <div className="country-pills">
-                {pinData.map((c) => (
-                    <div key={c.name} className="country-pill">
-                        <span className="pill-flag">{c.flag}</span>
-                        <span>{c.name}</span>
-                    </div>
-                ))}
             </div>
         </div>
     );

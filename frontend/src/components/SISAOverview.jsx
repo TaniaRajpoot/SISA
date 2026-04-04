@@ -137,6 +137,7 @@ const SISAOverview = () => {
                         <div className="pill">Bangladesh</div>
                         <div className="pill">UK</div>
                         <div className="pill">Canada</div>
+                        <div className="pill">Japan</div>
                     </div>
 
                     {/* Interactive World Map */}
