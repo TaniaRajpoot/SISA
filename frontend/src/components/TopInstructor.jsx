@@ -6,10 +6,8 @@ import inst01 from '../assets/New folder/SISA - Website Instructor-01.png';
 import inst02 from '../assets/New folder/SISA - Website Instructor-02.png';
 import inst03 from '../assets/New folder/SISA - Website Instructor-03.png';
 import inst04 from '../assets/New folder/SISA - Website Instructor-04.png';
-import Graphic from '../assets/Graphic.png';
   
 const TopInstructors = () => {
-  const [hoveredShareBtn, setHoveredShareBtn] = useState(null);
 
   const instructors = [
     {
@@ -64,10 +62,7 @@ const TopInstructors = () => {
               <div className="simple-card-image-box">
                 <img src={instructor.image} alt={instructor.name} className="simple-instructor-img" />
               </div>
-              <div className="card-text-content">
-                <h3 className="instructor-name-new">{instructor.name}</h3>
-                <p className="instructor-role-new">{instructor.role}</p>
-              </div>
+              
             </div>
           ))}
         </div>
