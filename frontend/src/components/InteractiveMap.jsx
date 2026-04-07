@@ -86,50 +86,50 @@ const InteractiveMap = () => {
                     const pinBg = g.append('g').attr('class', 'pin-outer');
 
                     pinBg.append('circle')
-                        .attr('r', 14)
-                        .attr('fill', '#111827')
-                        .attr('stroke', '#fff')
-                        .attr('stroke-width', 2);
+                        .attr('r', 16)
+                        .attr('fill', '#fff')
+                        .attr('stroke', '#4c1d95')
+                        .attr('stroke-width', 1.5)
+                        .attr('opacity', 0.95);
 
                     pinBg.append('image')
                         .attr('href', sisaPinLogo)
-                        .attr('x', -9)
-                        .attr('y', -9)
-                        .attr('width', 18)
-                        .attr('height', 18)
+                        .attr('x', -11)
+                        .attr('y', -11)
+                        .attr('width', 22)
+                        .attr('height', 22)
                         .attr('preserveAspectRatio', 'xMidYMid meet')
-                        .style('filter', 'brightness(0) invert(1)')
                         .style('pointer-events', 'none');
 
                     /* Country Label below pin */
                     const label = g.append('text')
                         .attr('class', 'pin-label')
-                        .attr('y', 25)
+                        .attr('y', 35)
                         .attr('text-anchor', 'middle')
                         .attr('font-size', '14px')
-                        .attr('font-weight', '800')
-                        .attr('font-family', 'system-ui, sans-serif')
-                        .attr('fill', '#111827')
+                        .attr('font-weight', '700')
+                        .attr('font-family', '"Inter", sans-serif')
+                        .attr('fill', '#4c1d95')
                         .attr('opacity', 0)
                         .attr('pointer-events', 'none')
-                        .style('text-transform', 'uppercase')
+                        .style('text-shadow', '0 1px 2px rgba(255,255,255,0.8)')
                         .text(country.name);
 
                     /* Hover interactions */
                     function showEffects() {
-                        pinBg.transition().duration(400).ease(d3.easeBackOut)
-                            .attr('transform', 'scale(2.5)');
-                        label.transition().duration(300)
+                        pinBg.transition().duration(400).ease(d3.easeCubicOut)
+                            .attr('transform', 'scale(2)');
+                        label.transition().duration(400).ease(d3.easeCubicOut)
                             .attr('opacity', 1)
-                            .attr('y', 42);
+                            .attr('y', 52);
                     }
 
                     function hideEffects() {
-                        pinBg.transition().duration(300)
+                        pinBg.transition().duration(300).ease(d3.easeCubicInOut)
                             .attr('transform', 'scale(1)');
-                        label.transition().duration(300)
+                        label.transition().duration(300).ease(d3.easeCubicInOut)
                             .attr('opacity', 0)
-                            .attr('y', 25);
+                            .attr('y', 35);
                     }
 
                     g.on('mouseenter', showEffects)

@@ -3,6 +3,25 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/InstructorsPage.css';
 
+import inst01 from '../assets/New folder/SISA - Website Instructor-01.png';
+import inst02 from '../assets/New folder/SISA - Website Instructor-02.png';
+import inst03 from '../assets/New folder/SISA - Website Instructor-03.png';
+import inst04 from '../assets/New folder/SISA - Website Instructor-04.png';
+import inst06 from '../assets/New folder/SISA - Website Instructor-06.png';
+import inst07 from '../assets/New folder/SISA - Website Instructor-07.png';
+import inst08 from '../assets/New folder/SISA - Website Instructor-08.png';
+import inst09 from '../assets/New folder/SISA - Website Instructor-09.png';
+import inst10 from '../assets/New folder/SISA - Website Instructor-10.png';
+import inst12 from '../assets/New folder/SISA - Website Instructor-12.png';
+import inst13 from '../assets/New folder/SISA - Website Instructor-13.png';
+import inst14 from '../assets/New folder/SISA - Website Instructor-14.png';
+import inst15 from '../assets/New folder/SISA - Website Instructor-15.png';
+import inst17 from '../assets/New folder/SISA - Website Instructor-17.png';
+import inst18 from '../assets/New folder/SISA - Website Instructor-18.png';
+import inst19 from '../assets/New folder/SISA - Website Instructor-19.png';
+import inst20 from '../assets/New folder/SISA - Website Instructor-20.png';
+import inst23 from '../assets/New folder/SISA - Website Instructor-23.png';
+
 const Instructors = () => {
   const [hoveredShareBtn, setHoveredShareBtn] = useState(null);
 
@@ -15,37 +34,37 @@ const Instructors = () => {
       id: "admin-1",
       name: "Mrs. Saeeda Salim",
       role: "Director & Principal",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+      image: inst01,
     },
     {
       id: "admin-2",
       name: "Mr. Wasif W. Mir",
       role: "Vice Principal",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: inst02,
     },
     {
       id: "admin-3",
       name: "Mrs. Saneea Sohaib Khan",
       role: "Administrator",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: inst03,
     },
     {
       id: "admin-4",
       name: "Mr. Hassan Askari",
       role: "Coordinator – Math",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: inst04,
     },
     {
       id: "admin-5",
       name: "Mrs. Khadija Idrees",
       role: "Coordinator – Urdu",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      image: inst06,
     },
     {
       id: "admin-6",
       name: "Mr. Furrukh Abbas",
       role: "Coordinator – History, Geography & Social Studies",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      image: inst08,
     }
   ];
 
@@ -54,122 +73,116 @@ const Instructors = () => {
       id: "faculty-1",
       name: "Mrs. Saeeda Salim",
       role: "A’Level Chemistry, IGCSE O’ & A’ Level Design & Tech, IGCSE O’ & A’ Level Travel & Tourism, IGCSE O’ & A’ Level Envirommental Management",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+      image: inst01,
     },
     {
       id: "faculty-2",
       name: "Mr. Wasif W. Mir",
       role: "IGCSE O’Level Chemistry, IGCSE O’ & A’ Global Perspectives",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: inst02,
     },
     {
       id: "faculty-3",
       name: "Mr. Hassan Askari",
       role: "IGCSE O’ & A’ Mathematics & IGCSE O’Level Additional Mathematics",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: inst04,
     },
     {
       id: "faculty-4",
       name: "Mrs. Saneea Sohaib Khan",
       role: "IGCSE O’ Level Mathematics & Key Stage",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: inst03,
     },
     {
       id: "faculty-5",
       name: "Mrs. Khadija Idrees",
       role: "IGCSE O’Level Urdu",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      image: inst06,
     },
     {
       id: "faculty-6",
       name: "Mr. Mazhar Abbas Chaudhry",
       role: "IGCSE O’ & A’ Level Urdu",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+      image: inst07,
     },
     {
       id: "faculty-7",
       name: "Mr. Furrukh Abbas",
       role: "IGCSE O’ Level Islamiyat & Pakistan Studies",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      image: inst08,
     },
     {
       id: "faculty-8",
       name: "Mr. Waris Ali",
       role: "IGCSE O’ Level Islamiyat & Pakistan Studies",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: inst09,
     },
     {
       id: "faculty-9",
       name: "Mr. Sajjad Afzal",
       role: "A’ Level Accounting & BTEC",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      image: inst10,
     },
     {
       id: "faculty-10",
       name: "Mr. Azam Saleem",
       role: "IGCSE O’Level Accounting & BTEC",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+      image: inst12,
     },
     {
       id: "faculty-11",
       name: "Mr. M. Waqar Khan",
       role: "A’ Level Business & BTEC",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: inst13,
     },
     {
       id: "faculty-12",
       name: "Mr. Raja Shahzore Khan",
       role: "IGCSE O’ Level Business Studies & Commerce",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: inst14,
     },
     {
       id: "faculty-13",
       name: "Mr. M. Dawood Murtaza",
       role: "A’ Level Physics",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      image: inst15,
     },
     {
       id: "faculty-14",
       name: "Mr. Muhammad Jameel",
       role: "IGCSE O’ Level Physics",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+      image: inst17,
     },
     {
       id: "faculty-15",
       name: "Mrs. Hafsa Akhtar",
       role: "IGCSE O’ Level English Language",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      image: inst18,
     },
     {
       id: "faculty-16",
       name: "Ms. Mishal Usman",
       role: "IGCSE O’ Level Biology & Chemistry",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: inst19,
     },
     {
       id: "faculty-17",
       name: "Mr. Abdul Quddus",
       role: "A’ Level Law",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: inst20,
     },
     {
       id: "faculty-18",
       name: "Mr. Muhammad Ali",
       role: "A’ Level Sociology",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: inst23,
     }
   ];
 
   const InstructorCard = ({ instructor }) => (
-    <div key={instructor.id} className="instructor-card-new">
-      <div className="card-image-box">
-        <div className="purple-bg-rect"></div>
-        <div className="slanted-border"></div>
-        <img src={instructor.image} alt={instructor.name} className="instructor-img" />
-      </div>
-      <div className="card-text-content">
-        <h3 className="instructor-name-new">{instructor.name}</h3>
-        <p className="instructor-role-new">{instructor.role}</p>
+    <div key={instructor.id} className="simple-instructor-card-list">
+      <div className="simple-card-img-wrapper">
+        <img src={instructor.image} alt={instructor.name} className="simple-faculty-img" />
       </div>
     </div>
   );
