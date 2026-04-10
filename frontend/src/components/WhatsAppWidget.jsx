@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/WhatsAppWidget.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/sisa_logo.png';
 
 const WhatsAppWidget = () => {
     const [isOpen, setIsOpen] = useState(false);

@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/SISAOverview.css';
 import Stats from './Stats';
 import Partners from './Partners';
-import worldMapImage from '../assets/world-map.png'; // Adjust path as needed
 import coreValuesImage from '../assets/SISA Core Values.jpg.jpeg';
 import InteractiveMap from './InteractiveMap';
 const SISAOverview = () => {
