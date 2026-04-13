@@ -53,6 +53,13 @@
   transition: all 0.4s ease;
 }
 
+/* OxfordAQA logo override — boosted scale to match Pearson's visual weight */
+.partner-logo-img.oxfordaqa-logo {
+  max-height: 95%;
+  max-width: 100%;
+  transform: scale(1.2);
+}
+
 .centre-info-box {
   position: absolute;
   top: -100%;

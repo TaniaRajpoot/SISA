@@ -39,7 +39,7 @@ const Partners = () => {
               <img 
                 src={partner.logo} 
                 alt={`${partner.name} logo`}
-                className="partner-logo-img"
+                className={`partner-logo-img${partner.id === 3 ? ' oxfordaqa-logo' : ''}`}
                 loading="lazy"
               />
             </div>
