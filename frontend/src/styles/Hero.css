@@ -85,6 +85,7 @@
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin-bottom: 30px;
   line-height: 1.6;
+  color: #ffffff !important;
 }
 
 /* Buttons */
@@ -168,6 +169,10 @@
 
 .hero-title {
   color: #fff;
+}
+
+.hero-description {
+  color: #ffffff !important;
 }
 
 .hero-description.slide-1 {
@@ -255,6 +260,60 @@
     font-size: 0.95rem;
     /* optional smaller font */
   }
+}
+
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.video-modal-content video {
+  width: 100%;
+  display: block;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.close-modal-btn:hover {
+  background: #ff4d4d;
+  transform: rotate(90deg);
 }
 
 /* Responsive for mobile phones */

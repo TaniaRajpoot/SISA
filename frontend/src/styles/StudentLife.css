@@ -20,25 +20,30 @@
 
 /* HERO */
 .sl-hero {
-    background: linear-gradient(135deg, var(--sl-primary) 0%, #4a3a7a 100%);
+    background: var(--sl-primary);
     color: var(--sl-text-light);
-    padding: 80px 20px 100px 20px;
+    padding: 100px 20px;
     text-align: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 .sl-hero-content h1 {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #ffffff !important;
+}
+
+.sl-hero-content h1 span {
+    color: var(--sl-secondary);
 }
 
 .sl-hero-content p {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1em;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: #ffffff !important;
 }
 
 /* CONTAINER */
@@ -68,8 +73,8 @@
 
 .section-title {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-secondary);
-    border-bottom: 3px solid var(--sl-secondary);
+    color: var(--sl-primary);
+    border-bottom: 3px solid var(--sl-primary);
     padding-bottom: 10px;
     margin-bottom: 25px;
     font-size: 1.8em;
@@ -97,17 +102,12 @@
     box-shadow: 0 10px 25px rgba(0, 77, 153, 0.15);
 }
 
-.icon-box {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: var(--sl-secondary);
-}
 
 .activity-block h3 {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-secondary);
+    color: var(--sl-primary);
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .activity-block p {
@@ -127,16 +127,16 @@
     flex: 1;
     min-width: 300px;
     padding: 20px;
-    border-left: 6px solid var(--sl-secondary);
+    border-left: 6px solid var(--sl-primary);
     background-color: #fcfcfc;
     border-radius: 6px;
 }
 
 .feature-item h4 {
     font-family: 'Montserrat', 'Inter', sans-serif;
-    color: var(--sl-secondary);
+    color: var(--sl-primary);
     margin-bottom: 5px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .feature-item p {
@@ -185,12 +185,7 @@
 
 /* FOOTER */
 .sl-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--sl-primary);
-    color: var(--sl-text-light);
-    font-size: 0.9em;
-    margin-top: 40px;
+    display: none;
 }
 
 /* RESPONSIVE */

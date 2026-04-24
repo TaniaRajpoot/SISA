@@ -23,7 +23,7 @@
 }
 
 .policies-header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: #2f2657;
     color: white;
     padding: 4rem 1.5rem;
     text-align: center;

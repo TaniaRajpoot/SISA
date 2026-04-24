@@ -103,7 +103,7 @@
     display: inline-block;
     padding: 8px 14px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #2f2657, #4a3a7a);
+    background: #2f2657;
     font-weight: 700;
     color: #fff;
     font-size: 0.85rem;
@@ -114,7 +114,7 @@
 .pathway-section,
 .accreditation-section,
 .values-section {
-    margin-bottom: 15px;
+    margin-bottom: 60px;
 }
 
 .coverage-section {
@@ -313,7 +313,7 @@
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #2f2657, #4a3a7a);
+    background: #2f2657;
     color: #fff;
     padding: 12px 28px;
     border-radius: 8px;
@@ -326,7 +326,7 @@
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(47, 38, 87, 0.3);
-    background: linear-gradient(135deg, #4a3a7a, #2f2657);
+    background: #403672;
 }
 
 .contact-card {

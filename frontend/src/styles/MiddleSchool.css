@@ -25,16 +25,11 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--ms-primary), var(--ms-secondary));
+    background: var(--ms-primary);
 }
 
 .ms-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.2), transparent 60%),
-        radial-gradient(circle at bottom left, rgba(74, 58, 122, 0.2), transparent 55%);
-    opacity: 0.5;
+    display: none;
 }
 
 .ms-container {
@@ -178,7 +173,7 @@
 }
 
 .ms-step.active {
-    background: linear-gradient(135deg, #302759, #483F7E);
+    background: var(--ms-primary);
     color: white;
 }
 
@@ -220,7 +215,7 @@
 }
 
 .ms-table thead {
-    background: linear-gradient(135deg, #302759, #483F7E);
+    background: var(--ms-primary);
     color: white;
 }
 
@@ -245,7 +240,7 @@
 
 /* HIGHLIGHT */
 .ms-highlight {
-    background: linear-gradient(135deg, #2f2657, #4a3a7a);
+    background: var(--ms-primary);
     border-radius: var(--ms-radius);
     padding: 40px;
     text-align: center;

@@ -8,8 +8,7 @@
 /* Hero Section */
 .why-hero {
     position: relative;
-    background: linear-gradient(rgba(47, 38, 87, 0.85), rgba(47, 38, 87, 0.85)),
-        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80');
+    background: #2f2657;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,13 +19,7 @@
 }
 
 .why-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 70%);
-    pointer-events: none;
+    display: none;
 }
 
 .why-hero-content {

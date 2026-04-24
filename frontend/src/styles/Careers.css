@@ -224,7 +224,7 @@
     margin-top: 20px;
     padding: 14px 28px;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--careers-accent), #e0b65a);
+    background: var(--careers-accent);
     color: #111;
     font-weight: 600;
     text-decoration: none;

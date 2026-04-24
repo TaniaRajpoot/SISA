@@ -116,6 +116,8 @@ const SISAOverview = () => {
 
                 {/* Core Values */}
                 <section className="values-section">
+                    <h2>Our Core Values</h2>
+                    <p className="section-desc muted">The fundamental principles that define our culture and educational philosophy.</p>
                     <img src={coreValuesImage} alt="SISA Core Values" className="core-values-img" />
                 </section>
 

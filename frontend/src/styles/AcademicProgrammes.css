@@ -21,7 +21,7 @@
 /* HERO */
 .ap-hero {
     padding: 100px 8% 80px;
-    background: linear-gradient(120deg, var(--ap-primary), #1a1340);
+    background: var(--ap-primary);
     color: #fff;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .ap-table thead {
-    background: linear-gradient(135deg, var(--ap-primary), var(--ap-secondary));
+    background: var(--ap-primary);
     color: white;
 }
 

@@ -1,8 +1,8 @@
 /* ContactForm.css - Matching Original HTML Design */
 
 :root {
-  --primary: #0b3c5d;
-  --secondary: #1d6fa5;
+  --primary: #2f2657;
+  --secondary: #ff9e00;
   --light: #f5f7fa;
   --text: #333;
   --muted: #6b7280;
@@ -26,19 +26,23 @@
 .contact-page-header {
   text-align: center;
   margin-bottom: 50px;
+  background: #2f2657;
+  padding: 60px 20px;
+  border-radius: 14px;
+  color: white;
 }
 
 .contact-page-header h1 {
-  font-size: 2.4rem;
-  color: var(--primary);
+  font-size: 2.8rem;
+  color: white;
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .contact-page-header p {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 700px;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 750px;
   margin: 0 auto;
   line-height: 1.7;
 }

@@ -48,10 +48,7 @@
 
 /* --- HERO SECTION --- */
 .btec-hero {
-    background: linear-gradient(rgba(47, 38, 87, 0.85), rgba(47, 38, 87, 0.85)),
-        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
+    background: var(--btec-primary);
     color: var(--btec-white);
     text-align: center;
     padding: 120px 20px;

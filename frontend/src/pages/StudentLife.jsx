@@ -39,7 +39,7 @@ const StudentLife = () => {
             {/* Hero Section */}
             <header className="sl-hero">
                 <div className="sl-hero-content">
-                    <h1>Student Life at SISA: Culture, Community, & Connection</h1>
+                    <h1>Student Life at SISA: <span>Culture, Community, & Connection</span></h1>
                     <p>At SISA, we believe a student's growth extends beyond the textbook. We foster a vibrant school culture that celebrates diversity, creativity, and service, ensuring every student—whether on-campus in Lahore or online globally—feels connected and valued.</p>
                 </div>
             </header>
@@ -52,17 +52,14 @@ const StudentLife = () => {
 
                     <div className="excellence-grid">
                         <div className="activity-block">
-                            <div className="icon-box">🎭</div>
                             <h3>Arts & Culture</h3>
                             <p>Drama club, school band, literary societies, and annual arts exhibitions.</p>
                         </div>
                         <div className="activity-block">
-                            <div className="icon-box">🏅</div>
                             <h3>Sports & Fitness</h3>
                             <p>Team sports, inter-school competitions, and fitness programs designed for holistic well-being.</p>
                         </div>
                         <div className="activity-block">
-                            <div className="icon-box">💡</div>
                             <h3>Academic Enrichment</h3>
                             <p>Debate societies, Model United Nations (MUN), and science fairs that extend learning outside the classroom.</p>
                         </div>
@@ -76,17 +73,14 @@ const StudentLife = () => {
 
                     <div className="online-features">
                         <div className="feature-item">
-                            <div className="icon-box">💻</div>
                             <h4>Virtual Student Life</h4>
                             <p>Online book clubs, digital art and photography contests, and coding societies.</p>
                         </div>
                         <div className="feature-item">
-                            <div className="icon-box">🌍</div>
                             <h4>Student Leadership</h4>
                             <p>Virtual Student Council positions allowing students from the UAE, UK, or Philippines to contribute to school governance.</p>
                         </div>
                         <div className="feature-item">
-                            <div className="icon-box">🗓️</div>
                             <h4>Digital Assemblies & Events</h4>
                             <p>Regular virtual gatherings, guest speaker sessions, and celebration events to foster camaraderie across time zones.</p>
                         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FaFacebookF, FaWhatsapp, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import logo from "../assets/sisa_logo.png";
@@ -57,11 +58,10 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Quick Links</h4>
                         <ul className="footer-links">
-                            <li><a href="#">Admissions</a></li>
-                            <li><a href="#">Academic Calendar</a></li>
-                            <li><a href="#">Student Life</a></li>
-                            <li><a href="#">News &amp; Events</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><Link to="/admissions">Admissions</Link></li>
+                            <li><Link to="/student-life">Student Life</Link></li>
+                            <li><Link to="/policies">School Policies</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -69,12 +69,10 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Programs</h4>
                         <ul className="footer-links">
-                            <li><a href="#">Preschool</a></li>
-                            <li><a href="#">Junior School</a></li>
-                            <li><a href="#">Middle School</a></li>
-                            <li><a href="#">Senior School</a></li>
-                            <li><a href="#">O' &amp; A' Levels</a></li>
-                            <li><a href="#">Online School</a></li>
+                            <li><Link to="/academics/preschool-junior">Preschool & Junior</Link></li>
+                            <li><Link to="/academics/middle-school">Middle School</Link></li>
+                            <li><Link to="/academics/curriculum">O' &amp; A' Levels</Link></li>
+                            <li><Link to="/academics/btec">BTEC Programme</Link></li>
                         </ul>
                     </div>
 

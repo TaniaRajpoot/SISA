@@ -31,6 +31,11 @@ import inst22 from '../assets/New folder/SISA - Website Instructor-22.png';
 import inst23 from '../assets/New folder/SISA - Website Instructor-23.png';
 // inst24 is missing in assets
 import inst25 from '../assets/New folder/SISA - Website Instructor-25.png';
+import inst26 from '../assets/New folder/SISA - Website Instructor-26.png';
+import inst27 from '../assets/New folder/SISA - Website Instructor-27.png';
+import inst28 from '../assets/New folder/SISA - Website Instructor-28.png';
+import inst29 from '../assets/New folder/SISA - Website Instructor-29.png';
+import inst30 from '../assets/New folder/SISA - Website Instructor-30.png';
 
 const Instructors = () => {
   const [hoveredShareBtn, setHoveredShareBtn] = useState(null);
@@ -186,6 +191,36 @@ const Instructors = () => {
       name: "Mr. Muhammad Ali",
       role: "A’ Level Sociology",
       image: inst25,
+    },
+    {
+      id: "faculty-19",
+      name: "Instructor 26",
+      role: "Faculty Member",
+      image: inst26,
+    },
+    {
+      id: "faculty-20",
+      name: "Instructor 27",
+      role: "Faculty Member",
+      image: inst27,
+    },
+    {
+      id: "faculty-21",
+      name: "Instructor 28",
+      role: "Faculty Member",
+      image: inst28,
+    },
+    {
+      id: "faculty-22",
+      name: "Instructor 29",
+      role: "Faculty Member",
+      image: inst29,
+    },
+    {
+      id: "faculty-23",
+      name: "Instructor 30",
+      role: "Faculty Member",
+      image: inst30,
     }
   ];
 

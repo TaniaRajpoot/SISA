@@ -97,6 +97,7 @@ import hero2 from "../assets/hero-2.jpg";
 import hero3 from "../assets/hero-3.jpg";
 import hero4 from "../assets/hero-4.jpg";
 import hero5 from "../assets/hero-5.jpg";
+import introVideo from "../assets/At SISA Online School, education goes beyond classrooms. Our online classes bring quality learni.mp4";
 
 const slides = [
   {
@@ -133,8 +134,9 @@ const slides = [
 
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
-  // Auto-slide every 3 seconds
+  // Auto-slide every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(prev => (prev + 1) % slides.length);
@@ -154,22 +156,34 @@ const Hero = () => {
           <div className={`hero-overlay ${activeSlide === index ? "active" : ""}`}>
             <div className={`hero-text ${activeSlide === index ? "active" : ""}`}>
               <h1 className={`hero-title`}>{slide.title}</h1>
-              <p className={`hero-description slide-${slide.id}`}>{slide.description}</p>
+              <p className={`hero-description`}>{slide.description}</p>
 
               <div className="hero-buttons">
-                <button className="btn btn-primary">Explore Courses</button>
-                <button className="btn btn-secondary">Watch Demo</button>
+                <Link to="/academics/curriculum" className="btn btn-primary">Explore Courses</Link>
+                <button className="btn btn-secondary" onClick={() => setShowVideo(true)}>Watch Demo</button>
               </div>
 
               <div className="hero-buttons-bottom">
                 <Link to="/admissions" className="btn btn-outline">Admissions</Link>
-                <Link to="/about/director-message" className="btn btn-outline">Director's Message</Link>
-                <Link to="/news/upcoming" className="btn btn-outline">Upcoming Events</Link>
+                <Link to="/about/us" className="btn btn-outline">About SISA</Link>
+                <Link to="/contact" className="btn btn-outline">Contact Us</Link>
               </div>
             </div>
           </div>
         </React.Fragment>
       ))}
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="video-modal-overlay" onClick={() => setShowVideo(false)}>
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal-btn" onClick={() => setShowVideo(false)}>×</button>
+            <video controls autoPlay src={introVideo}>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

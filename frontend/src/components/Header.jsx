@@ -56,11 +56,7 @@ const Header = () => {
             </Link>
             <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
               <Link to="/about/us">About Us</Link>
-              <Link to="/about/director-message">Director's Message</Link>
               <Link to="/mission-vision">Mission & Vision</Link>
-              <Link to="/about/facilities">Facilities</Link>
-              <Link to="/about/accreditation">Accreditation</Link>
-              <Link to="/about/virtual-tour">Campus Virtual Tour</Link>
             </div>
           </li>
 
@@ -105,37 +101,18 @@ const Header = () => {
                   <Link to="/academics/curriculum">Curriculum & Sections</Link>
                   <Link to="/academics/preschool-junior">Preschool & Junior School</Link>
                   <Link to="/academics/middle-school">Middle School</Link>
-                  <Link to="/academics/senior-school">Senior School</Link>
                   <Link to="/academics/btec">BTEC</Link>
-                  <div className="mega-menu-divider"></div>
-                  <Link to="/academics/awards-distinctions">Awards & Distinctions</Link>
-                  <Link to="/academics/affiliations">Affiliations</Link>
-                  <Link to="/academics/calendar">Academic Calendar</Link>
-                  <Link to="/academics/online-school">Online School</Link>
                 </div>
 
                 <div className="mega-menu-column">
                   <h3 className="mega-menu-title">STUDENT LIFE</h3>
                   <div className="mega-menu-divider"></div>
-                  <Link to="/student-life/clubs">Clubs & Co-curricular</Link>
-                  <Link to="/student-life/houses">School teams & Houses</Link>
-                  <Link to="/student-life/alumni">Alumni & Testimonials</Link>
-                  <Link to="/student-life/council">Student Council</Link>
-                  <Link to="/student-life/awards">Awards & Honours</Link>
-                </div>
-
-                <div className="mega-menu-column">
-                  <h3 className="mega-menu-title">NEWS & EVENTS</h3>
-                  <div className="mega-menu-divider"></div>
-                  <Link to="/news/upcoming">Upcoming Events</Link>
-                  <Link to="/news/gallery">Photo Gallery</Link>
-                  <Link to="/news/videos">Videos etc</Link>
+                  <Link to="/student-life">Overview</Link>
                 </div>
 
                 <div className="mega-menu-column">
                   <h3 className="mega-menu-title">POLICIES</h3>
                   <div className="mega-menu-divider"></div>
-
                   <Link to="/policies/rules">Rules & Regulations</Link>
                   <Link to="/policies/child-protection">Child Protection Policy</Link>
                   <Link to="/policies/exams">Examination Policy</Link>
@@ -159,11 +136,10 @@ const Header = () => {
               CONTACT <span className="dropdown-arrow">▼</span>
             </Link>
             <div className={`dropdown-menu ${activeDropdown === 'contact' ? 'active' : ''}`}>
-              <Link to="/contact">School Address & Location Pin</Link>
-              <Link to="/contact">Phone Numbers</Link>
+              <Link to="/contact">Contact Info & Location</Link>
               <Link to="/contact">Contact Form</Link>
-              <Link to="/contact">Job Application Form</Link>
-              <Link to="/contact">Franchise Application</Link>
+              <Link to="/instructors">Our Instructors</Link>
+              <Link to="/careers">Careers</Link>
             </div>
           </li>
 
