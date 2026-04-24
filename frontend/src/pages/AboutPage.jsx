@@ -118,7 +118,6 @@ function useCounter(num, suffix, active) {
         return () => clearInterval(t);
     }, [active, num]);
     const display = val >= 1000 ? (val / 1000).toFixed(0) + 'k' : val.toLocaleString();
-    // If original num had 'k' style large number (5000), show as 5k
     const finalNum = parseInt(num.replace(/,/g, ''), 10);
     const formatted = finalNum >= 1000 ? Math.floor(val / 1000) + (val >= finalNum ? 'k' : 'k') : val.toString();
     return (parseInt(num.replace(/,/g, ''), 10) >= 1000 ? formatted : val.toString()) + suffix;
@@ -147,19 +146,17 @@ function StatCard({ item }) {
 /* ── Page Component ── */
 const AboutPage = () => {
     const whoRef = useRef(null);
-    const videoRef = useRef(null);
     const [whoVisible, setWhoVisible] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const togglePlay = () => {
-        if (!videoRef.current) return;
-        if (isPlaying) {
-            videoRef.current.pause();
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
         } else {
-            videoRef.current.play();
+            document.body.style.overflow = 'auto';
         }
-        setIsPlaying(!isPlaying);
-    };
+        return () => { document.body.style.overflow = 'auto'; };
+    }, [isModalOpen]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -208,8 +205,6 @@ const AboutPage = () => {
             {/* ══ WHO WE ARE ══ */}
             <section className="ap-who" ref={whoRef}>
                 <div className="ap-container ap-who-grid">
-
-                    {/* Images column */}
                     <div className={`ap-imgs ${whoVisible ? 'ap-in-left' : ''}`}>
                         <div className="ap-img-main">
                             <img src="https://images.unsplash.com/photo-1616587226157-48e49175ee20?w=600&q=80" alt="SISA campus" />
@@ -224,7 +219,6 @@ const AboutPage = () => {
                         <div className="ap-est-text">EST 2006</div>
                     </div>
 
-                    {/* Text column */}
                     <div className={`ap-who-content ${whoVisible ? 'ap-in-right' : ''}`}>
                         <div className="ap-eyebrow">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
@@ -279,30 +273,24 @@ const AboutPage = () => {
                         <div className="ap-hdr-line"></div>
                     </div>
 
-                    {/* Video */}
-                    <div className="ap-video-wrap">
-                        <video
-                            ref={videoRef}
-                            src={sisaVideo}
-                            poster={videoThumbnail}
-                            className={`ap-video-thumb ${isPlaying ? '' : 'ap-video-paused'}`}
-                            playsInline
-                            onEnded={() => setIsPlaying(false)}
+                    <div className="ap-video-wrap" onClick={() => setIsModalOpen(true)}>
+                        <img 
+                            src={videoThumbnail} 
+                            alt="Video Thumbnail" 
+                            className="ap-video-thumb ap-video-paused" 
                         />
-
-                        <button className="ap-play-btn" onClick={togglePlay} aria-label={isPlaying ? 'Pause video' : 'Play video'}>
-                            {isPlaying ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <rect x="5" y="3" width="4" height="18" rx="1" />
-                                    <rect x="15" y="3" width="4" height="18" rx="1" />
-                                </svg>
-                            ) : (
-                                <IcoPlay />
-                            )}
+                        <button className="ap-play-btn" aria-label="Play video">
+                            <IcoPlay />
                         </button>
                     </div>
 
-                    {/* Steps */}
+                    {isModalOpen && (
+                        <VideoModal 
+                            src={sisaVideo} 
+                            onClose={() => setIsModalOpen(false)} 
+                        />
+                    )}
+
                     <div className="ap-steps-grid">
                         {howItWorks.map((s, i) => (
                             <div className="ap-step" key={i}>
@@ -319,5 +307,180 @@ const AboutPage = () => {
         </div>
     );
 };
+
+/* ── Custom Video Modal Component ── */
+const VideoModal = ({ src, onClose }) => {
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [volume, setVolume] = useState(1);
+    const [isMuted, setIsMuted] = useState(false);
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const [showControls, setShowControls] = useState(true);
+    const controlsTimeout = useRef(null);
+
+    const togglePlay = (e) => {
+        if (e) e.stopPropagation();
+        if (!videoRef.current) return;
+        if (videoRef.current.paused) {
+            videoRef.current.play();
+            setIsPlaying(true);
+        } else {
+            videoRef.current.pause();
+            setIsPlaying(false);
+        }
+    };
+
+    const handleTimeUpdate = () => {
+        if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
+    };
+
+    const handleLoadedMetadata = () => {
+        if (videoRef.current) setDuration(videoRef.current.duration);
+    };
+
+    const handleSeek = (e) => {
+        const time = parseFloat(e.target.value);
+        if (videoRef.current) {
+            videoRef.current.currentTime = time;
+            setCurrentTime(time);
+        }
+    };
+
+    const handleVolumeChange = (e) => {
+        const val = parseFloat(e.target.value);
+        setVolume(val);
+        if (videoRef.current) {
+            videoRef.current.volume = val;
+            setIsMuted(val === 0);
+        }
+    };
+
+    const toggleMute = (e) => {
+        e.stopPropagation();
+        const newMuted = !isMuted;
+        setIsMuted(newMuted);
+        if (videoRef.current) videoRef.current.muted = newMuted;
+    };
+
+    const toggleFullscreen = (e) => {
+        e.stopPropagation();
+        const container = videoRef.current.parentElement;
+        if (!document.fullscreenElement) {
+            if (container.requestFullscreen) container.requestFullscreen();
+            else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
+            else if (container.msRequestFullscreen) container.msRequestFullscreen();
+            setIsFullscreen(true);
+        } else {
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            else if (document.msExitFullscreen) document.msExitFullscreen();
+            setIsFullscreen(false);
+        }
+    };
+
+    const formatTime = (time) => {
+        if (isNaN(time)) return "0:00";
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
+
+    const handleMouseMove = () => {
+        setShowControls(true);
+        clearTimeout(controlsTimeout.current);
+        controlsTimeout.current = setTimeout(() => {
+            if (isPlaying) setShowControls(false);
+        }, 3000);
+    };
+
+    return (
+        <div className="ap-modal-overlay" onClick={onClose} onMouseMove={handleMouseMove}>
+            <div className="ap-modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="ap-modal-close" onClick={onClose} aria-label="Close modal">×</button>
+                
+                <div className={`ap-video-player-container ${!showControls && isPlaying ? 'hide-cursor' : ''}`}>
+                    <video 
+                        ref={videoRef}
+                        src={src}
+                        onClick={togglePlay}
+                        onTimeUpdate={handleTimeUpdate}
+                        onLoadedMetadata={handleLoadedMetadata}
+                        onEnded={() => setIsPlaying(false)}
+                        autoPlay
+                        playsInline
+                    />
+
+                    <div className={`ap-video-controls ${showControls || !isPlaying ? 'show' : 'hide'}`}>
+                        <div className="ap-video-progress-wrap">
+                            <input 
+                                type="range" 
+                                min="0" 
+                                max={duration || 0} 
+                                step="0.1"
+                                value={currentTime} 
+                                onChange={handleSeek}
+                                className="ap-video-progress"
+                                style={{ '--progress': `${(currentTime / (duration || 1)) * 100}%` }}
+                            />
+                        </div>
+
+                        <div className="ap-video-controls-bottom">
+                            <div className="ap-video-controls-left">
+                                <button className="ap-control-btn" onClick={togglePlay}>
+                                    {isPlaying ? <IcoPause /> : <IcoPlaySmall />}
+                                </button>
+                                <div className="ap-volume-wrap">
+                                    <button className="ap-control-btn" onClick={toggleMute}>
+                                        {isMuted || volume === 0 ? <IcoMute /> : <IcoVolume />}
+                                    </button>
+                                    <input 
+                                        type="range" 
+                                        min="0" 
+                                        max="1" 
+                                        step="0.05" 
+                                        value={isMuted ? 0 : volume} 
+                                        onChange={handleVolumeChange}
+                                        className="ap-volume-slider"
+                                    />
+                                </div>
+                                <span className="ap-video-time">
+                                    {formatTime(currentTime)} / {formatTime(duration)}
+                                </span>
+                            </div>
+
+                            <div className="ap-video-controls-right">
+                                <button className="ap-control-btn" onClick={toggleFullscreen}>
+                                    {isFullscreen ? <IcoExitFull /> : <IcoFullscreen />}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+/* ── Small Icons for Controls ── */
+const IcoPlaySmall = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M8 5v14l11-7z"/></svg>
+);
+const IcoPause = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+);
+const IcoVolume = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+);
+const IcoMute = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+);
+const IcoFullscreen = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+);
+const IcoExitFull = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
+);
 
 export default AboutPage;

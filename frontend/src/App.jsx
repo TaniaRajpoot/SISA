@@ -36,35 +36,35 @@ function App() {
 
         {/* About */}
         <Route path="/about/us" element={<AboutPage />} />
-        <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
+        {/* <Route path="/about/director-message" element={<GenericPage title="Director's Message" />} />
         <Route path="/about/mission-vision" element={<GenericPage title="Mission & Vision" />} />
         <Route path="/about/facilities" element={<GenericPage title="Facilities" />} />
         <Route path="/about/accreditation" element={<GenericPage title="Accreditation" />} />
-        <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} />
+        <Route path="/about/virtual-tour" element={<GenericPage title="Campus Virtual Tour" />} /> */}
 
         {/* Academics */}
         <Route path="/academics/curriculum" element={<AcademicProgrammes />} />
         <Route path="/academics/preschool-junior" element={<PreschoolJunior />} />
         <Route path="/academics/middle-school" element={<MiddleSchool />} />
-        <Route path="/academics/senior-school" element={<GenericPage title="Senior School" />} />
+        {/* <Route path="/academics/senior-school" element={<GenericPage title="Senior School" />} /> */}
         <Route path="/academics/btec" element={<BTEC />} />
-        <Route path="/academics/awards-distinctions" element={<GenericPage title="Awards & Distinctions" />} />
+        {/* <Route path="/academics/awards-distinctions" element={<GenericPage title="Awards & Distinctions" />} />
         <Route path="/academics/affiliations" element={<GenericPage title="Affiliations" />} />
         <Route path="/academics/calendar" element={<GenericPage title="Academic Calendar" />} />
-        <Route path="/academics/online-school" element={<GenericPage title="Online School" />} />
+        <Route path="/academics/online-school" element={<GenericPage title="Online School" />} /> */}
 
         {/* Student Life */}
         <Route path="/student-life" element={<StudentLife />} />
-        <Route path="/student-life/clubs" element={<GenericPage title="Clubs & Co-curricular" />} />
-        <Route path="/student-life/houses" element={<GenericPage title="School teams & Houses" />} />
-        <Route path="/student-life/alumni" element={<Alumni />} />
+        {/* <Route path="/student-life/clubs" element={<GenericPage title="Clubs & Co-curricular" />} />
+        <Route path="/student-life/houses" element={<GenericPage title="School teams & Houses" />} /> */}
+        {/* <Route path="/student-life/alumni" element={<Alumni />} />
         <Route path="/student-life/council" element={<GenericPage title="Student Council" />} />
-        <Route path="/student-life/awards" element={<GenericPage title="Awards & Honours" />} />
+        <Route path="/student-life/awards" element={<GenericPage title="Awards & Honours" />} /> */}
 
         {/* News & Events */}
-        <Route path="/news/upcoming" element={<GenericPage title="Upcoming Events" />} />
+        {/* <Route path="/news/upcoming" element={<GenericPage title="Upcoming Events" />} />
         <Route path="/news/gallery" element={<GenericPage title="Photo Gallery" />} />
-        <Route path="/news/videos" element={<GenericPage title="Videos etc" />} />
+        <Route path="/news/videos" element={<GenericPage title="Videos etc" />} /> */}
 
         {/* Policies */}
         <Route path="/policies" element={<Policies />} />

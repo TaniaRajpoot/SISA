@@ -145,7 +145,7 @@ const ContactForm = () => {
                 className="field-input"
               >
                 <option value="admissions">Admissions</option>
-                <option value="cocurricular">Co-curricular Activities</option>
+                {/* <option value="cocurricular">Co-curricular Activities</option> */}
                 <option value="campus-tour">Campus Tour</option>
                 <option value="general">General Inquiry</option>
               </select>
