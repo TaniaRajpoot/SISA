@@ -68,7 +68,7 @@ const HomePage = () => {
       <JoinTeacher />
       {/* <NewsEvents /> */}
       <Testimonials />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </div>
   );

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/JoinTeacher.css';
 
 const JoinTeacher = () => {
+  const navigate = useNavigate();
   return (
     <section className="join-teacher-section">
       <div className="join-teacher-container">
@@ -20,15 +22,10 @@ const JoinTeacher = () => {
             </h2>
           </div>
 
-          <div className="description-content">
-            <p className="join-description">
-              Borem ipsum dolor sit amet, consectetur adipiscing eliawe
-              awUt elit ellus, luctus nec ullamcorper mattisBorem
-            </p>
-          </div>
+         
 
           <div className="cta-content">
-            <button className="become-instructor-btn">
+            <button className="become-instructor-btn" onClick={() => navigate('/careers')}>
               BECOME AN INSTRUCTOR
               <svg 
                 width="18" 

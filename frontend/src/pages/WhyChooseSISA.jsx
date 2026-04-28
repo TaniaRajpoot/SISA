@@ -5,6 +5,7 @@ import '../styles/WhyChooseSISA.css';
 
 const WhyChooseSISA = () => {
     useEffect(() => {
+        window.scrollTo(0, 0);
         // Scroll reveal animation
         const observerOptions = {
             threshold: 0.1,
@@ -77,7 +78,7 @@ const WhyChooseSISA = () => {
             <section className="why-content-section">
                 <div className="container">
                     <div className="why-intro">
-                        <h2>Why Choose SISA?</h2>
+                       
                         <p>Choosing the right school is about finding the right fit for your child's future. Here is why families from Lahore to the UK choose SISA:</p>
                     </div>
 

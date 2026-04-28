@@ -4,52 +4,20 @@ import '../styles/Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    name: 'Alex Johnson',
-    location: 'United States',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-    text: 'Eduvalt transformed my career completely! The courses are comprehensive and the instructors are absolutely top-notch. I landed my dream job within 3 months.',
+    name: 'Musfira Umer',
+    location: 'Pakistan',
+    avatar: 'https://ui-avatars.com/api/?name=Musfira+Umer&background=2f2657&color=fff',
+    text: 'I would highly recommend SISA! Keep up the good work 👍👍👍',
     rating: 5,
   },
   {
     id: 2,
-    name: 'Maria Garcia',
-    location: 'Australia',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-    text: 'Best investment I ever made in my professional development. The quality of content is exceptional and very practical. The community support is amazing too!',
+    name: 'Fakhra Urfana',
+    location: 'Pakistan',
+    avatar: 'https://ui-avatars.com/api/?name=Fakhra+Urfana&background=2f2657&color=fff',
+    text: 'good school and great teachers and teaching',
     rating: 5,
-  },
-  {
-    id: 3,
-    name: 'James Smith',
-    location: 'Canada',
-    avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
-    text: 'I learned more in 3 months than I did in a year of self-study. The structured approach and hands-on projects made all the difference. Highly recommended!',
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: 'Sarah Williams',
-    location: 'United Kingdom',
-    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
-    text: 'The flexibility to learn at my own pace while having access to expert guidance was perfect for my busy schedule. The certificates helped me advance my career.',
-    rating: 5,
-  },
-  {
-    id: 5,
-    name: 'David Chen',
-    location: 'Singapore',
-    avatar: 'https://randomuser.me/api/portraits/men/22.jpg',
-    text: 'Outstanding platform! The mentors are incredibly knowledgeable and always willing to help. I went from a complete beginner to a full-stack developer in 6 months.',
-    rating: 5,
-  },
-  {
-    id: 6,
-    name: 'Priya Patel',
-    location: 'India',
-    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
-    text: 'Eduvalt gave me the confidence and skills to switch careers. The real-world projects prepared me perfectly for industry demands. Truly life-changing!',
-    rating: 5,
-  },
+  }
 ];
 
 const VISIBLE = 2; // cards shown at once

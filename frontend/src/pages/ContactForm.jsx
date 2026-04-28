@@ -29,9 +29,33 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    
+    const { name, email, phone, subject, message, inquiryType } = formData;
+    
+    // Determine the recipient email based on inquiry type
+    const recipientEmail = inquiryType === 'Events and Competitions' 
+      ? 'spaeds@sisa.edu.pk' 
+      : 'info@sisa.edu.pk';
 
+    // Construct the mailto URL
+    const mailtoSubject = encodeURIComponent(`${inquiryType}: ${subject}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone}\n\n` +
+      `Message:\n${message}`
+    );
+
+    const mailtoUrl = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    // Trigger the mail client popup
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -148,9 +172,9 @@ const ContactForm = () => {
                 {/* <option value="cocurricular">Co-curricular Activities</option> */}
                 <option value="campus-tour">Campus Tour</option>
                 <option value="general">General Inquiry</option>
+                <option value="Events and Competitions">Events and Competitions</option>
               </select>
             </div>
-
             <div className="form-row-grid">
               <div className="form-field">
                 <label htmlFor="name" className="field-label">Full Name *</label>

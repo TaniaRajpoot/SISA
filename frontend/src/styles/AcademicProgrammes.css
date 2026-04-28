@@ -20,9 +20,11 @@
 
 /* HERO */
 .ap-hero {
-    padding: 100px 8% 80px;
+    padding: 80px 8% 60px;
     background: var(--ap-primary);
     color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
 .ap-hero-grid {
@@ -35,22 +37,24 @@
 }
 
 .ap-hero h1 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    margin-bottom: 18px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
     color: #ffffff;
 }
 
 .ap-hero p {
     color: #e5ecf3;
-    max-width: 680px;
+    max-width: 650px;
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 .ap-hero-img {
-    height: 520px;
+    height: 280px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -58,8 +62,8 @@
 }
 
 .ap-hero-square-bg {
-    width: 400px;
-    height: 400px;
+    width: 220px;
+    height: 220px;
     border-radius: var(--ap-radius);
     background-color: #ffffff;
     background-image: url('../assets/young-students-learning-together-group-study.jpg');

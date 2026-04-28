@@ -178,7 +178,7 @@ const SISAOverview = () => {
                             </div>
 
                             <p className="muted contact-details">
-                                For admissions, email <a href="mailto:admissions@sisa.edu.pk">admissions@sisa.edu.pk</a> <br /> or call +92 42 0000 0000
+                                For admissions, email <a href="mailto:admissions@sisa.edu.pk">info@sisa.edu.pk</a> <br /> or call +92 311 3777472
                             </p>
                         </div>
                     </div>

@@ -78,6 +78,12 @@ const GetStarted = () => {
                             {isLogin ? "Sign Up" : "Sign In"}
                         </button>
                     </p>
+                    
+                    <div className="auth-contact-links" style={{marginTop: '20px', paddingTop: '20px', borderTop: '1px solid #e0e0e0'}}>
+                        <p>Need help? Contact us:</p>
+                        <Link to="/contact" className="contact-link" style={{display: 'block', marginBottom: '10px', color: '#0066cc', textDecoration: 'none'}}>📧 Contact Information</Link>
+                        <Link to="/contact" className="location-link" style={{display: 'block', color: '#0066cc', textDecoration: 'none'}}>📍 Find Our Location</Link>
+                    </div>
                 </div>
             </div>
         </div>

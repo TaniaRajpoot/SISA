@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import '../styles/AboutPage.css';
 import sisaVideo from '../assets/At SISA Online School, education goes beyond classrooms. Our online classes bring quality learni.mp4';
 import videoThumbnail from '../assets/Screenshot 2026-04-01 003155.png';
+import aboutImage1 from '../assets/about-1.jpg';
+import aboutImage2 from '../assets/about-2.jpg';
 
 /* ── Inline SVG Icons ── */
 const IcoGradCap = () => (
@@ -207,10 +209,10 @@ const AboutPage = () => {
                 <div className="ap-container ap-who-grid">
                     <div className={`ap-imgs ${whoVisible ? 'ap-in-left' : ''}`}>
                         <div className="ap-img-main">
-                            <img src="https://images.unsplash.com/photo-1616587226157-48e49175ee20?w=600&q=80" alt="SISA campus" />
+                            <img src={aboutImage1} alt="SISA campus" />
                         </div>
                         <div className="ap-img-float">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="SISA students" />
+                            <img src={aboutImage2} alt="SISA students" />
                             <div className="ap-float-badge">
                                 <IcoAward />
                                 <span>Experience Advisor</span>

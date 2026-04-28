@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/Careers.css';
+import carrerBanner from '../assets/carrer_banner.jpg';
 
 const Careers = () => {
     useEffect(() => {
@@ -16,7 +17,7 @@ const Careers = () => {
             <header className="careers-hero">
                 <div className="careers-hero-grid">
                     <div>
-                        <h1>💼 Careers at SISA</h1>
+                        <h1>Careers at SISA</h1>
                         <p>Join a globally focused educational institution offering rewarding opportunities across our Lahore campus and International Online School.</p>
                         <div className="careers-pill-group">
                             <div className="careers-pill">Cambridge</div>
@@ -97,17 +98,14 @@ const Careers = () => {
                         </div>
                         <div className="careers-step">
                             <span>2</span>
-                            <p><strong>Submit Application:</strong><br />Email: <strong>Careers@SISA.edu</strong><br />Subject: <em>[Role Applied For] – [Your Full Name]</em></p>
+                            <p><strong>Submit Application:</strong><br />Email: <strong>info@sisa.edu.pk</strong><br />Subject: <em>[Role Applied For] – [Your Full Name]</em></p>
                         </div>
-                        <a href="mailto:Careers@SISA.edu" className="careers-btn">Apply via Email</a>
+                        <a href="mailto:info@sisa.edu.pk" className="careers-btn">Apply via Email</a>
                     </div>
                     <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="SISA Careers" />
                 </div>
             </section>
 
-            <footer className="careers-footer">
-                <p>© <span>SISA</span> Careers · Equal Opportunity Employer · Global British Education</p>
-            </footer>
 
             <Footer />
         </div>

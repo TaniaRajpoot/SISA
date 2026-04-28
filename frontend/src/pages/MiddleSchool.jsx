@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/MiddleSchool.css';
+import schoolPhoto from '../assets/Photo from School Intl Studies Sisa.jpg';
+import scienceLab from '../assets/Science Labs (1).JPG';
+import auditorium from '../assets/Auditorium (2).jpg';
 
 const MiddleSchool = () => {
     const observerRef = useRef(null);
@@ -45,9 +48,9 @@ const MiddleSchool = () => {
 
                     {/* Photo Gallery */}
                     <div className="ms-photo-grid">
-                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Students studying" />
-                        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Classroom discussion" />
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Teacher mentoring students" />
+                        <img src={schoolPhoto} alt="Students studying" />
+                        <img src={scienceLab} alt="Classroom discussion" />
+                        <img src={auditorium} alt="Teacher mentoring students" />
                     </div>
                 </div>
             </header>

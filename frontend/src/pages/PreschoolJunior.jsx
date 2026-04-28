@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/PreschoolJunior.css';
+import preImage1 from '../assets/pre-1.jpg';
+import preImage2 from '../assets/pre-2.jpg';
 
 const PreschoolJunior = () => {
     const observerRef = useRef(null);
@@ -122,8 +124,8 @@ const PreschoolJunior = () => {
                 </div>
 
                 <div className="pj-split">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200" alt="Students learning together" />
-                    <img src="https://images.unsplash.com/photo-1557734864-c78b6dfef1b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2Nob29sJTIwZWFybmluZyUyMGFjdGl2aXRlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Creative classroom activities" />
+                    <img src={preImage1} alt="Students learning together" />
+                    <img src={preImage2} alt="Creative classroom activities" />
                 </div>
             </section>
 
