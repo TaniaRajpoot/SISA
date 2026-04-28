@@ -147,7 +147,7 @@ const Header = () => {
 
           {/* Mobile Get Started Button */}
           <li className="nav-item mobile-get-started-item">
-            <Link to="/get-started" className="mobile-get-started-btn">
+            <Link to="/contact" className="mobile-get-started-btn">
               Get Started
             </Link>
           </li>
@@ -155,7 +155,7 @@ const Header = () => {
 
         {/* Desktop Get Started Button */}
         <div className="nav-actions">
-          <Link to="/get-started" className="get-started-btn">Get Started</Link>
+          <Link to="/contact" className="get-started-btn">Get Started</Link>
         </div>
 
         <button
