@@ -32,6 +32,19 @@ const ContactForm = () => {
     
     const { name, email, phone, subject, message, inquiryType } = formData;
     
+    // Validation - check if required fields are filled
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      alert('Please fill in all required fields: Name, Email, Subject, and Message.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    
     // Determine the recipient email based on inquiry type
     const recipientEmail = inquiryType === 'Events and Competitions' 
       ? 'spaeds@sisa.edu.pk' 
@@ -42,7 +55,8 @@ const ContactForm = () => {
     const mailtoBody = encodeURIComponent(
       `Name: ${name}\n` +
       `Email: ${email}\n` +
-      `Phone: ${phone}\n\n` +
+      `Phone: ${phone}\n` +
+      `Inquiry Type: ${inquiryType}\n\n` +
       `Message:\n${message}`
     );
 
