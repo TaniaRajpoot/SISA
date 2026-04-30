@@ -56,28 +56,19 @@ const Header = () => {
             </Link>
             <div className={`dropdown-menu ${activeDropdown === 'about' ? 'active' : ''}`}>
               <Link to="/about/us">About Us</Link>
+              <Link to="/careers">Careers</Link>
               <Link to="/mission-vision">Mission & Vision</Link>
             </div>
           </li>
 
-          <li className="nav-item dropdown">
+          <li className="nav-item">
             <Link
-              to="/admissions"
+              to="/why-choose-sisa"
               className="nav-link"
-              onClick={(e) => {
-                if (window.innerWidth <= 768) {
-                  e.preventDefault();
-                  toggleDropdown('admissions');
-                }
-              }}
+              onClick={() => setMobileMenuOpen(false)}
             >
-              ADMISSIONS <span className="dropdown-arrow">▼</span>
+              WHY CHOOSE SISA
             </Link>
-            <div className={`dropdown-menu ${activeDropdown === 'admissions' ? 'mobile-active' : ''}`}>
-              <Link to="/why-choose-sisa" onClick={() => setMobileMenuOpen(false)}>Why Choose SISA</Link>
-              {/* <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>Admission Process</Link>
-              <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>Online and On Campus</Link> */}
-            </div>
           </li>
 
           <li className="nav-item mega-menu-item">
@@ -139,7 +130,7 @@ const Header = () => {
               <Link to="/contact">Contact Info & Location</Link>
               {/* <Link to="/contact">Contact Form</Link> */}
               <Link to="/instructors">Our Instructors</Link>
-              <Link to="/careers">Careers</Link>
+         
             </div>
           </li>
 

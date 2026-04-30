@@ -1,5 +1,7 @@
 /* Academic Programmes Page Styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Nunito:wght@400;600&display=swap');
+
 :root {
     --ap-primary: #2f2657;
     --ap-secondary: #4a3a7a;
@@ -12,108 +14,71 @@
 }
 
 .academic-programmes-page {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--ap-dark);
     background: linear-gradient(180deg, #eef3f8, #ffffff);
     line-height: 1.7;
 }
 
-/* HERO */
+/* =====================
+   HERO / BANNER
+   ===================== */
 .ap-hero {
-    padding: 80px 8% 60px;
-    background: var(--ap-primary);
-    color: #fff;
     position: relative;
+    padding: 90px 20px 80px;
+    text-align: center;
     overflow: hidden;
+    background: var(--ap-primary);
+
+    /* Stack children vertically and center them */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 }
 
-.ap-hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
+/* Subtle radial glow overlays */
+.ap-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 80% at 15% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 85% 50%, rgba(255, 165, 0, 0.04) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .ap-hero h1 {
-    font-size: clamp(2rem, 3.8vw, 2.8rem);
-    margin-bottom: 18px;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.2px;
-    color: #ffffff;
-}
-
-.ap-hero p {
-    color: #e5ecf3;
-    max-width: 650px;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.ap-hero-img {
-    height: 280px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ap-hero-square-bg {
-    width: 220px;
-    height: 220px;
-    border-radius: var(--ap-radius);
-    background-color: #ffffff;
-    background-image: url('../assets/young-students-learning-together-group-study.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: var(--ap-shadow);
     z-index: 1;
-    position: absolute;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    max-width: 760px;
+    text-align: center;
 }
 
-.ap-hero-img i {
-    position: absolute;
-    width: 54px;
-    height: 54px;
-    background: #fff;
-    color: var(--ap-primary);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    box-shadow: var(--ap-shadow);
-    animation: apFloat 6s ease-in-out infinite;
-    font-size: 1.3rem;
-    z-index: 2;
+/* Orange subtitle — centered below the heading */
+.ap-hero-subtitle {
+    position: relative;
+    z-index: 1;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ap-accent);
+    margin: 0;
+    letter-spacing: 0.3px;
+    text-align: center;
 }
 
-.ap-hero-img i.one {
-    top: -18px;
-    left: 30px;
-}
-
-.ap-hero-img i.two {
-    bottom: -18px;
-    right: 30px;
-    animation-delay: 2s;
-}
-
-@keyframes apFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-14px);
-    }
-}
-
-/* SECTIONS */
+/* =====================
+   SECTIONS
+   ===================== */
 .ap-section {
     padding: 90px 8%;
     max-width: 1400px;
@@ -123,7 +88,6 @@
 .ap-section-title {
     max-width: 900px;
     margin-bottom: 50px;
-    color: #e5e7eb;
 }
 
 .ap-section-title h2 {
@@ -146,7 +110,9 @@
     font-weight: 600;
 }
 
-/* TABLES */
+/* =====================
+   TABLES
+   ===================== */
 .ap-table {
     width: 100%;
     border-collapse: collapse;
@@ -198,7 +164,9 @@
     color: var(--ap-primary);
 }
 
-/* CARDS */
+/* =====================
+   CARDS
+   ===================== */
 .ap-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,7 +200,9 @@
     line-height: 1.7;
 }
 
-/* HIGHLIGHT SECTIONS */
+/* =====================
+   HIGHLIGHT SECTIONS
+   ===================== */
 .ap-highlight {
     background: var(--ap-bg);
     border-radius: 40px;
@@ -241,20 +211,12 @@
     margin: 60px auto;
 }
 
-
-
-/* RESPONSIVE */
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 900px) {
-    .ap-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
     .ap-hero {
-        padding-top: 80px;
-    }
-
-    .ap-hero-img {
-        height: 250px;
+        padding: 80px 20px 65px;
     }
 
     .ap-section {
@@ -278,11 +240,15 @@
 
 @media (max-width: 640px) {
     .ap-hero {
-        padding: 70px 5% 50px;
+        padding: 70px 5% 55px;
     }
 
     .ap-hero h1 {
         font-size: 2rem;
+    }
+
+    .ap-hero-subtitle {
+        font-size: 0.95rem;
     }
 
     .ap-section {
